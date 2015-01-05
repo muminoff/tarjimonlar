@@ -1,7 +1,6 @@
 tarjimonlar
 ==============================
 
-Tarjimonlar guruhining interaktiv tahliliy sayti
 Таржимонлар гуруҳининг интерактив сайти
 
 
