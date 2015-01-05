@@ -31,7 +31,7 @@ class Common(Configuration):
         'django.contrib.staticfiles',
 
         # Useful template tags:
-        # 'django.contrib.humanize',
+        'django.contrib.humanize',
 
         # Admin
         'django.contrib.admin',
@@ -42,6 +42,7 @@ class Common(Configuration):
         'allauth',  # registration
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
+        'allauth.socialaccount.providers.facebook',  # registration
     )
 
     # Apps specific for this project go here.
@@ -112,7 +113,7 @@ class Common(Configuration):
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
     # DATABASES = values.DatabaseURLValue('postgres://localhost/tarjimonlar')
-    DATABASES = values.DatabaseURLValue('sqlite://master.db')
+    DATABASES = values.DatabaseURLValue('sqlite:///master.db')
     # END DATABASE CONFIGURATION
 
     # CACHING
