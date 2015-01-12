@@ -11,4 +11,4 @@ tarjimonlar
 - [ ] Графика устида ишлаш
 
 
-Муаллиф: @muminoff
+Муаллиф: [@muminoff](https://github.com/muminoff/)
