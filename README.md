@@ -1,6 +1,6 @@
 ## tarjimonlar
 
-Таржимонлар гуруҳининг статистик таҳлилий сайти http://tarjimonlar.herokuapp.com
+Фейсбукдаги [Таржимонлар гуруҳининг](https://www.facebook.com/groups/438868872860349) статистик таҳлилий сайти http://tarjimonlar.herokuapp.com
 
 ### Режа:
 
