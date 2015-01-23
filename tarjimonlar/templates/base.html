@@ -1,8 +1,8 @@
 {% load staticfiles i18n %}<!DOCTYPE html>
-<html lang="en" ng-app>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>{% block title %}tarjimonlar{% endblock title %}</title>
+    <title>{% block title %}Таржимонлар гуруҳи статистикаси{% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -18,38 +18,39 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 
     <!-- Your stuff: Third-party css libraries go here -->
 
     <!-- This file store project specific CSS -->
+    <link href="{% static 'css/flat-ui.min.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
-    {% endblock %}
-
-    {% block angular %}
-      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
     {% endblock %}
 
   </head>
 
   <body>
 
-    <div class="header navbar">
-      <div class="container">
-        <a class="navbar-brand" href="/">tarjimonlar</a>
-        <ul class="nav navbar-nav">
-          <li class="active"><a href="{% url 'home' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
 
-          {% if request.user.is_authenticated %}
-            <li><a href="{% url 'users:detail' request.user.username  %}">{% trans "My Profile" %}</a></li>
-            <li><a href="{% url 'account_logout' %}">{% trans "Logout" %}</a></li>
-          {% else %}
-            <li><a href="{% url 'account_signup' %}">{% trans "Sign Up" %}</a></li>
-            <li><a href="{% url 'account_login' %}">{% trans "Log In" %}</a></li>
-          {% endif %}
-        </ul>
+      <div class="col-xs-12">
+          <nav class="navbar navbar-default" role="navigation">
+          <div class="collapse navbar-collapse" id="navbar-collapse-01">
+              <ul class="nav navbar-nav navbar-left">
+                  <li><a href="{% url 'gen_stat_page' %}"><span class="icon-stats"></span> Статистика</a></li>
+                  <li><a href="{% url 'gen_stat_page' %}"><span class="icon-post"></span> Постлар</a></li>
+                  <li><a href="{% url 'gen_stat_page' %}"><span class="icon-comment"></span> Комментлар</a></li>
+                  <li><a href="{% url 'gen_stat_page' %}"><span class="icon-search"></span> Қидирув</a></li>
+                  <li><a href="{% url 'gen_stat_page' %}"><span class="icon-book"></span> Луғатлар</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                  <li><a href="#"><span class="icon-happy"></span> Лойиҳа ҳақида</a></li>
+                  {% if request.user.is_authenticated %}
+                  <li><a href="#">Чиқиш</a></li>
+                  {% endif %}
+              </ul>
+          </div><!-- /.navbar-collapse -->
+          </nav><!-- /navbar -->
       </div>
-    </div>
 
     <div class="container">
         
@@ -60,7 +61,7 @@
       {% endif %}
 
       {% block content %}
-        <p>Use this document as a way to quick start any new project.</p>
+        <p>Фейсбук тармоғидаги «Профессионал ва ҳаваскор таржимонлар» гуруҳининг статистик таҳлилий сайти</p>
       {% endblock content %}
 
     </div> <!-- /container -->
@@ -81,6 +82,7 @@
 
       <!-- place project specific Javascript in this file -->
       <script src="{% static 'js/project.js' %}"></script>
+      <script src="{% static 'js/flat-ui.min.js' %}"></script>
     {% endblock javascript %}
   </body>
 </html>

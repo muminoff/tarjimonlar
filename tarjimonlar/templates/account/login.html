@@ -13,12 +13,11 @@
     <div class="col-md-5">
 
 
-      <h2>{% trans "Sign In" %}</h2>
+      <h2>{% trans "Рўйхатдан ўтиш" %}</h2>
 
       {% if socialaccount.providers  %}
-      <p>{% blocktrans with site.name as site_name %}Please sign in with one
-      of your existing third party accounts. Or, <a href="{{ signup_url }}">sign up</a> 
-      for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
+      <p>{% blocktrans with site.name as site_name %}Сайтдан рўйхатдан ўтиш учун қуйида келтирилган ижтимоий тармоқлардаги
+      бирорта аккаунтларингиздан бири орқали ўтишингиз мумкин ёки сайтга янги яъзо сифатида <a href="{{ signup_url }}">аъзо бўлишингиз</a> мумкин.{% endblocktrans %}</p>
 
       <div class="socialaccount_ballot">
 
@@ -26,7 +25,7 @@
           {% include "socialaccount/snippets/provider_list.html" with process="login" %}
         </ul>
 
-        <div class="login-or">{% trans 'or' %}</div>
+        <div class="login-or">{% trans 'ёки' %}</div>
 
       </div>
 

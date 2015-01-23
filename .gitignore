@@ -95,3 +95,5 @@ build/Release
 node_modules
 # Database
 master.db
+media
+.DS_Store

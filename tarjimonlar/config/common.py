@@ -48,6 +48,7 @@ class Common(Configuration):
     # Apps specific for this project go here.
     LOCAL_APPS = (
         'users',  # custom users app
+        'core',
         # Your stuff: custom apps go here
     )
 
@@ -112,8 +113,8 @@ class Common(Configuration):
 
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    # DATABASES = values.DatabaseURLValue('postgres://localhost/tarjimonlar')
-    DATABASES = values.DatabaseURLValue('sqlite:///master.db')
+    DATABASES = values.DatabaseURLValue('postgres://muminoff@localhost/tarjimonlar')
+    # DATABASES = values.DatabaseURLValue('sqlite:///master.db')
     # END DATABASE CONFIGURATION
 
     # CACHING
@@ -271,3 +272,5 @@ class Common(Configuration):
         cls.DATABASES['default']['ATOMIC_REQUESTS'] = True
 
     # Your common stuff: Below this line define 3rd party library settings
+    FACEBOOK_ACCESS_TOKEN = '1542757695977236|GJqQYTKCIMyKHuLD-8orv3MQBRc'
+    FACEBOOK_GROUP_ID = '438868872860349'
