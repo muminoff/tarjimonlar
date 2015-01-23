@@ -113,7 +113,11 @@ class Common(Configuration):
 
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
+<<<<<<< HEAD
     DATABASES = values.DatabaseURLValue('postgres://muminoff@localhost/tarjimonlar')
+=======
+    DATABASES = values.DatabaseURLValue('postgres://localhost/tarjimonlar')
+>>>>>>> 52a72a59a8bd6002e89899cd78ee4fb08c104f48
     # DATABASES = values.DatabaseURLValue('sqlite:///master.db')
     # END DATABASE CONFIGURATION
 
@@ -272,5 +276,5 @@ class Common(Configuration):
         cls.DATABASES['default']['ATOMIC_REQUESTS'] = True
 
     # Your common stuff: Below this line define 3rd party library settings
-    FACEBOOK_ACCESS_TOKEN = '1542757695977236|GJqQYTKCIMyKHuLD-8orv3MQBRc'
-    FACEBOOK_GROUP_ID = '438868872860349'
+    FACEBOOK_ACCESS_TOKEN = values.SecretValue(environ_prefix="", environ_name="FACEBOOK_ACCESS_TOKEN")
+    FACEBOOK_GROUP_ID = values.SecretValue(environ_prefix="", environ_name="FACEBOOK_GROUP_ID")
