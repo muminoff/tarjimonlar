@@ -272,5 +272,3 @@ class Common(Configuration):
         cls.DATABASES['default']['ATOMIC_REQUESTS'] = True
 
     # Your common stuff: Below this line define 3rd party library settings
-    FACEBOOK_ACCESS_TOKEN = values.SecretValue(environ_prefix="", environ_name="FACEBOOK_ACCESS_TOKEN")
-    FACEBOOK_GROUP_ID = values.SecretValue(environ_prefix="", environ_name="FACEBOOK_GROUP_ID")
