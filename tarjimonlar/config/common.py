@@ -161,6 +161,7 @@ class Common(Configuration):
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
         'django.core.context_processors.request',
+        'context_processors.navbar',
         # Your stuff: custom template context processers go here
     )
 

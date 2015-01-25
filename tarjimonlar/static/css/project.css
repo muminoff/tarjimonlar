@@ -91,8 +91,8 @@
 	content: "\e9cd";
 }
 
-.icon-information:before {
-	content: "\ea07";
+.icon-info:before {
+	content: "\ea0c";
 }
 
 .icon-question:before {
@@ -110,6 +110,10 @@
 
 body {
     font-family: 'Noto Serif', serif;
+}
+
+.navbar {
+  margin-top: 20px;
 }
 
 .memo {

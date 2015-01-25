@@ -18,10 +18,12 @@ class Command(BaseCommand):
             for member in members['data']:
                 if not Member.objects.filter(pk=member['id']).exists():
                     picture_url = graph.get(member['id'] + '/picture?redirect=false')['data']['url']
+                    admin = member['administrator']
                     try:
                         Member.objects.create(
                             pk=member['id'],
                             name=member['name'],
+                            admin=admin,
                             picture_url=picture_url
                         )
                         print u'{} imported'.format(member['name'])

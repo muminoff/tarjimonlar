@@ -12,7 +12,7 @@ class Command(BaseCommand):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
-        feed = graph.get('{}/feed?limit=100'.format(group_id))
+        feed = graph.get('{}/feed?limit=1000'.format(group_id))
 
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
