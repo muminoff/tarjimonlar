@@ -111,3 +111,7 @@
 body {
     font-family: 'Noto Serif', serif;
 }
+
+.memo {
+  font-size: 14px;
+}

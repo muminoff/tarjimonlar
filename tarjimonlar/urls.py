@@ -16,5 +16,6 @@ urlpatterns = patterns('',
     url(r'^avatar/', include('avatar.urls')),
     url(r'^$', 'core.views.index_page', name='index_page'),
     url(r'^statistics/', 'core.views.gen_stat_page', name='gen_stat_page'),
+    url(r'^about/', 'core.views.about_page', name='about_page'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

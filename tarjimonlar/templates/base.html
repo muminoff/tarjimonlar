@@ -43,7 +43,7 @@
                   <li><a href="{% url 'gen_stat_page' %}"><span class="icon-dictionary"></span> Луғатлар</a></li>
               </ul>
               <ul class="nav navbar-nav navbar-right">
-                  <li><a href="#"><span class="icon-happy"></span> Лойиҳа ҳақида</a></li>
+                <li><a href="{% url 'about_page' %}"><span class="icon-happy"></span> Лойиҳа ҳақида</a></li>
                   {% if request.user.is_authenticated %}
                   <li><a href="#">Чиқиш</a></li>
                   {% endif %}
