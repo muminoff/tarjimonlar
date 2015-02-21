@@ -16,6 +16,7 @@ class Command(BaseCommand):
 
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
+            new_posts = 0
             for post in feed['data']:
                 postid = post['id']
                 postmsg = post['message'] if 'message' in post else ''
@@ -26,30 +27,30 @@ class Command(BaseCommand):
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
                 if not post_exists:
-                    print 'Post', postid, 'not exists'
                     if not member_exists:
-                        print 'Member', creatorid, 'not exists'
                         creator = Member.objects.create(
                             pk=creatorid,
                             name=creatorname
                         )
                     else:
-                        print 'Member', creatorid, 'exists'
                         creator = Member.objects.get(id=creatorid)
-                    print 'Now creating post'
-                    Post.objects.create(
-                        pk=postid,
-                        message=postmsg,
-                        created_time=postctime,
-                        updated_time=postutime,
-                        creator=creator
-                    )
-                    print 'Post', postid, 'created'
-                else:
-                    print 'Post', postid, 'exists'
+
+                        try:
+                            Post.objects.create(
+                                pk=postid,
+                                message=postmsg,
+                                created_time=postctime,
+                                updated_time=postutime,
+                                creator=creator
+                            )
+                            new_posts += 1
+                        except:
+                            new_posts -= 1
 
 
             newUrl = feed['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
             )
             feed = graph.get(newUrl)
+
+        print 'Total {0} posts added.'.format(new_posts)

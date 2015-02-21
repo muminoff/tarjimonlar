@@ -21,6 +21,7 @@ class Command(BaseCommand):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
+        new_comments = 0
         for post in Post.objects.all():
             comments = graph.get('{}/comments?limit=1000'.format(post.id))
 
@@ -34,19 +35,15 @@ class Command(BaseCommand):
                 member_exists = Member.objects.filter(id=commentcreatorid).exists()
                 
                 if not comment_exists:
-                    print 'Comment', commentid, 'not exists'
                     if not member_exists:
-                        print 'Member', commentcreatorid, 'not exists'
                         commentcreator = Member.objects.create(
                             pk=commentcreatorid,
                             name=commentcreatorname
                         )
                     else:
-                        print 'Member', commentcreatorid, 'exists'
                         commentcreator = Member.objects.get(
                             pk=commentcreatorid
                         )
-                    print 'Now creating comment'
                     Comment.objects.create(
                         pk=commentid,
                         message=commentmsg if 'message' in c else '',
@@ -54,6 +51,6 @@ class Command(BaseCommand):
                         creator=commentcreator,
                         post=post
                     )
-                    print 'Comment', commentid, 'created'
-                else:
-                    print 'Comment', commentid, 'exists'
+                    new_comments += 1
+
+        print 'Total {0} posts added.'.format(new_posts)

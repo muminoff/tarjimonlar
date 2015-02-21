@@ -3,6 +3,7 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member
 from getenv import env
+import sys
 
 class Command(BaseCommand):
     help = 'Imports members from Facebook'
@@ -12,27 +13,27 @@ class Command(BaseCommand):
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         members = graph.get('{}/members?limit=1000'.format(group_id))
+        new_members = 0
 
         while 'data' in members and members['data'] and \
               len(members['data']) > 0:
             for member in members['data']:
                 if not Member.objects.filter(pk=member['id']).exists():
-                    picture_url = graph.get(member['id'] + '/picture?redirect=false')['data']['url']
-                    admin = member['administrator']
                     try:
                         Member.objects.create(
                             pk=member['id'],
                             name=member['name'],
-                            admin=admin,
-                            picture_url=picture_url
+                            admin=member['administrator'],
                         )
-                        print u'{} imported'.format(member['name'])
+                        new_members += 1
                     except Exception, e:
+                        new_members -= 1
                         print str(e), unicode(member['name']), member['id'], ' failed...'
-                else:
-                    print unicode('Member {} already exists..'.format(member['id']))
+
 
             newUrl = members['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
             )
             members = graph.get(newUrl)
+
+        print 'Total {0} members added.'.format(new_members)

@@ -2,7 +2,69 @@
 {% block content %}
 <div class="row">
     <div class="col-md-12">
-        Жами постлар: {{ total_posts }}.
+        <div id="main" style="height:400px"></div>
     </div>
 </div>
+<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<script type="text/javascript">
+    require.config({
+        paths: {
+            echarts: 'http://echarts.baidu.com/build/dist'
+        }
+    });
+
+    require(
+        [
+            'echarts',
+            'echarts/chart/line'
+        ],
+        function (ec) {
+            var myChart = ec.init(document.getElementById('main')); 
+
+            option = {
+                title : {
+                    text: 'Постлар',
+                    subtext: 'Йиллик статистика'
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:['Постлар','Комментлар']
+                },
+                xAxis : [
+                    {
+                        type : 'category',
+                        boundaryGap : false,
+                        data : ['周一','周二','周三','周四','周五','周六','周日']
+                    }
+                ],
+                yAxis : [
+                    {
+                        type : 'value'
+                    }
+                ],
+                series : [
+                    {
+                        name:'Постлар',
+                        type:'line',
+                        smooth:true,
+                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                        data:[10, 12, 21, 54, 260, 830, 710]
+                    },
+                    {
+                        name:'Комментлар',
+                        type:'line',
+                        smooth:true,
+                        itemStyle: {normal: {areaStyle: {type: 'default'}}},
+                        data:[30, 182, 434, 791, 390, 30, 10]
+                    }
+                ]
+            };
+
+
+            myChart.setOption(option); 
+        }
+    );
+</script>
 {% endblock content %}

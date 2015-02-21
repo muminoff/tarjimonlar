@@ -5,11 +5,17 @@ class Member(models.Model):
     id = models.CharField(max_length=255, primary_key=True)
     name = models.CharField(max_length=255)
     admin = models.BooleanField(default=False)
-    # picture_file = models.ImageField(upload_to='images', blank=True)
-    picture_url = models.URLField(max_length=255)
 
     def __unicode__(self):
         return unicode(self.name)
+
+    @property
+    def posts_count(self):
+        return Post.objects.filter(creator=self).count()
+
+    @property
+    def comments_count(self):
+        return Comment.objects.filter(creator=self).count()
 
     class Meta:
         db_table = 'members'
