@@ -9,8 +9,8 @@ def index_page(request):
 
 def members_page(request):
     context = {
-        "top_posters": sorted(Member.objects.all(), key=lambda m: m.posts_count),
-        "top_commentors": sorted(Member.objects.all(), key=lambda m: m.comments_count),
+        "top_posters": 12,
+        "top_commentors": 21,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/members.html', context)
