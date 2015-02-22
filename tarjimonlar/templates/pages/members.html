@@ -30,7 +30,7 @@
             <tbody>
                 {% for poster in top_posters %}
                 <tr>
-                    <td><a href="https://www.facebook.com/{{ poster.id }}/"><img src="http://graph.facebook.com/{{ poster.id }}/picture?type=square&width=32&height=32"/></a> {{ poster.name }}</td>
+                    <td><a href="https://www.facebook.com/{{ poster.id }}/"><img src="https://graph.facebook.com/{{ poster.id }}/picture?type=square&width=32&height=32"/></a> {{ poster.name }}</td>
                     <td>{{ poster.num_posts }}</td>
                 </tr>
                 {% endfor %}
@@ -49,7 +49,7 @@
             <tbody>
                 {% for commentor in top_commentors %}
                 <tr>
-                    <td><a href="https://www.facebook.com/{{ commentor.id }}/"><img src="http://graph.facebook.com/{{ commentor.id }}/picture?type=square&width=32&height=32"/></a> {{ commentor.name }}</td>
+                    <td><a href="https://www.facebook.com/{{ commentor.id }}/"><img src="https://graph.facebook.com/{{ commentor.id }}/picture?type=square&width=32&height=32"/></a> {{ commentor.name }}</td>
                     <td>{{ commentor.num_comments }}</td>
                 </tr>
                 {% endfor %}
