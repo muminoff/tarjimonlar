@@ -14,9 +14,6 @@ def members_page(request):
     context = {
         "top_posters": top_posters,
         "top_commentors": top_commentors,
-        "total_members": Member.objects.count(),
-        "total_admins": Member.objects.filter(admin=True).count(),
-        "all_admins": Member.objects.filter(admin=True),
         "next": request.GET.get('next')
     }
     return render(request, 'pages/members.html', context)
