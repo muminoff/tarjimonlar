@@ -1,61 +1,96 @@
 {% extends "base.html" %}
 {% block content %}
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <div class="row">
+    <p>Гуруҳ аъзолари жами {{ total_members }} та. Администраторлар сони {{ total_admins }} та. Улар: {% for admin in all_admins %}{% if not forloop.last %}<a href="https://www.facebook.com/{{ admin.id }}">{{ admin.name }}</a>, {% else %} <a href="https://wwww.facebook.com/{{ admin.id }}">{{ admin.name }}</a>{% endif %}{% endfor %}. Қуйида эса энг фаол иштирокчилар ўнлиги келтирилган.</p>
     <div class="col-md-12">
-        <div id="main" style="height:400px"></div>
+        <h4>Энг фаол иштирокчилар <span>(постлар сони бўйича)</span></h4>
+        <div id="posters-chart" style="height: 250px;"></div>
+    </div>
+    <div class="col-md-12">
+        <h4>Энг фаол иштирокчилар <span>(комментлар сони бўйича)</span></h4>
+        <div id="commentors-chart" style="height: 250px;"></div>
     </div>
 </div>
-<script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+<hr/>
+<div class="row">
+    <p>Айнан шу маълумот жадвал кўринишида:</p>
+    <div class="col-md-6">
+        <h4>Энг кўп пост ёзганлар</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Иштирокчи</th>
+                    <th>Постлар сони</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for poster in top_posters %}
+                <tr>
+                    <td><a href="https://www.facebook.com/{{ poster.id }}/"><img src="http://graph.facebook.com/{{ poster.id }}/picture?type=square&width=32&height=32"/></a> {{ poster.name }}</td>
+                    <td>{{ poster.num_posts }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h4>Энг кўп коммент ёзганлар</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Иштирокчи</th>
+                    <th>Комментлар сони</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for commentor in top_commentors %}
+                <tr>
+                    <td><a href="https://www.facebook.com/{{ commentor.id }}/"><img src="http://graph.facebook.com/{{ commentor.id }}/picture?type=square&width=32&height=32"/></a> {{ commentor.name }}</td>
+                    <td>{{ commentor.num_comments }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 <script type="text/javascript">
-    require.config({
-        paths: {
-            echarts: 'http://echarts.baidu.com/build/dist'
-        }
-    });
-
-    require(
-        [
-            'echarts',
-            'echarts/chart/pie'
+    Morris.Bar({
+        element: 'posters-chart',
+        data: [
+            {% for poster in top_posters %}
+            { poster: '{{ poster.name }}', posts: {{ poster.num_posts }} },
+            {% endfor %}
         ],
-        function (ec) {
-            var myChart = ec.init(document.getElementById('main')); 
-
-            var option = {
-                title : {
-                    text: '某站点用户访问来源',
-                    subtext: '纯属虚构',
-                    x:'center'
-                },
-                tooltip : {
-                    trigger: 'item',
-                    formatter: "{a} <br/>{b} : {c} ({d}%)"
-                },
-                legend: {
-                    orient : 'vertical',
-                    x : 'left',
-                    data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎']
-                },
-                series : [
-                    {
-                        name:'访问来源',
-                        type:'pie',
-                        radius : '55%',
-                        center: ['50%', '60%'],
-                        data:[
-                            {value:335, name:'直接访问'},
-                            {value:310, name:'邮件营销'},
-                            {value:234, name:'联盟广告'},
-                            {value:135, name:'视频广告'},
-                            {value:1548, name:'搜索引擎'}
-                        ]
-                    }
-                ]
-            };
-                     
-
-            myChart.setOption(option); 
-        }
-    );
+        xkey: 'poster',
+        ykeys: ['posts'],
+        labels: ['Постлар сони'],
+        barRatio: 0.4,
+        xLabelAngle: 15,
+        hideHover: 'auto',
+        grid: true,
+        resize: true,
+        barColors: ['#2980b9'],
+    });
+    Morris.Bar({
+        element: 'commentors-chart',
+        data: [
+            {% for commentor in top_commentors %}
+            { commentor: '{{ commentor.name }}', comments: {{ commentor.num_comments }} },
+            {% endfor %}
+        ],
+        xkey: 'commentor',
+        ykeys: ['comments'],
+        labels: ['Комментлар сони'],
+        barRatio: 0.4,
+        xLabelAngle: 15,
+        hideHover: 'auto',
+        grid: true,
+        resize: true,
+        barColors: ['#16a085'],
+    });
 </script>
 {% endblock content %}

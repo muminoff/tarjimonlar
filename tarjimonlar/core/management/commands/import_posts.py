@@ -3,6 +3,8 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member, Post
 from getenv import env
+import sys
+import sys
 
 
 class Command(BaseCommand):
@@ -14,16 +16,23 @@ class Command(BaseCommand):
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=1000'.format(group_id))
 
+        new_posts = 0
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
-            new_posts = 0
             for post in feed['data']:
+
                 postid = post['id']
                 postmsg = post['message'] if 'message' in post else ''
                 postctime = post['created_time']
                 postutime = post['updated_time']
                 creatorid = post['from']['id']
                 creatorname = post['from']['name']
+
+                try:
+                    howmanylikes = len(post['likes']['data'])
+                except:
+                    howmanylikes = 0
+
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
                 if not post_exists:
@@ -41,11 +50,14 @@ class Command(BaseCommand):
                                 message=postmsg,
                                 created_time=postctime,
                                 updated_time=postutime,
-                                creator=creator
+                                creator=creator,
+                                likes=howmanylikes
                             )
                             new_posts += 1
                         except:
                             new_posts -= 1
+                else:
+                    Post.objects.filter(id=postid).update(likes=howmanylikes)
 
 
             newUrl = feed['paging']['next'].replace(

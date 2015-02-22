@@ -10,11 +10,7 @@ class Member(models.Model):
         return unicode(self.name)
 
     @property
-    def posts_count(self):
-        return Post.objects.filter(creator=self).count()
-
-    @property
-    def comments_count(self):
+    def get_comments_count(self):
         return Comment.objects.filter(creator=self).count()
 
     class Meta:
@@ -27,6 +23,7 @@ class Post(models.Model):
     created_time = models.DateTimeField()
     updated_time = models.DateTimeField()
     creator = models.ForeignKey(Member)
+    likes = models.IntegerField()
 
     def __unicode__(self):
         return self.id

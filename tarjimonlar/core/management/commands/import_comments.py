@@ -31,6 +31,7 @@ class Command(BaseCommand):
                 commentcreatorname = c['from']['name']
                 commentmsg = c['message']
                 commentctime = c['created_time']
+
                 comment_exists = Comment.objects.filter(id=c['id']).exists()
                 member_exists = Member.objects.filter(id=commentcreatorid).exists()
                 
@@ -53,4 +54,4 @@ class Command(BaseCommand):
                     )
                     new_comments += 1
 
-        print 'Total {0} posts added.'.format(new_posts)
+        print 'Total {0} comments added.'.format(new_comments)
