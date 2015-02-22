@@ -10,8 +10,19 @@ import sys
 class Command(BaseCommand):
     help = 'Imports posts from Facebook'
 
+    def get_likes_of_post(self, postid):
+        print 'Trying to get like counts of {} ...'.format(postid)
+        access_token = env('FACEBOOK_ACCESS_TOKEN')
+        graph = GraphAPI(access_token)
+        likes_arr = graph.get('{}/likes?limit=1000'.format(postid))
+
+        return len(likes_arr['data'])
+
+
+
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
+        grab_likes = env('GRAB_LIKES')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=1000'.format(group_id))
@@ -28,9 +39,9 @@ class Command(BaseCommand):
                 creatorid = post['from']['id']
                 creatorname = post['from']['name']
 
-                try:
-                    howmanylikes = len(post['likes']['data'])
-                except:
+                if grab_likes:
+                    howmanylikes = self.get_likes_of_post(postid)
+                else:
                     howmanylikes = 0
 
                 post_exists = Post.objects.filter(id=postid).exists()
@@ -56,8 +67,8 @@ class Command(BaseCommand):
                             new_posts += 1
                         except:
                             new_posts -= 1
-                else:
-                    Post.objects.filter(id=postid).update(likes=howmanylikes)
+                # else:
+                #     Post.objects.filter(id=postid).update(likes=howmanylikes)
 
 
             newUrl = feed['paging']['next'].replace(

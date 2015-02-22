@@ -42,7 +42,7 @@ def posts_page(request):
 
     context = {
         "total_posts": Post.objects.count(),
-        "jsondata": json_values,
+        # "jsondata": json_values,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)
