@@ -97,3 +97,5 @@ node_modules
 master.db
 media
 .DS_Store
+nohup.out
+staticfiles/*
