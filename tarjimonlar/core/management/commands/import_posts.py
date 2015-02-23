@@ -11,11 +11,13 @@ class Command(BaseCommand):
     help = 'Imports posts from Facebook'
 
     def get_likes_of_post(self, postid):
-        print 'Trying to get like counts of {} ...'.format(postid)
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         likes_arr = graph.get('{}/likes?limit=1000'.format(postid))
-
+        print 'Getting like counts of {post_id} - {like_counts}...'.format(
+                post_id=postid,
+                like_counts=len(likes_arr['data'])
+                )
         return len(likes_arr['data'])
 
 
