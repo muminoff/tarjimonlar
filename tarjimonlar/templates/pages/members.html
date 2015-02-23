@@ -57,7 +57,7 @@
                 <tr>
                     <td><a href="https://www.facebook.com/{{ post.creator.id }}/"><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/></a> {{ post.creator.name }}</td>
                     <td>{{ post.likes }}</td>
-                    <td><a class="btn btn-xs btn-block btn-inverse" href="https://www.facebook.com/{{ post.id }}" target="_blank"><span class="icon-link"></span></a></td>
+                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}" target="_blank"><span class="icon-link"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
@@ -78,7 +78,7 @@
                 <tr>
                     <td><a href="https://www.facebook.com/{{ comment.creator.id }}/"><img src="https://graph.facebook.com/{{ comment.creator.id }}/picture?type=square&width=32&height=32"/></a> {{ comment.creator.name }}</td>
                     <td>{{ comment.likes }}</td>
-                    <td><a class="btn btn-xs btn-block btn-inverse" href="https://www.facebook.com/{{ comment.id }}" target="_blank"><span class="icon-link"></span></a></td>
+                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ comment.id }}" target="_blank"><span class="icon-link"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
