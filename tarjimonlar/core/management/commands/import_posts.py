@@ -69,8 +69,8 @@ class Command(BaseCommand):
                             new_posts += 1
                         except:
                             new_posts -= 1
-                # else:
-                #     Post.objects.filter(id=postid).update(likes=howmanylikes)
+                else:
+                    Post.objects.filter(id=postid).update(likes=howmanylikes)
 
 
             newUrl = feed['paging']['next'].replace(

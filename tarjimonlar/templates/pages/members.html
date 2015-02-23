@@ -7,7 +7,7 @@
             <thead>
                 <tr>
                     <th>Пост эгаси</th>
-                    <th>Постлар сони</th>
+                    <th>Постлар</th>
                 </tr>
             </thead>
             <tbody>
@@ -26,7 +26,7 @@
             <thead>
                 <tr>
                     <th>Коммент эгаси</th>
-                    <th>Комментлар сони</th>
+                    <th>Комментлар</th>
                 </tr>
             </thead>
             <tbody>
@@ -38,6 +38,50 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <h4>Энг кўп лайк олган пост эгалари</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Пост эгаси</th>
+                    <th>Лайклар</th>
+                    <th>Пост</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in top_liked_posters %}
+                <tr>
+                    <td><a href="https://www.facebook.com/{{ post.creator.id }}/"><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/></a> {{ post.creator.name }}</td>
+                    <td>{{ post.likes }}</td>
+                    <td><a class="btn btn-xs btn-block btn-inverse" href="https://www.facebook.com/{{ post.id }}" target="_blank">Постга ҳавола <span class="icon-link"></span></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h4>Энг кўп лайк олган коммент эгалари</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Коммент эгаси</th>
+                    <th>Лайклар</th>
+                    <th>Коммент</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in top_liked_posters %}
+                <tr>
+                    <td><a href="https://www.facebook.com/{{ post.creator.id }}/"><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/></a> {{ post.creator.name }}</td>
+                    <td>{{ post.likes }}</td>
+                    <td><a class="btn btn-xs btn-block btn-inverse" href="https://www.facebook.com/{{ post.id }}" target="_blank">Постга ҳавола <span class="icon-link"></span></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
     </div>
 </div>
 {% endblock content %}
