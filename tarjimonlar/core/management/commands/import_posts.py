@@ -34,10 +34,7 @@ class Command(BaseCommand):
             creatorid = post['from']['id']
             creatorname = post['from']['name']
 
-            if grab_likes:
-                howmanylikes = self.get_likes_of_post(postid)
-            else:
-                howmanylikes = 0
+            howmanylikes = self.get_likes_of_post(postid)
 
             post_exists = Post.objects.filter(id=postid).exists()
             member_exists = Member.objects.filter(id=creatorid).exists()
@@ -70,7 +67,6 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
-        grab_likes = env('GRAB_LIKES')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=1000'.format(group_id))
