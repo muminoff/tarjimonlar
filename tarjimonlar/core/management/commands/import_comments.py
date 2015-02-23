@@ -45,7 +45,7 @@ class Command(BaseCommand):
                 commentctime = c['created_time']
 
                 if grab_likes:
-                    howmanylikes = self.get_likes_of_comment(postid)
+                    howmanylikes = self.get_likes_of_comment(commentid)
                 else:
                     howmanylikes = 0
 
