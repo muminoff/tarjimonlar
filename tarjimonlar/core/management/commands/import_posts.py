@@ -21,7 +21,6 @@ class Command(BaseCommand):
         return len(likes_arr['data'])
 
 
-
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         grab_likes = env('GRAB_LIKES')
@@ -48,6 +47,7 @@ class Command(BaseCommand):
 
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
+
                 if not post_exists:
                     if not member_exists:
                         creator = Member.objects.create(
@@ -57,18 +57,19 @@ class Command(BaseCommand):
                     else:
                         creator = Member.objects.get(id=creatorid)
 
-                        try:
-                            Post.objects.create(
-                                pk=postid,
-                                message=postmsg,
-                                created_time=postctime,
-                                updated_time=postutime,
-                                creator=creator,
-                                likes=howmanylikes
-                            )
-                            new_posts += 1
-                        except:
-                            new_posts -= 1
+                    try:
+                        Post.objects.create(
+                            pk=postid,
+                            message=postmsg,
+                            created_time=postctime,
+                            updated_time=postutime,
+                            creator=creator,
+                            likes=howmanylikes
+                        )
+                        new_posts += 1
+                    except:
+                        new_posts -= 1
+
                 else:
                     Post.objects.filter(id=postid).update(likes=howmanylikes)
 

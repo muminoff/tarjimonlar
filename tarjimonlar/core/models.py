@@ -45,6 +45,7 @@ class Comment(models.Model):
     created_time = models.DateTimeField()
     creator = models.ForeignKey(Member)
     post = models.ForeignKey(Post)
+    likes = models.IntegerField()
 
     def __unicode__(self):
         return self.id
