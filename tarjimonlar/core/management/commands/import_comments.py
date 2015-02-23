@@ -69,7 +69,8 @@ class Command(BaseCommand):
                             message=commentmsg if 'message' in c else '',
                             created_time=commentctime,
                             creator=commentcreator,
-                            post=post
+                            post=post,
+                            likes=howmanylikes
                         )
                         new_comments += 1
                     except:
