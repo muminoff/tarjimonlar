@@ -24,31 +24,32 @@ def members_page(request):
 
 
 def posts_page(request):
-    qs = (Post.objects.all().
-          extra(select={
-              'day': 'extract(day from created_time)',
-              'month': 'extract(month from created_time)',
-              'year': 'extract(year from created_time)',
-          }).
-          values('month', 'year', 'day').
-          annotate(count_posts=Count('created_time')))
-    qs = qs.order_by('created_time')
-    total = 0
-    json_values = []
-    for item in qs:
-        total += item['count_posts']
-        json_values.append(
-            {
-                'day': item['day'],
-                'month': item['month'],
-                'year': item['year'],
-                'count_posts': total
-            }
-        )
+    # qs = (Post.objects.all().
+    #       extra(select={
+    #           'day': 'extract(day from created_time)',
+    #           'month': 'extract(month from created_time)',
+    #           'year': 'extract(year from created_time)',
+    #       }).
+    #       values('month', 'year', 'day').
+    #       annotate(count_posts=Count('created_time')))
+    # qs = qs.order_by('created_time')
+    # total = 0
+    # json_values = []
+    # for item in qs:
+    #     total += item['count_posts']
+    #     json_values.append(
+    #         {
+    #             'day': item['day'],
+    #             'month': item['month'],
+    #             'year': item['year'],
+    #             'count_posts': total
+    #         }
+    #     )
 
     context = {
-        "total_posts": Post.objects.count(),
-        "jsondata": json_values,
+        "top_liked_posts": Post.objects.order_by('-likes'):[10],
+        "top_commented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10],
+        # "jsondata": json_values,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)
