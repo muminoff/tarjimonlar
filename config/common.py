@@ -43,6 +43,7 @@ class Common(Configuration):
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
         'allauth.socialaccount.providers.facebook',  # registration
+        'pipeline', # minimize assets
     )
 
     # Apps specific for this project go here.
@@ -66,6 +67,8 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.gzip.GZipMiddleware',
+        'pipeline.middleware.MinifyHTMLMiddleware',
     )
     # END MIDDLEWARE CONFIGURATION
 
@@ -195,6 +198,8 @@ class Common(Configuration):
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        'pipeline.finders.PipelineFinder',
+        'pipeline.finders.CachedFileFinder',
     )
     # END STATIC FILE CONFIGURATION
 
@@ -273,3 +278,53 @@ class Common(Configuration):
         cls.DATABASES['default']['ATOMIC_REQUESTS'] = True
 
     # Your common stuff: Below this line define 3rd party library settings
+    PIPELINE_CSS = {
+        'reset': {
+            'source_filenames': (
+                'css/reset.css',
+            ),
+            'output_filename': 'css/reset.min.css',
+        },
+        'style': {
+            'source_filenames': (
+                'css/style.css',
+            ),
+            'output_filename': 'css/style.min.css',
+        },
+        'table': {
+            'source_filenames': (
+                'css/table.css',
+            ),
+            'output_filename': 'css/table.min.css',
+        },
+        'fonts': {
+            'source_filenames': (
+                'css/fonts.css',
+            ),
+            'output_filename': 'css/fonts.min.css',
+        },
+    }
+    PIPELINE_JS = {
+        'modernizr': {
+            'source_filenames': (
+                'js/modernizr.js',
+            ),
+            'output_filename': 'js/modernizr.min.js',
+        },
+        'jquery': {
+            'source_filenames': (
+                'js/jquery.js',
+            ),
+            'output_filename': 'js/jquery.min.js',
+        },
+        'main': {
+            'source_filenames': (
+                'js/main.js',
+            ),
+            'output_filename': 'js/main.min.js',
+        },
+    }
+    PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+    PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+    PIPELINE_ENABLED = True
