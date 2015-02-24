@@ -10,14 +10,24 @@ class Member(models.Model):
         return unicode(self.name)
 
     @property
+    def posts_count(self):
+        return Post.objects.filter(creator=self).count()
+
+    def get_posts(self):
+        return Post.objects.filter(creator=self)
+
+    @property
     def comments_count(self):
         return Comment.objects.filter(creator=self).count()
 
     def get_comments(self):
         return Comment.objects.filter(creator=self)
 
-    def get_texts_from_all_comments(self):
-        return [''.join(c.message) for c in Comment.objects.filter(creator=self)]
+    def get_texts_from_posts_and_comments(self):
+        posts = [''.join(p.message) for p in Post.objects.filter(creator=self)]
+        comments = [''.join(c.message) for c in Comment.objects.filter(creator=self)]
+        return posts + comments
+
 
     class Meta:
         db_table = 'members'
