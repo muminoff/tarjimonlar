@@ -8,7 +8,7 @@ def navbar(request):
     menus = OrderedDict([
         ('members_page', {'title': 'Гуруҳ аъзолари', 'icon': 'user'}),
         ('posts_page', {'title': 'Постлар', 'icon': 'post'}),
-        ('comments_page', {'title': 'Комментлар', 'icon': 'comment'}),
+        ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment'}),
         ('search_page', {'title': 'Қидирув', 'icon': 'search'}),
         ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info'}),
         ])
