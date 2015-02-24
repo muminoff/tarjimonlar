@@ -22,10 +22,10 @@
     <!-- Your stuff: Third-party css libraries go here -->
 
     <!-- This file store project specific CSS -->
-    {% compressed_css 'flat' %}
     <link href="{% static 'css/flat.css' %}" rel="stylesheet">
     <link href="{% static 'css/project.css' %}" rel="stylesheet">
     {% endblock %}
+    {% compressed_css 'flat' %}
 
   </head>
 
