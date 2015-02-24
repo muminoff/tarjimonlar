@@ -49,4 +49,52 @@
         </table> 
     </div>
 </div>
+<div class="row">
+    <div class="col-md-6">
+        <h4>Умумман муҳокама бўлмаган постлар (хронологик)</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Пост матнидан парча</th>
+                    <th>Сана</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in top_noncommented_posts %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ post.message | slice:"25"}}...</td>
+                    <td>{{ post.created_time }}</td>
+                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h4>Ҳеч кимга ёқмаган постлар (хронолгик)</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Пост матнидан парча</th>
+                    <th>Сана</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for post in top_disliked_posts %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ post.message | slice:"25"}}...</td>
+                    <td>{{ post.created_time }}</td>
+                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+</div>
 {% endblock %}

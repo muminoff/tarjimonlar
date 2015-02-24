@@ -14,6 +14,7 @@ def members_page(request):
     top_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10]
     top_liked_posters = Post.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+
     context = {
         "total_members": total_members,
         "top_posters": top_posters,
@@ -22,6 +23,7 @@ def members_page(request):
         "top_liked_commentors": top_liked_commentors,
         "next": request.GET.get('next')
     }
+
     return render(request, 'pages/members.html', context)
 
 
@@ -52,6 +54,8 @@ def posts_page(request):
         "total_posts": Post.objects.count(),
         "top_liked_posts": Post.objects.order_by('-likes')[:10],
         "top_commented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10],
+        "top_noncommented_posts_by_time": Post.objects.annotate(num_comments=Count('comment')).order_by('-created_time', 'num_comments')[:10],
+        "top_disliked_posts_by_time": Post.objects.order_by('-created_time', 'likes')[:10],
         # "jsondata": json_values,
         "next": request.GET.get('next')
     }
