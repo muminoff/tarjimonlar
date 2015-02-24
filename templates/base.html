@@ -3,8 +3,8 @@
 <!doctype html>
 <html lang="uz">
   <head>
-    <meta charset="utf-8">
     <title>{% block title %}Таржимонлар гуруҳи{% endblock title %}</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Таржимонлар гуруҳи">
     <meta name="keywords" content="ўзбек, ўзбек тили, ўзбекча, таржима, таржимон, таржимонлар, ўзбеклар фейсбукда, бадиий китоблар, бадиий асарлар, ўзбек таржималар">
@@ -14,19 +14,10 @@
     <meta name="web_author" content="@muminoff">
     <meta name="author" content="@muminoff">
     <meta name="rating" content="general">
-
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-    {% block css %}
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
-    <link href="{% static 'css/flat.css' %}" rel="stylesheet">
-    <link href="{% static 'css/project.css' %}" rel="stylesheet">
-    {% endblock %}
     {% stylesheet 'flat' %}
+    {% stylesheet 'project' %}
+    {% stylesheet 'bootstrap' %}
   </head>
   <body>
       <div class="col-xs-12">
@@ -54,20 +45,12 @@
           {% endfor %}
       {% endif %}
 
-      {% block content %}
-        <p>Фейсбук тармоғидаги «Профессионал ва ҳаваскор таржимонлар» гуруҳининг статистик таҳлилий сайти</p>
-      {% endblock content %}
-
     </div>
     
-    {% block modal %}{% endblock modal %}
-
-    {% block javascript %}
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-      <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-      <script src="{% static 'js/project.js' %}"></script>
-      <script src="{% static 'js/flat-ui.min.js' %}"></script>
-    {% endblock javascript %}
+      {% javascript 'jquery' %}
+      {% javascript 'bootstrap' %}
+      {% javascript 'flat' %}
+      {% javascript 'project' %}
 
   </body>
 </html>

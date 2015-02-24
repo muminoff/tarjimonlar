@@ -285,6 +285,18 @@ class Common(Configuration):
             ),
             'output_filename': 'css/flat.min.css',
         },
+        'project': {
+            'source_filenames': (
+                'css/project.css',
+            ),
+            'output_filename': 'css/project.min.css',
+        },
+        'bootstrap': {
+            'source_filenames': (
+                'css/bootstrap.css',
+            ),
+            'output_filename': 'css/bootstrap.min.css',
+        },
     }
     PIPELINE_JS = {
         'jquery': {
@@ -292,6 +304,24 @@ class Common(Configuration):
                 'js/jquery.js',
             ),
             'output_filename': 'js/jquery.min.js',
+        },
+        'bootstrap': {
+            'source_filenames': (
+                'js/bootstrap.js',
+            ),
+            'output_filename': 'js/bootstrap.min.js',
+        },
+        'flat': {
+            'source_filenames': (
+                'js/flat.js',
+            ),
+            'output_filename': 'js/flat.min.js',
+        },
+        'project': {
+            'source_filenames': (
+                'js/project.js',
+            ),
+            'output_filename': 'js/project.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
