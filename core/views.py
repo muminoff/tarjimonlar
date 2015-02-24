@@ -9,11 +9,13 @@ def index_page(request):
 
 
 def members_page(request):
+    total_members = Member.objects.count()
     top_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10]
     top_liked_posters = Post.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
     context = {
+        "total_members": total_members,
         "top_posters": top_posters,
         "top_commentors": top_commentors,
         "top_liked_posters": top_liked_posters,
