@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.db.models import Count, Sum
+from django.views.decorators.cache import cache_page
 from core.models import Member, Post, Comment
 
 
@@ -8,6 +9,7 @@ def index_page(request):
     return render(request, 'base.html', context)
 
 
+@cache_page(60 * 5)
 def members_page(request):
     total_members = Member.objects.count()
     top_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:10]
@@ -27,6 +29,7 @@ def members_page(request):
     return render(request, 'pages/members.html', context)
 
 
+@cache_page(60 * 5)
 def posts_page(request):
     # qs = (Post.objects.all().
     #       extra(select={

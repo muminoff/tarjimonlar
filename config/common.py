@@ -125,19 +125,13 @@ class Common(Configuration):
     # memcacheify (used on heroku) is painful to install on windows.
     SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
     CACHES = {
-        'default': {
-            'BACKEND': 'redis_cache.RedisCache',
-            'LOCATION': 'localhost:6379',
-            'OPTIONS': {
-                'DB': 1,
-                'PARSER_CLASS': 'redis.connection.HiredisParser',
-                'CONNECTION_POOL_CLASS': 'redis.BlockingConnectionPool',
-                'CONNECTION_POOL_CLASS_KWARGS': {
-                    'max_connections': 50,
-                    'timeout': 20,
-                }
-            },
-        },
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/1",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
+        }
     }
     # END CACHING
 
