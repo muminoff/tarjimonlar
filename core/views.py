@@ -26,10 +26,11 @@ def members_page(request):
 def posts_page(request):
     qs = (Post.objects.all().
           extra(select={
+              'day': 'extract(day from created_time)',
               'month': 'extract(month from created_time)',
               'year': 'extract(year from created_time)',
           }).
-          values('month', 'year').
+          values('month', 'year', 'day').
           annotate(count_posts=Count('created_time')))
     qs = qs.order_by('created_time')
     total = 0
@@ -38,6 +39,7 @@ def posts_page(request):
         total += item['count_posts']
         json_values.append(
             {
+                'day': item['day'],
                 'month': item['month'],
                 'year': item['year'],
                 'count_posts': total
