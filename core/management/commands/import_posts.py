@@ -22,48 +22,6 @@ class Command(BaseCommand):
         return len(likes_arr['data'])
 
 
-    def get_posts(self, feeddata):
-
-        for post in feeddata:
-
-            postid = post['id']
-            postmsg = post['message'] if 'message' in post else ''
-            postctime = post['created_time']
-            postutime = post['updated_time']
-            creatorid = post['from']['id']
-            creatorname = post['from']['name']
-
-            howmanylikes = self.get_likes_of_post(postid)
-
-            post_exists = Post.objects.filter(id=postid).exists()
-            member_exists = Member.objects.filter(id=creatorid).exists()
-
-            if not post_exists:
-                if not member_exists:
-                    creator = Member.objects.create(
-                        pk=creatorid,
-                        name=creatorname
-                    )
-                else:
-                    creator = Member.objects.get(id=creatorid)
-
-                try:
-                    Post.objects.create(
-                        pk=postid,
-                        message=postmsg,
-                        created_time=postctime,
-                        updated_time=postutime,
-                        creator=creator,
-                        likes=howmanylikes
-                    )
-                    new_posts += 1
-                except:
-                    new_posts -= 1
-
-            else:
-                Post.objects.filter(id=postid).update(likes=howmanylikes)
-
-
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
@@ -74,7 +32,44 @@ class Command(BaseCommand):
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
 
-            self.get_posts(feed['data']) 
+            for post in feeddata:
+
+                postid = post['id']
+                postmsg = post['message'] if 'message' in post else ''
+                postctime = post['created_time']
+                postutime = post['updated_time']
+                creatorid = post['from']['id']
+                creatorname = post['from']['name']
+
+                howmanylikes = self.get_likes_of_post(postid)
+
+                post_exists = Post.objects.filter(id=postid).exists()
+                member_exists = Member.objects.filter(id=creatorid).exists()
+
+                if not post_exists:
+                    if not member_exists:
+                        creator = Member.objects.create(
+                            pk=creatorid,
+                            name=creatorname
+                        )
+                    else:
+                        creator = Member.objects.get(id=creatorid)
+
+                    try:
+                        Post.objects.create(
+                            pk=postid,
+                            message=postmsg,
+                            created_time=postctime,
+                            updated_time=postutime,
+                            creator=creator,
+                            likes=howmanylikes
+                        )
+                        new_posts += 1
+                    except:
+                        new_posts -= 1
+
+                else:
+                    Post.objects.filter(id=postid).update(likes=howmanylikes)
 
             newUrl = feed['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
