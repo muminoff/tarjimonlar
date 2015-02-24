@@ -69,7 +69,6 @@ class Command(BaseCommand):
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=1000'.format(group_id))
-        pool = Pool(512)
 
         new_posts = 0
         while 'data' in feed and feed['data'] and \
