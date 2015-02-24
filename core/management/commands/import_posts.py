@@ -32,7 +32,7 @@ class Command(BaseCommand):
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
 
-            for post in feeddata:
+            for post in feed['data']:
 
                 postid = post['id']
                 postmsg = post['message'] if 'message' in post else ''
