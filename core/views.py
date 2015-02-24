@@ -63,6 +63,7 @@ def posts_page(request):
     return render(request, 'pages/posts.html', context)
 
 
+@cache_page(60 * 5)
 def comments_page(request):
     context = {
         "total_comments": Comment.objects.count(),
@@ -76,11 +77,6 @@ def search_page(request):
         "next": request.GET.get('next')
     }
     return render(request, 'pages/search.html', context)
-
-
-def gen_stat_page(request):
-    context = {"next": request.GET.get('next')}
-    return render(request, 'pages/gen_stat.html', context)
 
 
 def about_page(request):
