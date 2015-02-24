@@ -10,8 +10,14 @@ class Member(models.Model):
         return unicode(self.name)
 
     @property
-    def get_comments_count(self):
+    def comments_count(self):
         return Comment.objects.filter(creator=self).count()
+
+    def get_comments(self):
+        return Comment.objects.filter(creator=self)
+
+    def get_texts_from_all_comments(self):
+        return [''.join(c.message) for c in Comment.objects.filter(creator=self)]
 
     class Meta:
         db_table = 'members'
