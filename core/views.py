@@ -54,7 +54,7 @@ def posts_page(request):
         "total_posts": Post.objects.count(),
         "top_liked_posts": Post.objects.order_by('-likes')[:10],
         "top_commented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10],
-        "top_noncommented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('created_time', 'num_comments')[:10],
+        "top_noncommented_posts": Post.objects.annotate(num_comments=Count('comment')).filter(num_comments=0).order_by('created_time')[:10],
         "top_disliked_posts": Post.objects.order_by('created_time', 'likes')[:10],
         # "jsondata": json_values,
         "next": request.GET.get('next')
