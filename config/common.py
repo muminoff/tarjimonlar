@@ -328,3 +328,5 @@ class Common(Configuration):
     PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
     STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
     PIPELINE_ENABLED = True
+    PIPELINE_AUTO = False
+    PIPELINE_VERSION = True
