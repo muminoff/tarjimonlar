@@ -3,7 +3,6 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member, Post
 from getenv import env
-from gevent.pool import Pool
 import sys
 import sys
 
@@ -76,15 +75,12 @@ class Command(BaseCommand):
         while 'data' in feed and feed['data'] and \
               len(feed['data']) > 0:
 
-
-            pool.spawn(self.get_posts, feed['data'])
-
+            self.get_posts(feed['data']) 
 
             newUrl = feed['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
             )
             feed = graph.get(newUrl)
 
-        pool.join()
 
         print 'Total {0} posts added.'.format(new_posts)
