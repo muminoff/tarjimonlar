@@ -3,7 +3,7 @@
 <div class="row">
     <p>Гуруҳдаги жами постлар: {{ total_posts }}.</p>
     <div class="col-md-6">
-        <h5>Энг кўп мунозара бўлган постлар</h5>
+        <h5>Энг кўп муҳокама бўлган постлар</h5>
         <table class="table">
             <thead>
                 <tr>
@@ -97,4 +97,9 @@
         </table> 
     </div>
 </div>
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  });
+</script>
 {% endblock %}
