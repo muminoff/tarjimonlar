@@ -279,49 +279,19 @@ class Common(Configuration):
 
     # Your common stuff: Below this line define 3rd party library settings
     PIPELINE_CSS = {
-        'reset': {
+        'flat': {
             'source_filenames': (
-                'css/reset.css',
+                'css/flat.css',
             ),
-            'output_filename': 'css/reset.min.css',
-        },
-        'style': {
-            'source_filenames': (
-                'css/style.css',
-            ),
-            'output_filename': 'css/style.min.css',
-        },
-        'table': {
-            'source_filenames': (
-                'css/table.css',
-            ),
-            'output_filename': 'css/table.min.css',
-        },
-        'fonts': {
-            'source_filenames': (
-                'css/fonts.css',
-            ),
-            'output_filename': 'css/fonts.min.css',
+            'output_filename': 'css/flat.min.css',
         },
     }
     PIPELINE_JS = {
-        'modernizr': {
-            'source_filenames': (
-                'js/modernizr.js',
-            ),
-            'output_filename': 'js/modernizr.min.js',
-        },
         'jquery': {
             'source_filenames': (
                 'js/jquery.js',
             ),
             'output_filename': 'js/jquery.min.js',
-        },
-        'main': {
-            'source_filenames': (
-                'js/main.js',
-            ),
-            'output_filename': 'js/main.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
