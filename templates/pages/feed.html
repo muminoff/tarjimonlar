@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+<div class="row">
+    <h5>Тасмадаги охирги янгиликлар</h5>
+    <div class="col-md-6">
+        <h5>Постлар</h5>
+        <table class="table table-condensed">
+            <tbody>
+                {% for post in last_ten_posts %}
+                <tr>
+                    <td>{{ post.created_time|date:"d-m-Y" }}</td>
+                    <td>{{ post.creator.name }} <a href="https://fb.com/{{ post.id }}" target="_blank">пост</a> ёзди.</td>
+                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+    </div>
+</div>

@@ -5,8 +5,15 @@ from core.models import Member, Post, Comment
 
 
 def index_page(request):
-    context = {"next": request.GET.get('next')}
-    return render(request, 'base.html', context)
+    last_ten_posts = Post.objects.order_by('-created_time')[:10]
+    last_ten_comments = Comment.objects.order_by('-created_time')[:10]
+
+    context = {
+        "next": request.GET.get('next'),
+        "last_ten_posts": last_ten_posts,
+        "last_ten_comments": last_ten_comments
+    }
+    return render(request, 'feed.html', context)
 
 
 @cache_page(60 * 5)
