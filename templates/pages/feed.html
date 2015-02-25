@@ -22,7 +22,7 @@
                 {% for comment in last_ten_comments %}
                 <tr>
                     <td>{{ comment.created_time|date:"d-m-Y" }}</td>
-                    <td>{{ comment.creator.name }} {{ comment.post.creator.name }} <a href="https://fb.com/{{ comment.post.id }}">постига</a>  <a href="https://fb.com/{{ comment.id }}" target="_blank">шарҳ</a> ёзди.</td>
+                    <td>{{ comment.creator.name }} {{ comment.post.creator.name }} <a href="https://fb.com/{{ comment.post.id }} target="_blank"">постига</a>, <a href="https://fb.com/{{ comment.id }}" target="_blank">шарҳ</a> ёзди.</td>
                 </tr>
                 {% endfor %}
             </tbody>
