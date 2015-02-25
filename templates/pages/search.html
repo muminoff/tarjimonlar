@@ -2,7 +2,15 @@
 {% block content %}
 <div class="row">
   <div class="col-lg-12">
-      <input type="text" class="form-control" placeholder="Нима қидирмоқчисиз?" autofocus required>
+      <div class="col-lg-6">
+          <div class="input-group">
+              <!-- <input type="text" class="form-control" placeholder="Нима қидирмоқчисиз?" autofocus required> -->
+              <input type="text" class="form-control" placeholder="Нима қидирмоқчисиз?">
+              <span class="input-group-btn">
+                  <button class="btn btn-default" type="button">Қидирмоқ</button>
+              </span>
+          </div><!-- /input-group -->
+      </div><!-- /.col-lg-6 -->
     <div class="row-fluid">
       <label class="checkbox" for="post-check">
         <input type="checkbox" value="" id="post-check" data-toggle="checkbox" class="custom-checkbox" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
