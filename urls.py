@@ -19,7 +19,6 @@ urlpatterns = patterns('',
     url(r'^posts/', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/', 'core.views.comments_page', name='comments_page'),
     url(r'^search/', 'core.views.search_page', name='search_page'),
-    url(r'^statistics/', 'core.views.gen_stat_page', name='gen_stat_page'),
     url(r'^about/', 'core.views.about_page', name='about_page'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -43,6 +43,7 @@ class Common(Configuration):
         'allauth.account',  # registration
         'allauth.socialaccount',  # registration
         'allauth.socialaccount.providers.facebook',  # registration
+        'pipeline', # minimize assets
     )
 
     # Apps specific for this project go here.
@@ -66,6 +67,8 @@ class Common(Configuration):
         'django.contrib.auth.middleware.AuthenticationMiddleware',
         'django.contrib.messages.middleware.MessageMiddleware',
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
+        'django.middleware.gzip.GZipMiddleware',
+        'pipeline.middleware.MinifyHTMLMiddleware',
     )
     # END MIDDLEWARE CONFIGURATION
 
@@ -120,10 +123,14 @@ class Common(Configuration):
     # CACHING
     # Do this here because thanks to django-pylibmc-sasl and pylibmc
     # memcacheify (used on heroku) is painful to install on windows.
+    SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
     CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-            'LOCATION': ''
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": "redis://127.0.0.1:6379/1",
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
         }
     }
     # END CACHING
@@ -195,6 +202,8 @@ class Common(Configuration):
     STATICFILES_FINDERS = (
         'django.contrib.staticfiles.finders.FileSystemFinder',
         'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+        'pipeline.finders.PipelineFinder',
+        'pipeline.finders.CachedFileFinder',
     )
     # END STATIC FILE CONFIGURATION
 
@@ -273,3 +282,56 @@ class Common(Configuration):
         cls.DATABASES['default']['ATOMIC_REQUESTS'] = True
 
     # Your common stuff: Below this line define 3rd party library settings
+    PIPELINE_CSS = {
+        'flat': {
+            'source_filenames': (
+                'css/flat.css',
+            ),
+            'output_filename': 'css/flat.min.css',
+        },
+        'project': {
+            'source_filenames': (
+                'css/project.css',
+            ),
+            'output_filename': 'css/project.min.css',
+        },
+        'bootstrap': {
+            'source_filenames': (
+                'css/bootstrap.css',
+            ),
+            'output_filename': 'css/bootstrap.min.css',
+        },
+    }
+    PIPELINE_JS = {
+        'jquery': {
+            'source_filenames': (
+                'js/jquery.js',
+            ),
+            'output_filename': 'js/jquery.min.js',
+        },
+        'bootstrap': {
+            'source_filenames': (
+                'js/bootstrap.js',
+            ),
+            'output_filename': 'js/bootstrap.min.js',
+        },
+        'flat': {
+            'source_filenames': (
+                'js/flat.js',
+            ),
+            'output_filename': 'js/flat.min.js',
+        },
+        'project': {
+            'source_filenames': (
+                'js/project.js',
+            ),
+            'output_filename': 'js/project.min.js',
+        },
+    }
+    PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
+    PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
+    STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
+    PIPELINE_VERSIONING = 'pipeline.versioning.hash.MD5Versioning'
+    PIPELINE_ENABLED = True
+    PIPELINE_AUTO = False
+    PIPELINE_VERSION = True

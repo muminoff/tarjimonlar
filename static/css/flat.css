@@ -5744,14 +5744,6 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
   font-weight: 700;
   color: #7f8c8d;
 }
-.login {
-  position: relative;
-  padding: 38px 38px 267px;
-  margin-bottom: 77px;
-  color: #fff;
-  background: url(../img/login/imac.png) 0 0 no-repeat;
-  background-size: 940px 778px;
-}
 .login-screen {
   min-height: 473px;
   padding: 123px 199px 33px 306px;
@@ -5800,27 +5792,6 @@ fieldset[disabled] .navbar-inverse .navbar-btn.active {
 }
 .login-form .login-field:focus + .login-field-icon {
   color: #1abc9c;
-}
-.login-form .login-field-icon {
-  position: absolute;
-  top: 3px;
-  right: 15px;
-  font-size: 16px;
-  color: #bfc9ca;
-  -webkit-transition: all .25s;
-  transition: all .25s;
-}
-.login-link {
-  display: block;
-  margin-top: 15px;
-  font-size: 13px;
-  color: #bfc9ca;
-  text-align: center;
-}
-@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (-moz-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
-  .login {
-    background-image: url(../img/login/imac-2x.png);
-  }
 }
 footer {
   padding: 0;
