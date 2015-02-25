@@ -13,7 +13,7 @@ def index_page(request):
         "last_ten_posts": last_ten_posts,
         "last_ten_comments": last_ten_comments
     }
-    return render(request, 'feed.html', context)
+    return render(request, 'pages/feed.html', context)
 
 
 @cache_page(60 * 5)
