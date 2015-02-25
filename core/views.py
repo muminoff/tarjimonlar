@@ -4,6 +4,7 @@ from django.views.decorators.cache import cache_page
 from core.models import Member, Post, Comment
 
 
+@cache_page(60 * 5)
 def index_page(request):
     last_ten_posts = Post.objects.order_by('-created_time')[:10]
     last_ten_comments = Comment.objects.order_by('-created_time')[:10]
