@@ -3,6 +3,7 @@ from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page
 from core.models import Member, Post, Comment
 from itertools import chain
+from random import sample
 
 
 def index_page(request):
@@ -10,7 +11,7 @@ def index_page(request):
     top_15_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:50]
 
     context = {
-        "hall_of_fame": list(chain(top_15_posters, top_15_commentors)),
+        "hall_of_fame": sample(list(chain(top_15_posters, top_15_commentors)), 100),
     }
     return render(request, 'home.html', context)
 
