@@ -1,6 +1,5 @@
 {% extends "base.html" %}
 {% load highlight %}
-{% load cache %}
 {% block content %}
 <div class="row">
     <h5>Қидириш</h5>
@@ -38,7 +37,6 @@
       </tr>
     </thead>
     <tbody>
-      {% cache 300 search_results %}
       {% for result in page.object_list %}
       <tr>
         {% if result.object.message %}
@@ -53,7 +51,6 @@
         <td><a class="btn btn-xs btn-inverse" target="_blank" href="https://fb.com/{{ result.object.id }}/">Link</a></td>
       </tr>
       {% endfor %}
-      {% endcache %}
     </tbody>
   </table>
 </div>
