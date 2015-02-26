@@ -1,9 +1,11 @@
 {% extends "base.html" %}
+{% load highlight %}
 {% block content %}
 <div class="row">
+    <h5>Қидириш</h5>
     <div class="col-lg-12">
-      <form method="get" action=".">
-        <input type="text" class="form-control" placeholder="Нима қидирмоқчисиз?" autofocus required>
+      <form name="search_form" method="get" action=".">
+        <input type="text" class="form-control" name="q" id="q" placeholder="Нима қидирмоқчисиз?" autofocus required>
         <div class="row-fluid">
             <label class="checkbox" for="post-check">
                 <input type="checkbox" value="" id="post-check" data-toggle="checkbox" class="custom-checkbox" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
@@ -21,4 +23,33 @@
       </form>
     </div>
 </div>
-{% endblock content %}
+{% if query %}
+<div class="row">
+  <h5>Натижалар</h5>
+  <table class="table table-hover table-condensed">
+    <thead>
+      <tr>
+        <th>Ким томондан</th>
+        <th>Матн</th>
+        <th>Ҳавола</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for result in page.object_list %}
+      <tr>
+        {% if result.object.message %}
+        <td><p class="small">{{ result.object.creator.name }}</p></td>
+        <td><p class="small">{% highlight result.object.message with query css_class "label label-default" max_length 100 %}</p></td>
+        <td><a class="btn btn-xs btn-inverse" target="_blank" href="https://fb.com/{{ result.object.id }}/">Link</a></td>
+        {% endif %}
+      </tr>
+      {% empty %}
+      <tr>
+        <td>No results</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endif %}
+{% endblock %}

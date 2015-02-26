@@ -44,6 +44,7 @@ class Common(Configuration):
         'allauth.socialaccount',  # registration
         'allauth.socialaccount.providers.facebook',  # registration
         'pipeline', # minimize assets
+        'haystack',
     )
 
     # Apps specific for this project go here.
@@ -335,3 +336,13 @@ class Common(Configuration):
     PIPELINE_ENABLED = True
     PIPELINE_AUTO = False
     PIPELINE_VERSION = True
+
+    # Haystack
+    HAYSTACK_CONNECTIONS = {
+            'default': {
+                'ENGINE': 'haystack.backends.elasticsearch_backend.ElasticsearchSearchEngine',
+                'URL': 'http://127.0.0.1:9200/',
+                'INDEX_NAME': 'haystack',
+                },
+            }
+
