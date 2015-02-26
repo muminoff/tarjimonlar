@@ -33,12 +33,12 @@
       {% for result in page.object_list %}
       <tr>
         {% if result.object.message %}
-        <td><p class="small">{{ forloop.counter }}</p></td>
+        <td><p class="small">{{ forloop.counter }}.</p></td>
         <td><a href="https://www.facebook.com/{{ result.object.creator.id }}/" target="_blank"><img src="https://graph.facebook.com/{{ result.object.creator.id }}/picture?type=square&width=32&height=32"/></a></td>
         <td><p class="small">{% if result.object.get_type == 'comment' %}<span class="icon-comment"></span>{% else %}<span class="icon-post"></span>{% endif %}</p></td>
           <td><p class="small">{% highlight result.object.message with query css_class "found_result" max_length 100 %}</p></td>
         {% else %}
-        <td><p class="small">{{ forloop.counter }}</p></td>
+        <td><p class="small">{{ forloop.counter }}.</p></td>
         <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.id }}/picture?type=square&width=32&height=32"/> {{ result.object.name }}</p></td>
         <td><p class="small">{% if result.object.get_type == 'comment' %}<span class="icon-comment"></span>{% else %}<span class="icon-post"></span>{% endif %}</p></td>
         <td><p class="small">{{ result.object.name }}</p></td>
