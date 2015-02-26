@@ -137,6 +137,7 @@ body {
 	margin: 30px auto 30px;
 	position: relative;
 	height: auto;
+  top: 50px;
 }
 
 .ri-grid ul {
@@ -272,4 +273,23 @@ ul.credits {
 
 span.found_result {
   background-color: #ecf0f1;
+}
+
+.group-name{
+	margin: 30px auto 30px;
+	position: relative;
+	height: auto;
+  top: 70px;
+}
+
+.login-btn{
+	margin: 30px auto 30px;
+	position: relative;
+	height: auto;
+  top: 75px;
+}
+
+.login-wrapper {
+  display:table;
+  margin:0 auto;
 }
