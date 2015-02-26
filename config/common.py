@@ -345,4 +345,5 @@ class Common(Configuration):
                 'INDEX_NAME': 'haystack',
                 },
             }
+    HAYSTACK_SEARCH_RESULTS_PER_PAGE = 50
 
