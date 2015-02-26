@@ -1,0 +1,188 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../fonts/icomoon.eot?lvp2y6');
+  src: url('../fonts/icomoon.eot?#iefixlvp2y6') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?lvp2y6') format('woff'),
+		url('../fonts/icomoon.ttf?lvp2y6') format('truetype'),
+		url('../fonts/icomoon.svg?lvp2y6#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-post:before {
+  content: "\e96e";
+}
+
+.icon-comment:before {
+  content: "\e96f";
+}
+
+.icon-user:before {
+  content: "\e972";
+}
+
+.icon-search:before {
+  content: "\e986";
+}
+
+.icon-link:before {
+  content: "\e9cb";
+}
+
+.icon-info:before {
+  content: "\ea0c";
+}
+
+.icon-facebook:before {
+  content: "\ea8d";
+}
+
+body {
+  font-family: 'Noto Serif', serif;
+}
+
+.navbar {
+  margin-top: 20px;
+}
+
+/* demo.css */
+
+*,
+*:after,
+*:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* style.css */
+
+.ri-grid {
+  margin: 30px auto 30px;
+  position: relative;
+  height: auto;
+  top: 50px;
+}
+
+.ri-grid ul {
+  list-style: none;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Clear floats by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+
+.ri-grid ul:before,
+.ri-grid ul:after {
+  content: '';
+  display: table;
+}
+
+.ri-grid ul:after {
+  clear: both;
+}
+
+.ri-grid ul {
+  zoom: 1;
+  /* For IE 6/7 (trigger hasLayout) */
+}
+
+.ri-grid ul li {
+  -webkit-perspective: 400px;
+  -moz-perspective: 400px;
+  -o-perspective: 400px;
+  -ms-perspective: 400px;
+  perspective: 400px;
+  margin: 0;
+  padding: 0;
+  float: left;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: #000;
+}
+
+.ri-grid ul li a {
+  display: block;
+  outline: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-color: #333;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+/* Grid wrapper sizes */
+
+.ri-grid-size-2 {
+  width: 100%;
+}
+
+/* Shadow style */
+
+.ri-loading-image {
+  display: none;
+}
+
+ul.credits {
+  list-style-type: none;
+}
+
+span.found_result {
+  background-color: #ecf0f1;
+}
+
+.group-name {
+  margin: 30px auto 30px;
+  position: relative;
+  height: auto;
+  top: 70px;
+}
+
+.login-btn {
+  margin: 30px auto 30px;
+  position: relative;
+  height: auto;
+  top: 75px;
+}
+
+.login-wrapper {
+  display: table;
+  margin: 0 auto;
+}
