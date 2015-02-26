@@ -6,8 +6,8 @@ from itertools import chain
 
 
 def index_page(request):
-    top_15_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:25]
-    top_15_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:25]
+    top_15_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:50]
+    top_15_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:50]
 
     context = {
         "hall_of_fame": list(chain(top_15_posters, top_15_commentors)),
