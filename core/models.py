@@ -50,6 +50,9 @@ class Post(models.Model):
     def get_comments_count(self):
         return Comment.objects.filter(post=self).count()
 
+    def get_type(self):
+        return 'post'
+
     class Meta:
         db_table = 'posts'
         ordering = ['-created_time', '-updated_time']
@@ -65,6 +68,9 @@ class Comment(models.Model):
 
     def __unicode__(self):
         return self.id
+
+    def get_type(self):
+        return 'comment'
 
     class Meta:
         db_table = 'comments'

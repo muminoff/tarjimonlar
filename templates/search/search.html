@@ -5,7 +5,7 @@
     <h5>Қидириш</h5>
     <div class="col-lg-12">
       <form name="search_form" method="get" action=".">
-        <input type="text" class="form-control" name="q" id="q" placeholder="Нима қидирмоқчисиз?" autofocus required>
+        <input type="text" class="form-control" name="q" id="q" value="{{ request.GET.q }}" placeholder="Нима қидирмоқчисиз?" autofocus required>
         <div class="row-fluid">
             <label class="checkbox" for="post-check">
                 <input type="checkbox" value="" id="post-check" data-toggle="checkbox" class="custom-checkbox" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>
@@ -34,12 +34,14 @@
       {% for result in page.object_list %}
       <tr>
         {% if result.object.message %}
-        <td>{{ forloop.counter }}.</td>
-        <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.creator.id }}/picture?type=square&width=32&height=32"/> {{ result.object.creator.name }}</td>
-        <td><p class="small">{% highlight result.object.message with query css_class "found_result" max_length 100 %}</p></td>
+        <td><p class="small">{{ forloop.counter }}</p></td>
+        <td><a href="https://www.facebook.com/{{ result.object.creator.id }}/" target="_blank"><img src="https://graph.facebook.com/{{ result.object.creator.id }}/picture?type=square&width=32&height=32"/></a></td>
+        <td><p class="small">{% if result.object.get_type == 'comment' %}<span class="icon-comment"></span>{% else %}<span class="icon-post"></span>{% endif %}</p></td>
+          <td><p class="small">{% highlight result.object.message with query css_class "found_result" max_length 100 %}</p></td>
         {% else %}
-        <td>{{ forloop.counter }}.</td>
-        <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.id }}/picture?type=square&width=32&height=32"/> {{ result.object.name }}</td>
+        <td><p class="small">{{ forloop.counter }}</p></td>
+        <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.id }}/picture?type=square&width=32&height=32"/> {{ result.object.name }}</p></td>
+        <td><p class="small">{% if result.object.get_type == 'comment' %}<span class="icon-comment"></span>{% else %}<span class="icon-post"></span>{% endif %}</p></td>
         <td><p class="small">{{ result.object.name }}</p></td>
         {% endif %}
         <td><a class="btn btn-xs btn-inverse" target="_blank" href="https://fb.com/{{ result.object.id }}/">Очиб кўриш</a></td>
