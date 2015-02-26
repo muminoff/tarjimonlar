@@ -24,31 +24,25 @@
     </div>
 </div>
 {% if query %}
+<br/>
+<hr/>
 <div class="row">
   <h5>Натижалар</h5>
   <p>Сўровингиз бўйича {{ page.object_list|length }} та натижа топилди.</p>
-  <table class="table table-hover table-condensed">
-    <thead>
-      <tr>
-        <th>№</th>
-        <th>Ким томондан</th>
-        <th>Матн</th>
-        <th>Ҳавола</th>
-      </tr>
-    </thead>
+  <table class="table">
     <tbody>
       {% for result in page.object_list %}
       <tr>
         {% if result.object.message %}
         <td>{{ forloop.counter }}.</td>
         <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.creator.id }}/picture?type=square&width=32&height=32"/> {{ result.object.creator.name }}</td>
-        <td><p class="small">{% highlight result.object.message with query css_class "label label-default" max_length 100 %}</p></td>
+        <td><p class="small">{% highlight result.object.message with query css_class "found_result" max_length 100 %}</p></td>
         {% else %}
         <td>{{ forloop.counter }}.</td>
         <td><p class="small"><img src="https://graph.facebook.com/{{ result.object.id }}/picture?type=square&width=32&height=32"/> {{ result.object.name }}</td>
         <td><p class="small">{{ result.object.name }}</p></td>
         {% endif %}
-        <td><a class="btn btn-xs btn-inverse" target="_blank" href="https://fb.com/{{ result.object.id }}/">Link</a></td>
+        <td><a class="btn btn-xs btn-inverse" target="_blank" href="https://fb.com/{{ result.object.id }}/">Очиб кўриш</a></td>
       </tr>
       {% endfor %}
     </tbody>

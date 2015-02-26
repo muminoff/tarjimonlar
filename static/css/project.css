@@ -122,8 +122,6 @@ body {
 
 /* demo.css */
 
-@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
-
 *,
 *:after,
 *:before {
@@ -266,4 +264,12 @@ body {
 	left: 50%;
 	margin: 100px 0 0 -15px;
 	display: block;
+}
+
+ul.credits {
+  list-style-type: none;
+}
+
+span.found_result {
+  background-color: #ecf0f1;
 }
