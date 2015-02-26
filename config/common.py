@@ -220,7 +220,7 @@ class Common(Configuration):
     ROOT_URLCONF = 'deploy.urls'
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#wsgi-application
-    WSGI_APPLICATION = 'wsgi.application'
+    WSGI_APPLICATION = 'deploy.wsgi.application'
     # End URL Configuration
 
     # AUTHENTICATION CONFIGURATION
@@ -304,11 +304,23 @@ class Common(Configuration):
         },
     }
     PIPELINE_JS = {
+        'modernizr': {
+            'source_filenames': (
+                'js/modernizr.js',
+            ),
+            'output_filename': 'js/modernizr.min.js',
+        },
         'jquery': {
             'source_filenames': (
                 'js/jquery.js',
             ),
             'output_filename': 'js/jquery.min.js',
+        },
+        'jquery_gridrotator': {
+            'source_filenames': (
+                'js/jquery.gridrotator.js',
+            ),
+            'output_filename': 'js/jquery.gridrotator.js',
         },
         'bootstrap': {
             'source_filenames': (
@@ -327,6 +339,12 @@ class Common(Configuration):
                 'js/project.js',
             ),
             'output_filename': 'js/project.min.js',
+        },
+        'home': {
+            'source_filenames': (
+                'js/home.js',
+            ),
+            'output_filename': 'js/home.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'

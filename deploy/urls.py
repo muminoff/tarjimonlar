@@ -18,8 +18,7 @@ urlpatterns = patterns('',
     url(r'^members/', 'core.views.members_page', name='members_page'),
     url(r'^posts/', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/', 'core.views.comments_page', name='comments_page'),
-    # url(r'^find/', 'core.views.search_page', name='search_page'),
-    url(r'^about/', 'core.views.about_page', name='about_page'),
     url(r'^search/', include('haystack.urls')),
+    url(r'^about/', 'core.views.about_page', name='about_page'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

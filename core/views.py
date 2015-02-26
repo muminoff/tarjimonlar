@@ -2,20 +2,17 @@ from django.shortcuts import render
 from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page
 from core.models import Member, Post, Comment
+from itertools import chain
 
 
-@cache_page(60 * 5)
 def index_page(request):
-    last_ten_posts = Post.objects.order_by('-created_time')[:10]
-    last_ten_comments = Comment.objects.order_by('-created_time')[:10]
+    top_15_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:25]
+    top_15_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:25]
 
     context = {
-        "next": request.GET.get('next'),
-        "last_ten_posts": last_ten_posts,
-        "last_ten_comments": last_ten_comments
+        "hall_of_fame": list(chain(top_15_posters, top_15_commentors)),
     }
-    # return render(request, 'pages/feed.html', context)
-    return render(request, 'base.html', context)
+    return render(request, 'home.html', context)
 
 
 @cache_page(60 * 5)
