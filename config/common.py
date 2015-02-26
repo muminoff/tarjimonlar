@@ -286,19 +286,19 @@ class Common(Configuration):
     PIPELINE_CSS = {
         'flat': {
             'source_filenames': (
-                'css/uncss/flat.css',
+                'uncss/flat.css',
             ),
             'output_filename': 'css/flat.min.css',
         },
         'project': {
             'source_filenames': (
-                'css/uncss/project.css',
+                'uncss/project.css',
             ),
             'output_filename': 'css/project.min.css',
         },
         'bootstrap': {
             'source_filenames': (
-                'css/uncss/bootstrap.css',
+                'uncss/bootstrap.css',
             ),
             'output_filename': 'css/bootstrap.min.css',
         },
