@@ -14,5 +14,5 @@ gulp.task('default', function() {
                 'https://tarjimonlar.org/about'
                 ]
         }))
-        .pipe(gulp.dest('./out.css'));
+        .pipe(gulp.dest('static/uncss'));
 });
