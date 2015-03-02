@@ -42,13 +42,12 @@
       </div>
 
       {% if request.path == '/comments/' %}
-      {% javascript 'jquery' %}
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       {% stylesheet 'chart' %}
       {% javascript 'raphael' %}
       {% javascript 'morris' %}
       {% include 'pages/daily_comments.html' %}
       {% endif %}
-
     
   </body>
 </html>
