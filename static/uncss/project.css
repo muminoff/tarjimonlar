@@ -38,6 +38,10 @@
   content: "\e99a";
 }
 
+.icon-link:before {
+  content: "\e9cb";
+}
+
 .icon-info:before {
   content: "\ea0c";
 }

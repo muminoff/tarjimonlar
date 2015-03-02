@@ -6,7 +6,7 @@ gulp.task('default', function() {
         .pipe(uncss({
               html: [
                 'https://tarjimonlar.org',
-                'https://tarjimonlar.org/members',
+                'https://tarjimonlar.org/facts',
                 'https://tarjimonlar.org/posts',
                 'https://tarjimonlar.org/comments',
                 'https://tarjimonlar.org/search',
