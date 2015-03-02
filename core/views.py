@@ -23,7 +23,7 @@ def index_page(request):
 
 
 @cache_page(60 * 5)
-def members_page(request):
+def facts_page(request):
     total_members = Member.objects.count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
@@ -33,6 +33,9 @@ def members_page(request):
             creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(
             creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+    top_commented_posts = Post.objects.annotate(
+            num_comments=Count('comment')).order_by('-num_comments')[:10]
+    top_liked_posts = Post.objects.order_by('-likes')[:10]
 
     context = {
         "total_members": total_members,
@@ -40,10 +43,12 @@ def members_page(request):
         "top_commentors": top_commentors,
         "top_liked_posters": top_liked_posters,
         "top_liked_commentors": top_liked_commentors,
+        "top_commented_posts": top_commented_posts,
+        "top_liked_posts": top_liked_posts,
         "next": request.GET.get('next')
     }
 
-    return render(request, 'pages/members.html', context)
+    return render(request, 'pages/facts.html', context)
 
 
 @cache_page(60 * 5)
@@ -51,8 +56,6 @@ def posts_page(request):
 
     context = {
         "total_posts": Post.objects.count(),
-        "top_liked_posts": Post.objects.order_by('-likes')[:10],
-        "top_commented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10],
         "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)

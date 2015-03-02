@@ -6,8 +6,7 @@ from django.utils.translation import ugettext_lazy as _
 
 def navbar(request):
     menus = OrderedDict([
-        # ('index_page', {'title': 'Тасма', 'icon': 'article'}),
-        ('members_page', {'title': 'Гуруҳ аъзолари', 'icon': 'user', 'submenu': False}),
+        ('facts_page', {'title': 'Фактлар', 'icon': 'stat', 'submenu': False}),
         ('posts_page', {'title': 'Постлар', 'icon': 'post', 'submenu': False}),
         ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment', 'submenu': False}),
         ('search_page', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
