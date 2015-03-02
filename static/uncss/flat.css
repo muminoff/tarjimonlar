@@ -99,6 +99,24 @@ ul {
   outline: none;
 }
 
+.btn-info {
+  color: #fff;
+  background-color: #3498db;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active {
+  color: #fff;
+  background-color: #5dade2;
+  border-color: #5dade2;
+}
+
+.btn-info:active {
+  background: #2c81ba;
+  border-color: #2c81ba;
+}
+
 .btn-inverse {
   color: #fff;
   background-color: #34495e;
