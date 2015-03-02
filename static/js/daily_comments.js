@@ -1289,60 +1289,60 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif',
         barRatio: 0.4,
-        xLabelAngle: 15,
+        xLabelAngle: 0,
         hideHover: 'auto'
         });
         new Morris.Bar({
             element: 'monthly_comments',
             data: [
               
-              { day: '03-2013', num_comments: 201 },
+              { day: 'март, 2013 йил', num_comments: 201 },
               
-              { day: '04-2013', num_comments: 239 },
+              { day: 'апрель, 2013 йил', num_comments: 239 },
               
-              { day: '05-2013', num_comments: 446 },
+              { day: 'май, 2013 йил', num_comments: 446 },
               
-              { day: '06-2013', num_comments: 570 },
+              { day: 'июнь, 2013 йил', num_comments: 570 },
               
-              { day: '07-2013', num_comments: 621 },
+              { day: 'июль, 2013 йил', num_comments: 621 },
               
-              { day: '08-2013', num_comments: 1387 },
+              { day: 'август, 2013 йил', num_comments: 1387 },
               
-              { day: '09-2013', num_comments: 1260 },
+              { day: 'сентябрь, 2013 йил', num_comments: 1260 },
               
-              { day: '10-2013', num_comments: 2141 },
+              { day: 'октябрь, 2013 йил', num_comments: 2141 },
               
-              { day: '11-2013', num_comments: 1573 },
+              { day: 'ноябрь, 2013 йил', num_comments: 1573 },
               
-              { day: '12-2013', num_comments: 1954 },
+              { day: 'декабрь, 2013 йил', num_comments: 1954 },
               
-              { day: '01-2014', num_comments: 2993 },
+              { day: 'январь, 2014 йил', num_comments: 2993 },
               
-              { day: '02-2014', num_comments: 1347 },
+              { day: 'февраль, 2014 йил', num_comments: 1347 },
               
-              { day: '03-2014', num_comments: 451 },
+              { day: 'март, 2014 йил', num_comments: 451 },
               
-              { day: '04-2014', num_comments: 227 },
+              { day: 'апрель, 2014 йил', num_comments: 227 },
               
-              { day: '05-2014', num_comments: 243 },
+              { day: 'май, 2014 йил', num_comments: 243 },
               
-              { day: '06-2014', num_comments: 458 },
+              { day: 'июнь, 2014 йил', num_comments: 458 },
               
-              { day: '07-2014', num_comments: 347 },
+              { day: 'июль, 2014 йил', num_comments: 347 },
               
-              { day: '08-2014', num_comments: 3263 },
+              { day: 'август, 2014 йил', num_comments: 3263 },
               
-              { day: '09-2014', num_comments: 3095 },
+              { day: 'сентябрь, 2014 йил', num_comments: 3095 },
               
-              { day: '10-2014', num_comments: 2735 },
+              { day: 'октябрь, 2014 йил', num_comments: 2735 },
               
-              { day: '11-2014', num_comments: 2912 },
+              { day: 'ноябрь, 2014 йил', num_comments: 2912 },
               
-              { day: '12-2014', num_comments: 710 },
+              { day: 'декабрь, 2014 йил', num_comments: 710 },
               
-              { day: '01-2015', num_comments: 878 },
+              { day: 'январь, 2015 йил', num_comments: 878 },
               
-              { day: '02-2015', num_comments: 1757 },
+              { day: 'февраль, 2015 йил', num_comments: 1757 },
               
         ],
         xkey: 'day',
@@ -1354,7 +1354,7 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif',
         barRatio: 0.4,
-        xLabelAngle: 45,
+        xLabelAngle: 15,
         hideHover: 'auto'
         });
         Morris.Donut({

@@ -3,7 +3,7 @@
             element: 'daily_comments',
             data: [
               {% for comment in daily_comments %}
-              { day: '{{ comment.day|date:"d-m-Y"|uzbekify_time }}', num_comments: {{ comment.num_comments }} },
+              { day: '{{ comment.day|date:"d-m-Y"|uzbekify_daymonthyear }}', num_comments: {{ comment.num_comments }} },
               {% endfor %}
         ],
         xkey: 'day',
@@ -17,14 +17,14 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif',
         barRatio: 0.4,
-        xLabelAngle: 15,
+        xLabelAngle: 0,
         hideHover: 'auto'
         });
         new Morris.Bar({
             element: 'monthly_comments',
             data: [
               {% for comment in monthly_comments %}
-              { day: '{{ comment.month|date:"m-Y" }}', num_comments: {{ comment.num_comments }} },
+              { day: '{{ comment.month|date:"m-Y"|uzbekify_monthyear }}', num_comments: {{ comment.num_comments }} },
               {% endfor %}
         ],
         xkey: 'day',
@@ -36,7 +36,7 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif',
         barRatio: 0.4,
-        xLabelAngle: 45,
+        xLabelAngle: 15,
         hideHover: 'auto'
         });
         Morris.Donut({
