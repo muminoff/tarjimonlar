@@ -60,7 +60,7 @@ def posts_page(request):
 def comments_page(request):
     daily_comments = Comment.objects.extra({
         "day": "date_trunc('day', created_time)"
-        }).values('day').order_by().annotate(num_comments=Count('id'))[:30]
+        }).values('day').order_by().annotate(num_comments=Count('id'))
     monthly_comments = Comment.objects.extra({
         "month": "date_trunc('month', created_time)"
         }).values('month').order_by().annotate(num_comments=Count('id'))

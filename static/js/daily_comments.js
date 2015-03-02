@@ -1,1280 +1,1281 @@
+
         new Morris.Bar({
             element: 'daily_comments',
             data: [
               
-              { day: '05-03-2013', num_comments: 17 },
+              { day: '5 март, 2013 йил', num_comments: 17 },
               
-              { day: '06-03-2013', num_comments: 1 },
+              { day: '6 март, 2013 йил', num_comments: 1 },
               
-              { day: '07-03-2013', num_comments: 1 },
+              { day: '7 март, 2013 йил', num_comments: 1 },
               
-              { day: '08-03-2013', num_comments: 12 },
+              { day: '8 март, 2013 йил', num_comments: 12 },
               
-              { day: '09-03-2013', num_comments: 5 },
+              { day: '9 март, 2013 йил', num_comments: 5 },
               
-              { day: '11-03-2013', num_comments: 1 },
+              { day: '11 март, 2013 йил', num_comments: 1 },
               
-              { day: '12-03-2013', num_comments: 1 },
+              { day: '12 март, 2013 йил', num_comments: 1 },
               
-              { day: '13-03-2013', num_comments: 23 },
+              { day: '13 март, 2013 йил', num_comments: 23 },
               
-              { day: '14-03-2013', num_comments: 11 },
+              { day: '14 март, 2013 йил', num_comments: 11 },
               
-              { day: '16-03-2013', num_comments: 5 },
+              { day: '16 март, 2013 йил', num_comments: 5 },
               
-              { day: '19-03-2013', num_comments: 1 },
+              { day: '19 март, 2013 йил', num_comments: 1 },
               
-              { day: '21-03-2013', num_comments: 25 },
+              { day: '21 март, 2013 йил', num_comments: 25 },
               
-              { day: '22-03-2013', num_comments: 29 },
+              { day: '22 март, 2013 йил', num_comments: 29 },
               
-              { day: '23-03-2013', num_comments: 16 },
+              { day: '23 март, 2013 йил', num_comments: 16 },
               
-              { day: '24-03-2013', num_comments: 2 },
+              { day: '24 март, 2013 йил', num_comments: 2 },
               
-              { day: '25-03-2013', num_comments: 31 },
+              { day: '25 март, 2013 йил', num_comments: 31 },
               
-              { day: '26-03-2013', num_comments: 12 },
+              { day: '26 март, 2013 йил', num_comments: 12 },
               
-              { day: '27-03-2013', num_comments: 2 },
+              { day: '27 март, 2013 йил', num_comments: 2 },
               
-              { day: '28-03-2013', num_comments: 2 },
+              { day: '28 март, 2013 йил', num_comments: 2 },
               
-              { day: '29-03-2013', num_comments: 4 },
+              { day: '29 март, 2013 йил', num_comments: 4 },
               
-              { day: '02-04-2013', num_comments: 1 },
+              { day: '2 апрель, 2013 йил', num_comments: 1 },
               
-              { day: '05-04-2013', num_comments: 9 },
+              { day: '5 апрель, 2013 йил', num_comments: 9 },
               
-              { day: '07-04-2013', num_comments: 2 },
+              { day: '7 апрель, 2013 йил', num_comments: 2 },
               
-              { day: '09-04-2013', num_comments: 5 },
+              { day: '9 апрель, 2013 йил', num_comments: 5 },
               
-              { day: '10-04-2013', num_comments: 1 },
+              { day: '10 апрель, 2013 йил', num_comments: 1 },
               
-              { day: '14-04-2013', num_comments: 10 },
+              { day: '14 апрель, 2013 йил', num_comments: 10 },
               
-              { day: '15-04-2013', num_comments: 3 },
+              { day: '15 апрель, 2013 йил', num_comments: 3 },
               
-              { day: '16-04-2013', num_comments: 6 },
+              { day: '16 апрель, 2013 йил', num_comments: 6 },
               
-              { day: '17-04-2013', num_comments: 2 },
+              { day: '17 апрель, 2013 йил', num_comments: 2 },
               
-              { day: '18-04-2013', num_comments: 8 },
+              { day: '18 апрель, 2013 йил', num_comments: 8 },
               
-              { day: '19-04-2013', num_comments: 12 },
+              { day: '19 апрель, 2013 йил', num_comments: 12 },
               
-              { day: '20-04-2013', num_comments: 30 },
+              { day: '20 апрель, 2013 йил', num_comments: 30 },
               
-              { day: '21-04-2013', num_comments: 14 },
+              { day: '21 апрель, 2013 йил', num_comments: 14 },
               
-              { day: '22-04-2013', num_comments: 4 },
+              { day: '22 апрель, 2013 йил', num_comments: 4 },
               
-              { day: '23-04-2013', num_comments: 13 },
+              { day: '23 апрель, 2013 йил', num_comments: 13 },
               
-              { day: '24-04-2013', num_comments: 15 },
+              { day: '24 апрель, 2013 йил', num_comments: 15 },
               
-              { day: '25-04-2013', num_comments: 70 },
+              { day: '25 апрель, 2013 йил', num_comments: 70 },
               
-              { day: '26-04-2013', num_comments: 10 },
+              { day: '26 апрель, 2013 йил', num_comments: 10 },
               
-              { day: '27-04-2013', num_comments: 9 },
+              { day: '27 апрель, 2013 йил', num_comments: 9 },
               
-              { day: '28-04-2013', num_comments: 8 },
+              { day: '28 апрель, 2013 йил', num_comments: 8 },
               
-              { day: '29-04-2013', num_comments: 2 },
+              { day: '29 апрель, 2013 йил', num_comments: 2 },
               
-              { day: '30-04-2013', num_comments: 5 },
+              { day: '30 апрель, 2013 йил', num_comments: 5 },
               
-              { day: '01-05-2013', num_comments: 34 },
+              { day: '1 май, 2013 йил', num_comments: 34 },
               
-              { day: '02-05-2013', num_comments: 10 },
+              { day: '2 май, 2013 йил', num_comments: 10 },
               
-              { day: '03-05-2013', num_comments: 17 },
+              { day: '3 май, 2013 йил', num_comments: 17 },
               
-              { day: '04-05-2013', num_comments: 14 },
+              { day: '4 май, 2013 йил', num_comments: 14 },
               
-              { day: '05-05-2013', num_comments: 6 },
+              { day: '5 май, 2013 йил', num_comments: 6 },
               
-              { day: '06-05-2013', num_comments: 31 },
+              { day: '6 май, 2013 йил', num_comments: 31 },
               
-              { day: '07-05-2013', num_comments: 16 },
+              { day: '7 май, 2013 йил', num_comments: 16 },
               
-              { day: '08-05-2013', num_comments: 155 },
+              { day: '8 май, 2013 йил', num_comments: 155 },
               
-              { day: '09-05-2013', num_comments: 53 },
+              { day: '9 май, 2013 йил', num_comments: 53 },
               
-              { day: '10-05-2013', num_comments: 7 },
+              { day: '10 май, 2013 йил', num_comments: 7 },
               
-              { day: '11-05-2013', num_comments: 10 },
+              { day: '11 май, 2013 йил', num_comments: 10 },
               
-              { day: '12-05-2013', num_comments: 2 },
+              { day: '12 май, 2013 йил', num_comments: 2 },
               
-              { day: '13-05-2013', num_comments: 14 },
+              { day: '13 май, 2013 йил', num_comments: 14 },
               
-              { day: '14-05-2013', num_comments: 1 },
+              { day: '14 май, 2013 йил', num_comments: 1 },
               
-              { day: '16-05-2013', num_comments: 4 },
+              { day: '16 май, 2013 йил', num_comments: 4 },
               
-              { day: '17-05-2013', num_comments: 3 },
+              { day: '17 май, 2013 йил', num_comments: 3 },
               
-              { day: '22-05-2013', num_comments: 25 },
+              { day: '22 май, 2013 йил', num_comments: 25 },
               
-              { day: '23-05-2013', num_comments: 2 },
+              { day: '23 май, 2013 йил', num_comments: 2 },
               
-              { day: '24-05-2013', num_comments: 1 },
+              { day: '24 май, 2013 йил', num_comments: 1 },
               
-              { day: '28-05-2013', num_comments: 8 },
+              { day: '28 май, 2013 йил', num_comments: 8 },
               
-              { day: '29-05-2013', num_comments: 22 },
+              { day: '29 май, 2013 йил', num_comments: 22 },
               
-              { day: '30-05-2013', num_comments: 8 },
+              { day: '30 май, 2013 йил', num_comments: 8 },
               
-              { day: '31-05-2013', num_comments: 3 },
+              { day: '31 май, 2013 йил', num_comments: 3 },
               
-              { day: '03-06-2013', num_comments: 11 },
+              { day: '3 июнь, 2013 йил', num_comments: 11 },
               
-              { day: '04-06-2013', num_comments: 20 },
+              { day: '4 июнь, 2013 йил', num_comments: 20 },
               
-              { day: '05-06-2013', num_comments: 19 },
+              { day: '5 июнь, 2013 йил', num_comments: 19 },
               
-              { day: '07-06-2013', num_comments: 21 },
+              { day: '7 июнь, 2013 йил', num_comments: 21 },
               
-              { day: '08-06-2013', num_comments: 42 },
+              { day: '8 июнь, 2013 йил', num_comments: 42 },
               
-              { day: '09-06-2013', num_comments: 12 },
+              { day: '9 июнь, 2013 йил', num_comments: 12 },
               
-              { day: '10-06-2013', num_comments: 25 },
+              { day: '10 июнь, 2013 йил', num_comments: 25 },
               
-              { day: '11-06-2013', num_comments: 54 },
+              { day: '11 июнь, 2013 йил', num_comments: 54 },
               
-              { day: '12-06-2013', num_comments: 17 },
+              { day: '12 июнь, 2013 йил', num_comments: 17 },
               
-              { day: '13-06-2013', num_comments: 63 },
+              { day: '13 июнь, 2013 йил', num_comments: 63 },
               
-              { day: '14-06-2013', num_comments: 5 },
+              { day: '14 июнь, 2013 йил', num_comments: 5 },
               
-              { day: '15-06-2013', num_comments: 32 },
+              { day: '15 июнь, 2013 йил', num_comments: 32 },
               
-              { day: '16-06-2013', num_comments: 36 },
+              { day: '16 июнь, 2013 йил', num_comments: 36 },
               
-              { day: '17-06-2013', num_comments: 35 },
+              { day: '17 июнь, 2013 йил', num_comments: 35 },
               
-              { day: '18-06-2013', num_comments: 23 },
+              { day: '18 июнь, 2013 йил', num_comments: 23 },
               
-              { day: '19-06-2013', num_comments: 3 },
+              { day: '19 июнь, 2013 йил', num_comments: 3 },
               
-              { day: '21-06-2013', num_comments: 34 },
+              { day: '21 июнь, 2013 йил', num_comments: 34 },
               
-              { day: '22-06-2013', num_comments: 7 },
+              { day: '22 июнь, 2013 йил', num_comments: 7 },
               
-              { day: '23-06-2013', num_comments: 1 },
+              { day: '23 июнь, 2013 йил', num_comments: 1 },
               
-              { day: '24-06-2013', num_comments: 12 },
+              { day: '24 июнь, 2013 йил', num_comments: 12 },
               
-              { day: '25-06-2013', num_comments: 10 },
+              { day: '25 июнь, 2013 йил', num_comments: 10 },
               
-              { day: '26-06-2013', num_comments: 2 },
+              { day: '26 июнь, 2013 йил', num_comments: 2 },
               
-              { day: '27-06-2013', num_comments: 66 },
+              { day: '27 июнь, 2013 йил', num_comments: 66 },
               
-              { day: '28-06-2013', num_comments: 3 },
+              { day: '28 июнь, 2013 йил', num_comments: 3 },
               
-              { day: '29-06-2013', num_comments: 9 },
+              { day: '29 июнь, 2013 йил', num_comments: 9 },
               
-              { day: '30-06-2013', num_comments: 8 },
+              { day: '30 июнь, 2013 йил', num_comments: 8 },
               
-              { day: '01-07-2013', num_comments: 2 },
+              { day: '1 июль, 2013 йил', num_comments: 2 },
               
-              { day: '02-07-2013', num_comments: 1 },
+              { day: '2 июль, 2013 йил', num_comments: 1 },
               
-              { day: '04-07-2013', num_comments: 32 },
+              { day: '4 июль, 2013 йил', num_comments: 32 },
               
-              { day: '05-07-2013', num_comments: 12 },
+              { day: '5 июль, 2013 йил', num_comments: 12 },
               
-              { day: '06-07-2013', num_comments: 12 },
+              { day: '6 июль, 2013 йил', num_comments: 12 },
               
-              { day: '07-07-2013', num_comments: 7 },
+              { day: '7 июль, 2013 йил', num_comments: 7 },
               
-              { day: '08-07-2013', num_comments: 52 },
+              { day: '8 июль, 2013 йил', num_comments: 52 },
               
-              { day: '09-07-2013', num_comments: 93 },
+              { day: '9 июль, 2013 йил', num_comments: 93 },
               
-              { day: '10-07-2013', num_comments: 30 },
+              { day: '10 июль, 2013 йил', num_comments: 30 },
               
-              { day: '11-07-2013', num_comments: 19 },
+              { day: '11 июль, 2013 йил', num_comments: 19 },
               
-              { day: '12-07-2013', num_comments: 33 },
+              { day: '12 июль, 2013 йил', num_comments: 33 },
               
-              { day: '13-07-2013', num_comments: 5 },
+              { day: '13 июль, 2013 йил', num_comments: 5 },
               
-              { day: '17-07-2013', num_comments: 17 },
+              { day: '17 июль, 2013 йил', num_comments: 17 },
               
-              { day: '18-07-2013', num_comments: 7 },
+              { day: '18 июль, 2013 йил', num_comments: 7 },
               
-              { day: '19-07-2013', num_comments: 22 },
+              { day: '19 июль, 2013 йил', num_comments: 22 },
               
-              { day: '20-07-2013', num_comments: 40 },
+              { day: '20 июль, 2013 йил', num_comments: 40 },
               
-              { day: '21-07-2013', num_comments: 66 },
+              { day: '21 июль, 2013 йил', num_comments: 66 },
               
-              { day: '22-07-2013', num_comments: 84 },
+              { day: '22 июль, 2013 йил', num_comments: 84 },
               
-              { day: '23-07-2013', num_comments: 6 },
+              { day: '23 июль, 2013 йил', num_comments: 6 },
               
-              { day: '25-07-2013', num_comments: 2 },
+              { day: '25 июль, 2013 йил', num_comments: 2 },
               
-              { day: '26-07-2013', num_comments: 10 },
+              { day: '26 июль, 2013 йил', num_comments: 10 },
               
-              { day: '27-07-2013', num_comments: 19 },
+              { day: '27 июль, 2013 йил', num_comments: 19 },
               
-              { day: '28-07-2013', num_comments: 3 },
+              { day: '28 июль, 2013 йил', num_comments: 3 },
               
-              { day: '29-07-2013', num_comments: 15 },
+              { day: '29 июль, 2013 йил', num_comments: 15 },
               
-              { day: '30-07-2013', num_comments: 23 },
+              { day: '30 июль, 2013 йил', num_comments: 23 },
               
-              { day: '31-07-2013', num_comments: 9 },
+              { day: '31 июль, 2013 йил', num_comments: 9 },
               
-              { day: '01-08-2013', num_comments: 26 },
+              { day: '1 август, 2013 йил', num_comments: 26 },
               
-              { day: '02-08-2013', num_comments: 10 },
+              { day: '2 август, 2013 йил', num_comments: 10 },
               
-              { day: '03-08-2013', num_comments: 20 },
+              { day: '3 август, 2013 йил', num_comments: 20 },
               
-              { day: '04-08-2013', num_comments: 2 },
+              { day: '4 август, 2013 йил', num_comments: 2 },
               
-              { day: '05-08-2013', num_comments: 1 },
+              { day: '5 август, 2013 йил', num_comments: 1 },
               
-              { day: '06-08-2013', num_comments: 50 },
+              { day: '6 август, 2013 йил', num_comments: 50 },
               
-              { day: '07-08-2013', num_comments: 37 },
+              { day: '7 август, 2013 йил', num_comments: 37 },
               
-              { day: '08-08-2013', num_comments: 25 },
+              { day: '8 август, 2013 йил', num_comments: 25 },
               
-              { day: '09-08-2013', num_comments: 24 },
+              { day: '9 август, 2013 йил', num_comments: 24 },
               
-              { day: '10-08-2013', num_comments: 20 },
+              { day: '10 август, 2013 йил', num_comments: 20 },
               
-              { day: '11-08-2013', num_comments: 77 },
+              { day: '11 август, 2013 йил', num_comments: 77 },
               
-              { day: '12-08-2013', num_comments: 29 },
+              { day: '12 август, 2013 йил', num_comments: 29 },
               
-              { day: '13-08-2013', num_comments: 31 },
+              { day: '13 август, 2013 йил', num_comments: 31 },
               
-              { day: '14-08-2013', num_comments: 10 },
+              { day: '14 август, 2013 йил', num_comments: 10 },
               
-              { day: '15-08-2013', num_comments: 15 },
+              { day: '15 август, 2013 йил', num_comments: 15 },
               
-              { day: '16-08-2013', num_comments: 40 },
+              { day: '16 август, 2013 йил', num_comments: 40 },
               
-              { day: '17-08-2013', num_comments: 3 },
+              { day: '17 август, 2013 йил', num_comments: 3 },
               
-              { day: '18-08-2013', num_comments: 52 },
+              { day: '18 август, 2013 йил', num_comments: 52 },
               
-              { day: '19-08-2013', num_comments: 73 },
+              { day: '19 август, 2013 йил', num_comments: 73 },
               
-              { day: '20-08-2013', num_comments: 178 },
+              { day: '20 август, 2013 йил', num_comments: 178 },
               
-              { day: '21-08-2013', num_comments: 92 },
+              { day: '21 август, 2013 йил', num_comments: 92 },
               
-              { day: '22-08-2013', num_comments: 73 },
+              { day: '22 август, 2013 йил', num_comments: 73 },
               
-              { day: '23-08-2013', num_comments: 18 },
+              { day: '23 август, 2013 йил', num_comments: 18 },
               
-              { day: '24-08-2013', num_comments: 100 },
+              { day: '24 август, 2013 йил', num_comments: 100 },
               
-              { day: '25-08-2013', num_comments: 19 },
+              { day: '25 август, 2013 йил', num_comments: 19 },
               
-              { day: '26-08-2013', num_comments: 13 },
+              { day: '26 август, 2013 йил', num_comments: 13 },
               
-              { day: '27-08-2013', num_comments: 79 },
+              { day: '27 август, 2013 йил', num_comments: 79 },
               
-              { day: '28-08-2013', num_comments: 120 },
+              { day: '28 август, 2013 йил', num_comments: 120 },
               
-              { day: '29-08-2013', num_comments: 24 },
+              { day: '29 август, 2013 йил', num_comments: 24 },
               
-              { day: '30-08-2013', num_comments: 22 },
+              { day: '30 август, 2013 йил', num_comments: 22 },
               
-              { day: '31-08-2013', num_comments: 104 },
+              { day: '31 август, 2013 йил', num_comments: 104 },
               
-              { day: '01-09-2013', num_comments: 15 },
+              { day: '1 сентябрь, 2013 йил', num_comments: 15 },
               
-              { day: '02-09-2013', num_comments: 65 },
+              { day: '2 сентябрь, 2013 йил', num_comments: 65 },
               
-              { day: '03-09-2013', num_comments: 22 },
+              { day: '3 сентябрь, 2013 йил', num_comments: 22 },
               
-              { day: '04-09-2013', num_comments: 19 },
+              { day: '4 сентябрь, 2013 йил', num_comments: 19 },
               
-              { day: '05-09-2013', num_comments: 85 },
+              { day: '5 сентябрь, 2013 йил', num_comments: 85 },
               
-              { day: '06-09-2013', num_comments: 80 },
+              { day: '6 сентябрь, 2013 йил', num_comments: 80 },
               
-              { day: '07-09-2013', num_comments: 21 },
+              { day: '7 сентябрь, 2013 йил', num_comments: 21 },
               
-              { day: '08-09-2013', num_comments: 23 },
+              { day: '8 сентябрь, 2013 йил', num_comments: 23 },
               
-              { day: '09-09-2013', num_comments: 58 },
+              { day: '9 сентябрь, 2013 йил', num_comments: 58 },
               
-              { day: '10-09-2013', num_comments: 35 },
+              { day: '10 сентябрь, 2013 йил', num_comments: 35 },
               
-              { day: '11-09-2013', num_comments: 28 },
+              { day: '11 сентябрь, 2013 йил', num_comments: 28 },
               
-              { day: '12-09-2013', num_comments: 59 },
+              { day: '12 сентябрь, 2013 йил', num_comments: 59 },
               
-              { day: '13-09-2013', num_comments: 102 },
+              { day: '13 сентябрь, 2013 йил', num_comments: 102 },
               
-              { day: '14-09-2013', num_comments: 20 },
+              { day: '14 сентябрь, 2013 йил', num_comments: 20 },
               
-              { day: '15-09-2013', num_comments: 2 },
+              { day: '15 сентябрь, 2013 йил', num_comments: 2 },
               
-              { day: '16-09-2013', num_comments: 28 },
+              { day: '16 сентябрь, 2013 йил', num_comments: 28 },
               
-              { day: '17-09-2013', num_comments: 40 },
+              { day: '17 сентябрь, 2013 йил', num_comments: 40 },
               
-              { day: '18-09-2013', num_comments: 24 },
+              { day: '18 сентябрь, 2013 йил', num_comments: 24 },
               
-              { day: '19-09-2013', num_comments: 124 },
+              { day: '19 сентябрь, 2013 йил', num_comments: 124 },
               
-              { day: '20-09-2013', num_comments: 15 },
+              { day: '20 сентябрь, 2013 йил', num_comments: 15 },
               
-              { day: '21-09-2013', num_comments: 11 },
+              { day: '21 сентябрь, 2013 йил', num_comments: 11 },
               
-              { day: '22-09-2013', num_comments: 115 },
+              { day: '22 сентябрь, 2013 йил', num_comments: 115 },
               
-              { day: '23-09-2013', num_comments: 67 },
+              { day: '23 сентябрь, 2013 йил', num_comments: 67 },
               
-              { day: '24-09-2013', num_comments: 37 },
+              { day: '24 сентябрь, 2013 йил', num_comments: 37 },
               
-              { day: '25-09-2013', num_comments: 18 },
+              { day: '25 сентябрь, 2013 йил', num_comments: 18 },
               
-              { day: '26-09-2013', num_comments: 26 },
+              { day: '26 сентябрь, 2013 йил', num_comments: 26 },
               
-              { day: '27-09-2013', num_comments: 65 },
+              { day: '27 сентябрь, 2013 йил', num_comments: 65 },
               
-              { day: '28-09-2013', num_comments: 17 },
+              { day: '28 сентябрь, 2013 йил', num_comments: 17 },
               
-              { day: '29-09-2013', num_comments: 6 },
+              { day: '29 сентябрь, 2013 йил', num_comments: 6 },
               
-              { day: '30-09-2013', num_comments: 33 },
+              { day: '30 сентябрь, 2013 йил', num_comments: 33 },
               
-              { day: '01-10-2013', num_comments: 72 },
+              { day: '1 октябрь, 2013 йил', num_comments: 72 },
               
-              { day: '02-10-2013', num_comments: 71 },
+              { day: '2 октябрь, 2013 йил', num_comments: 71 },
               
-              { day: '03-10-2013', num_comments: 57 },
+              { day: '3 октябрь, 2013 йил', num_comments: 57 },
               
-              { day: '04-10-2013', num_comments: 20 },
+              { day: '4 октябрь, 2013 йил', num_comments: 20 },
               
-              { day: '05-10-2013', num_comments: 63 },
+              { day: '5 октябрь, 2013 йил', num_comments: 63 },
               
-              { day: '06-10-2013', num_comments: 70 },
+              { day: '6 октябрь, 2013 йил', num_comments: 70 },
               
-              { day: '07-10-2013', num_comments: 80 },
+              { day: '7 октябрь, 2013 йил', num_comments: 80 },
               
-              { day: '08-10-2013', num_comments: 149 },
+              { day: '8 октябрь, 2013 йил', num_comments: 149 },
               
-              { day: '09-10-2013', num_comments: 166 },
+              { day: '9 октябрь, 2013 йил', num_comments: 166 },
               
-              { day: '10-10-2013', num_comments: 86 },
+              { day: '10 октябрь, 2013 йил', num_comments: 86 },
               
-              { day: '11-10-2013', num_comments: 22 },
+              { day: '11 октябрь, 2013 йил', num_comments: 22 },
               
-              { day: '12-10-2013', num_comments: 110 },
+              { day: '12 октябрь, 2013 йил', num_comments: 110 },
               
-              { day: '13-10-2013', num_comments: 59 },
+              { day: '13 октябрь, 2013 йил', num_comments: 59 },
               
-              { day: '14-10-2013', num_comments: 52 },
+              { day: '14 октябрь, 2013 йил', num_comments: 52 },
               
-              { day: '15-10-2013', num_comments: 90 },
+              { day: '15 октябрь, 2013 йил', num_comments: 90 },
               
-              { day: '16-10-2013', num_comments: 142 },
+              { day: '16 октябрь, 2013 йил', num_comments: 142 },
               
-              { day: '17-10-2013', num_comments: 264 },
+              { day: '17 октябрь, 2013 йил', num_comments: 264 },
               
-              { day: '18-10-2013', num_comments: 51 },
+              { day: '18 октябрь, 2013 йил', num_comments: 51 },
               
-              { day: '19-10-2013', num_comments: 53 },
+              { day: '19 октябрь, 2013 йил', num_comments: 53 },
               
-              { day: '20-10-2013', num_comments: 69 },
+              { day: '20 октябрь, 2013 йил', num_comments: 69 },
               
-              { day: '21-10-2013', num_comments: 22 },
+              { day: '21 октябрь, 2013 йил', num_comments: 22 },
               
-              { day: '22-10-2013', num_comments: 34 },
+              { day: '22 октябрь, 2013 йил', num_comments: 34 },
               
-              { day: '23-10-2013', num_comments: 79 },
+              { day: '23 октябрь, 2013 йил', num_comments: 79 },
               
-              { day: '24-10-2013', num_comments: 61 },
+              { day: '24 октябрь, 2013 йил', num_comments: 61 },
               
-              { day: '25-10-2013', num_comments: 6 },
+              { day: '25 октябрь, 2013 йил', num_comments: 6 },
               
-              { day: '26-10-2013', num_comments: 42 },
+              { day: '26 октябрь, 2013 йил', num_comments: 42 },
               
-              { day: '27-10-2013', num_comments: 16 },
+              { day: '27 октябрь, 2013 йил', num_comments: 16 },
               
-              { day: '28-10-2013', num_comments: 2 },
+              { day: '28 октябрь, 2013 йил', num_comments: 2 },
               
-              { day: '30-10-2013', num_comments: 14 },
+              { day: '30 октябрь, 2013 йил', num_comments: 14 },
               
-              { day: '31-10-2013', num_comments: 119 },
+              { day: '31 октябрь, 2013 йил', num_comments: 119 },
               
-              { day: '01-11-2013', num_comments: 105 },
+              { day: '1 ноябрь, 2013 йил', num_comments: 105 },
               
-              { day: '02-11-2013', num_comments: 37 },
+              { day: '2 ноябрь, 2013 йил', num_comments: 37 },
               
-              { day: '03-11-2013', num_comments: 1 },
+              { day: '3 ноябрь, 2013 йил', num_comments: 1 },
               
-              { day: '04-11-2013', num_comments: 37 },
+              { day: '4 ноябрь, 2013 йил', num_comments: 37 },
               
-              { day: '05-11-2013', num_comments: 37 },
+              { day: '5 ноябрь, 2013 йил', num_comments: 37 },
               
-              { day: '06-11-2013', num_comments: 87 },
+              { day: '6 ноябрь, 2013 йил', num_comments: 87 },
               
-              { day: '07-11-2013', num_comments: 29 },
+              { day: '7 ноябрь, 2013 йил', num_comments: 29 },
               
-              { day: '08-11-2013', num_comments: 33 },
+              { day: '8 ноябрь, 2013 йил', num_comments: 33 },
               
-              { day: '09-11-2013', num_comments: 40 },
+              { day: '9 ноябрь, 2013 йил', num_comments: 40 },
               
-              { day: '10-11-2013', num_comments: 31 },
+              { day: '10 ноябрь, 2013 йил', num_comments: 31 },
               
-              { day: '11-11-2013', num_comments: 14 },
+              { day: '11 ноябрь, 2013 йил', num_comments: 14 },
               
-              { day: '12-11-2013', num_comments: 102 },
+              { day: '12 ноябрь, 2013 йил', num_comments: 102 },
               
-              { day: '13-11-2013', num_comments: 105 },
+              { day: '13 ноябрь, 2013 йил', num_comments: 105 },
               
-              { day: '14-11-2013', num_comments: 15 },
+              { day: '14 ноябрь, 2013 йил', num_comments: 15 },
               
-              { day: '15-11-2013', num_comments: 5 },
+              { day: '15 ноябрь, 2013 йил', num_comments: 5 },
               
-              { day: '16-11-2013', num_comments: 18 },
+              { day: '16 ноябрь, 2013 йил', num_comments: 18 },
               
-              { day: '17-11-2013', num_comments: 179 },
+              { day: '17 ноябрь, 2013 йил', num_comments: 179 },
               
-              { day: '18-11-2013', num_comments: 77 },
+              { day: '18 ноябрь, 2013 йил', num_comments: 77 },
               
-              { day: '19-11-2013', num_comments: 18 },
+              { day: '19 ноябрь, 2013 йил', num_comments: 18 },
               
-              { day: '20-11-2013', num_comments: 22 },
+              { day: '20 ноябрь, 2013 йил', num_comments: 22 },
               
-              { day: '21-11-2013', num_comments: 41 },
+              { day: '21 ноябрь, 2013 йил', num_comments: 41 },
               
-              { day: '22-11-2013', num_comments: 42 },
+              { day: '22 ноябрь, 2013 йил', num_comments: 42 },
               
-              { day: '23-11-2013', num_comments: 68 },
+              { day: '23 ноябрь, 2013 йил', num_comments: 68 },
               
-              { day: '24-11-2013', num_comments: 16 },
+              { day: '24 ноябрь, 2013 йил', num_comments: 16 },
               
-              { day: '25-11-2013', num_comments: 76 },
+              { day: '25 ноябрь, 2013 йил', num_comments: 76 },
               
-              { day: '26-11-2013', num_comments: 30 },
+              { day: '26 ноябрь, 2013 йил', num_comments: 30 },
               
-              { day: '27-11-2013', num_comments: 164 },
+              { day: '27 ноябрь, 2013 йил', num_comments: 164 },
               
-              { day: '28-11-2013', num_comments: 40 },
+              { day: '28 ноябрь, 2013 йил', num_comments: 40 },
               
-              { day: '29-11-2013', num_comments: 37 },
+              { day: '29 ноябрь, 2013 йил', num_comments: 37 },
               
-              { day: '30-11-2013', num_comments: 67 },
+              { day: '30 ноябрь, 2013 йил', num_comments: 67 },
               
-              { day: '01-12-2013', num_comments: 123 },
+              { day: '1 декабрь, 2013 йил', num_comments: 123 },
               
-              { day: '02-12-2013', num_comments: 155 },
+              { day: '2 декабрь, 2013 йил', num_comments: 155 },
               
-              { day: '03-12-2013', num_comments: 108 },
+              { day: '3 декабрь, 2013 йил', num_comments: 108 },
               
-              { day: '04-12-2013', num_comments: 163 },
+              { day: '4 декабрь, 2013 йил', num_comments: 163 },
               
-              { day: '05-12-2013', num_comments: 148 },
+              { day: '5 декабрь, 2013 йил', num_comments: 148 },
               
-              { day: '06-12-2013', num_comments: 111 },
+              { day: '6 декабрь, 2013 йил', num_comments: 111 },
               
-              { day: '07-12-2013', num_comments: 40 },
+              { day: '7 декабрь, 2013 йил', num_comments: 40 },
               
-              { day: '08-12-2013', num_comments: 38 },
+              { day: '8 декабрь, 2013 йил', num_comments: 38 },
               
-              { day: '09-12-2013', num_comments: 24 },
+              { day: '9 декабрь, 2013 йил', num_comments: 24 },
               
-              { day: '10-12-2013', num_comments: 55 },
+              { day: '10 декабрь, 2013 йил', num_comments: 55 },
               
-              { day: '11-12-2013', num_comments: 96 },
+              { day: '11 декабрь, 2013 йил', num_comments: 96 },
               
-              { day: '12-12-2013', num_comments: 32 },
+              { day: '12 декабрь, 2013 йил', num_comments: 32 },
               
-              { day: '13-12-2013', num_comments: 16 },
+              { day: '13 декабрь, 2013 йил', num_comments: 16 },
               
-              { day: '14-12-2013', num_comments: 10 },
+              { day: '14 декабрь, 2013 йил', num_comments: 10 },
               
-              { day: '15-12-2013', num_comments: 10 },
+              { day: '15 декабрь, 2013 йил', num_comments: 10 },
               
-              { day: '16-12-2013', num_comments: 36 },
+              { day: '16 декабрь, 2013 йил', num_comments: 36 },
               
-              { day: '17-12-2013', num_comments: 27 },
+              { day: '17 декабрь, 2013 йил', num_comments: 27 },
               
-              { day: '18-12-2013', num_comments: 135 },
+              { day: '18 декабрь, 2013 йил', num_comments: 135 },
               
-              { day: '19-12-2013', num_comments: 95 },
+              { day: '19 декабрь, 2013 йил', num_comments: 95 },
               
-              { day: '20-12-2013', num_comments: 85 },
+              { day: '20 декабрь, 2013 йил', num_comments: 85 },
               
-              { day: '21-12-2013', num_comments: 49 },
+              { day: '21 декабрь, 2013 йил', num_comments: 49 },
               
-              { day: '22-12-2013', num_comments: 45 },
+              { day: '22 декабрь, 2013 йил', num_comments: 45 },
               
-              { day: '23-12-2013', num_comments: 9 },
+              { day: '23 декабрь, 2013 йил', num_comments: 9 },
               
-              { day: '24-12-2013', num_comments: 39 },
+              { day: '24 декабрь, 2013 йил', num_comments: 39 },
               
-              { day: '25-12-2013', num_comments: 39 },
+              { day: '25 декабрь, 2013 йил', num_comments: 39 },
               
-              { day: '26-12-2013', num_comments: 30 },
+              { day: '26 декабрь, 2013 йил', num_comments: 30 },
               
-              { day: '27-12-2013', num_comments: 60 },
+              { day: '27 декабрь, 2013 йил', num_comments: 60 },
               
-              { day: '28-12-2013', num_comments: 23 },
+              { day: '28 декабрь, 2013 йил', num_comments: 23 },
               
-              { day: '29-12-2013', num_comments: 20 },
+              { day: '29 декабрь, 2013 йил', num_comments: 20 },
               
-              { day: '30-12-2013', num_comments: 76 },
+              { day: '30 декабрь, 2013 йил', num_comments: 76 },
               
-              { day: '31-12-2013', num_comments: 57 },
+              { day: '31 декабрь, 2013 йил', num_comments: 57 },
               
-              { day: '01-01-2014', num_comments: 158 },
+              { day: '1 январь, 2014 йил', num_comments: 158 },
               
-              { day: '02-01-2014', num_comments: 219 },
+              { day: '2 январь, 2014 йил', num_comments: 219 },
               
-              { day: '03-01-2014', num_comments: 316 },
+              { day: '3 январь, 2014 йил', num_comments: 316 },
               
-              { day: '04-01-2014', num_comments: 131 },
+              { day: '4 январь, 2014 йил', num_comments: 131 },
               
-              { day: '05-01-2014', num_comments: 93 },
+              { day: '5 январь, 2014 йил', num_comments: 93 },
               
-              { day: '06-01-2014', num_comments: 65 },
+              { day: '6 январь, 2014 йил', num_comments: 65 },
               
-              { day: '07-01-2014', num_comments: 205 },
+              { day: '7 январь, 2014 йил', num_comments: 205 },
               
-              { day: '08-01-2014', num_comments: 219 },
+              { day: '8 январь, 2014 йил', num_comments: 219 },
               
-              { day: '09-01-2014', num_comments: 114 },
+              { day: '9 январь, 2014 йил', num_comments: 114 },
               
-              { day: '10-01-2014', num_comments: 8 },
+              { day: '10 январь, 2014 йил', num_comments: 8 },
               
-              { day: '11-01-2014', num_comments: 36 },
+              { day: '11 январь, 2014 йил', num_comments: 36 },
               
-              { day: '12-01-2014', num_comments: 22 },
+              { day: '12 январь, 2014 йил', num_comments: 22 },
               
-              { day: '13-01-2014', num_comments: 153 },
+              { day: '13 январь, 2014 йил', num_comments: 153 },
               
-              { day: '14-01-2014', num_comments: 137 },
+              { day: '14 январь, 2014 йил', num_comments: 137 },
               
-              { day: '15-01-2014', num_comments: 31 },
+              { day: '15 январь, 2014 йил', num_comments: 31 },
               
-              { day: '16-01-2014', num_comments: 71 },
+              { day: '16 январь, 2014 йил', num_comments: 71 },
               
-              { day: '17-01-2014', num_comments: 117 },
+              { day: '17 январь, 2014 йил', num_comments: 117 },
               
-              { day: '18-01-2014', num_comments: 15 },
+              { day: '18 январь, 2014 йил', num_comments: 15 },
               
-              { day: '19-01-2014', num_comments: 11 },
+              { day: '19 январь, 2014 йил', num_comments: 11 },
               
-              { day: '20-01-2014', num_comments: 40 },
+              { day: '20 январь, 2014 йил', num_comments: 40 },
               
-              { day: '21-01-2014', num_comments: 64 },
+              { day: '21 январь, 2014 йил', num_comments: 64 },
               
-              { day: '22-01-2014', num_comments: 84 },
+              { day: '22 январь, 2014 йил', num_comments: 84 },
               
-              { day: '23-01-2014', num_comments: 155 },
+              { day: '23 январь, 2014 йил', num_comments: 155 },
               
-              { day: '24-01-2014', num_comments: 124 },
+              { day: '24 январь, 2014 йил', num_comments: 124 },
               
-              { day: '25-01-2014', num_comments: 27 },
+              { day: '25 январь, 2014 йил', num_comments: 27 },
               
-              { day: '26-01-2014', num_comments: 81 },
+              { day: '26 январь, 2014 йил', num_comments: 81 },
               
-              { day: '27-01-2014', num_comments: 49 },
+              { day: '27 январь, 2014 йил', num_comments: 49 },
               
-              { day: '28-01-2014', num_comments: 41 },
+              { day: '28 январь, 2014 йил', num_comments: 41 },
               
-              { day: '29-01-2014', num_comments: 77 },
+              { day: '29 январь, 2014 йил', num_comments: 77 },
               
-              { day: '30-01-2014', num_comments: 59 },
+              { day: '30 январь, 2014 йил', num_comments: 59 },
               
-              { day: '31-01-2014', num_comments: 71 },
+              { day: '31 январь, 2014 йил', num_comments: 71 },
               
-              { day: '01-02-2014', num_comments: 72 },
+              { day: '1 февраль, 2014 йил', num_comments: 72 },
               
-              { day: '02-02-2014', num_comments: 185 },
+              { day: '2 февраль, 2014 йил', num_comments: 185 },
               
-              { day: '03-02-2014', num_comments: 66 },
+              { day: '3 февраль, 2014 йил', num_comments: 66 },
               
-              { day: '04-02-2014', num_comments: 63 },
+              { day: '4 февраль, 2014 йил', num_comments: 63 },
               
-              { day: '05-02-2014', num_comments: 44 },
+              { day: '5 февраль, 2014 йил', num_comments: 44 },
               
-              { day: '06-02-2014', num_comments: 105 },
+              { day: '6 февраль, 2014 йил', num_comments: 105 },
               
-              { day: '07-02-2014', num_comments: 37 },
+              { day: '7 февраль, 2014 йил', num_comments: 37 },
               
-              { day: '08-02-2014', num_comments: 18 },
+              { day: '8 февраль, 2014 йил', num_comments: 18 },
               
-              { day: '09-02-2014', num_comments: 64 },
+              { day: '9 февраль, 2014 йил', num_comments: 64 },
               
-              { day: '10-02-2014', num_comments: 22 },
+              { day: '10 февраль, 2014 йил', num_comments: 22 },
               
-              { day: '11-02-2014', num_comments: 65 },
+              { day: '11 февраль, 2014 йил', num_comments: 65 },
               
-              { day: '12-02-2014', num_comments: 28 },
+              { day: '12 февраль, 2014 йил', num_comments: 28 },
               
-              { day: '13-02-2014', num_comments: 3 },
+              { day: '13 февраль, 2014 йил', num_comments: 3 },
               
-              { day: '14-02-2014', num_comments: 38 },
+              { day: '14 февраль, 2014 йил', num_comments: 38 },
               
-              { day: '15-02-2014', num_comments: 37 },
+              { day: '15 февраль, 2014 йил', num_comments: 37 },
               
-              { day: '16-02-2014', num_comments: 78 },
+              { day: '16 февраль, 2014 йил', num_comments: 78 },
               
-              { day: '17-02-2014', num_comments: 30 },
+              { day: '17 февраль, 2014 йил', num_comments: 30 },
               
-              { day: '18-02-2014', num_comments: 60 },
+              { day: '18 февраль, 2014 йил', num_comments: 60 },
               
-              { day: '19-02-2014', num_comments: 79 },
+              { day: '19 февраль, 2014 йил', num_comments: 79 },
               
-              { day: '20-02-2014', num_comments: 23 },
+              { day: '20 февраль, 2014 йил', num_comments: 23 },
               
-              { day: '21-02-2014', num_comments: 57 },
+              { day: '21 февраль, 2014 йил', num_comments: 57 },
               
-              { day: '22-02-2014', num_comments: 65 },
+              { day: '22 февраль, 2014 йил', num_comments: 65 },
               
-              { day: '23-02-2014', num_comments: 26 },
+              { day: '23 февраль, 2014 йил', num_comments: 26 },
               
-              { day: '24-02-2014', num_comments: 20 },
+              { day: '24 февраль, 2014 йил', num_comments: 20 },
               
-              { day: '25-02-2014', num_comments: 20 },
+              { day: '25 февраль, 2014 йил', num_comments: 20 },
               
-              { day: '26-02-2014', num_comments: 16 },
+              { day: '26 февраль, 2014 йил', num_comments: 16 },
               
-              { day: '27-02-2014', num_comments: 7 },
+              { day: '27 февраль, 2014 йил', num_comments: 7 },
               
-              { day: '28-02-2014', num_comments: 19 },
+              { day: '28 февраль, 2014 йил', num_comments: 19 },
               
-              { day: '01-03-2014', num_comments: 16 },
+              { day: '1 март, 2014 йил', num_comments: 16 },
               
-              { day: '02-03-2014', num_comments: 20 },
+              { day: '2 март, 2014 йил', num_comments: 20 },
               
-              { day: '03-03-2014', num_comments: 10 },
+              { day: '3 март, 2014 йил', num_comments: 10 },
               
-              { day: '04-03-2014', num_comments: 14 },
+              { day: '4 март, 2014 йил', num_comments: 14 },
               
-              { day: '05-03-2014', num_comments: 16 },
+              { day: '5 март, 2014 йил', num_comments: 16 },
               
-              { day: '06-03-2014', num_comments: 4 },
+              { day: '6 март, 2014 йил', num_comments: 4 },
               
-              { day: '07-03-2014', num_comments: 33 },
+              { day: '7 март, 2014 йил', num_comments: 33 },
               
-              { day: '08-03-2014', num_comments: 24 },
+              { day: '8 март, 2014 йил', num_comments: 24 },
               
-              { day: '09-03-2014', num_comments: 52 },
+              { day: '9 март, 2014 йил', num_comments: 52 },
               
-              { day: '10-03-2014', num_comments: 12 },
+              { day: '10 март, 2014 йил', num_comments: 12 },
               
-              { day: '11-03-2014', num_comments: 15 },
+              { day: '11 март, 2014 йил', num_comments: 15 },
               
-              { day: '12-03-2014', num_comments: 14 },
+              { day: '12 март, 2014 йил', num_comments: 14 },
               
-              { day: '13-03-2014', num_comments: 23 },
+              { day: '13 март, 2014 йил', num_comments: 23 },
               
-              { day: '14-03-2014', num_comments: 19 },
+              { day: '14 март, 2014 йил', num_comments: 19 },
               
-              { day: '15-03-2014', num_comments: 5 },
+              { day: '15 март, 2014 йил', num_comments: 5 },
               
-              { day: '16-03-2014', num_comments: 4 },
+              { day: '16 март, 2014 йил', num_comments: 4 },
               
-              { day: '17-03-2014', num_comments: 15 },
+              { day: '17 март, 2014 йил', num_comments: 15 },
               
-              { day: '18-03-2014', num_comments: 4 },
+              { day: '18 март, 2014 йил', num_comments: 4 },
               
-              { day: '19-03-2014', num_comments: 10 },
+              { day: '19 март, 2014 йил', num_comments: 10 },
               
-              { day: '20-03-2014', num_comments: 26 },
+              { day: '20 март, 2014 йил', num_comments: 26 },
               
-              { day: '21-03-2014', num_comments: 17 },
+              { day: '21 март, 2014 йил', num_comments: 17 },
               
-              { day: '23-03-2014', num_comments: 7 },
+              { day: '23 март, 2014 йил', num_comments: 7 },
               
-              { day: '24-03-2014', num_comments: 15 },
+              { day: '24 март, 2014 йил', num_comments: 15 },
               
-              { day: '25-03-2014', num_comments: 8 },
+              { day: '25 март, 2014 йил', num_comments: 8 },
               
-              { day: '26-03-2014', num_comments: 16 },
+              { day: '26 март, 2014 йил', num_comments: 16 },
               
-              { day: '27-03-2014', num_comments: 7 },
+              { day: '27 март, 2014 йил', num_comments: 7 },
               
-              { day: '28-03-2014', num_comments: 8 },
+              { day: '28 март, 2014 йил', num_comments: 8 },
               
-              { day: '29-03-2014', num_comments: 7 },
+              { day: '29 март, 2014 йил', num_comments: 7 },
               
-              { day: '30-03-2014', num_comments: 4 },
+              { day: '30 март, 2014 йил', num_comments: 4 },
               
-              { day: '31-03-2014', num_comments: 26 },
+              { day: '31 март, 2014 йил', num_comments: 26 },
               
-              { day: '01-04-2014', num_comments: 40 },
+              { day: '1 апрель, 2014 йил', num_comments: 40 },
               
-              { day: '02-04-2014', num_comments: 38 },
+              { day: '2 апрель, 2014 йил', num_comments: 38 },
               
-              { day: '03-04-2014', num_comments: 14 },
+              { day: '3 апрель, 2014 йил', num_comments: 14 },
               
-              { day: '04-04-2014', num_comments: 5 },
+              { day: '4 апрель, 2014 йил', num_comments: 5 },
               
-              { day: '05-04-2014', num_comments: 4 },
+              { day: '5 апрель, 2014 йил', num_comments: 4 },
               
-              { day: '06-04-2014', num_comments: 1 },
+              { day: '6 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '07-04-2014', num_comments: 8 },
+              { day: '7 апрель, 2014 йил', num_comments: 8 },
               
-              { day: '08-04-2014', num_comments: 4 },
+              { day: '8 апрель, 2014 йил', num_comments: 4 },
               
-              { day: '10-04-2014', num_comments: 6 },
+              { day: '10 апрель, 2014 йил', num_comments: 6 },
               
-              { day: '11-04-2014', num_comments: 8 },
+              { day: '11 апрель, 2014 йил', num_comments: 8 },
               
-              { day: '12-04-2014', num_comments: 5 },
+              { day: '12 апрель, 2014 йил', num_comments: 5 },
               
-              { day: '13-04-2014', num_comments: 1 },
+              { day: '13 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '15-04-2014', num_comments: 1 },
+              { day: '15 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '16-04-2014', num_comments: 7 },
+              { day: '16 апрель, 2014 йил', num_comments: 7 },
               
-              { day: '17-04-2014', num_comments: 5 },
+              { day: '17 апрель, 2014 йил', num_comments: 5 },
               
-              { day: '19-04-2014', num_comments: 4 },
+              { day: '19 апрель, 2014 йил', num_comments: 4 },
               
-              { day: '21-04-2014', num_comments: 1 },
+              { day: '21 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '22-04-2014', num_comments: 14 },
+              { day: '22 апрель, 2014 йил', num_comments: 14 },
               
-              { day: '23-04-2014', num_comments: 19 },
+              { day: '23 апрель, 2014 йил', num_comments: 19 },
               
-              { day: '24-04-2014', num_comments: 7 },
+              { day: '24 апрель, 2014 йил', num_comments: 7 },
               
-              { day: '25-04-2014', num_comments: 8 },
+              { day: '25 апрель, 2014 йил', num_comments: 8 },
               
-              { day: '26-04-2014', num_comments: 1 },
+              { day: '26 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '27-04-2014', num_comments: 15 },
+              { day: '27 апрель, 2014 йил', num_comments: 15 },
               
-              { day: '28-04-2014', num_comments: 1 },
+              { day: '28 апрель, 2014 йил', num_comments: 1 },
               
-              { day: '29-04-2014', num_comments: 10 },
+              { day: '29 апрель, 2014 йил', num_comments: 10 },
               
-              { day: '01-05-2014', num_comments: 23 },
+              { day: '1 май, 2014 йил', num_comments: 23 },
               
-              { day: '02-05-2014', num_comments: 2 },
+              { day: '2 май, 2014 йил', num_comments: 2 },
               
-              { day: '03-05-2014', num_comments: 7 },
+              { day: '3 май, 2014 йил', num_comments: 7 },
               
-              { day: '04-05-2014', num_comments: 2 },
+              { day: '4 май, 2014 йил', num_comments: 2 },
               
-              { day: '07-05-2014', num_comments: 1 },
+              { day: '7 май, 2014 йил', num_comments: 1 },
               
-              { day: '08-05-2014', num_comments: 10 },
+              { day: '8 май, 2014 йил', num_comments: 10 },
               
-              { day: '09-05-2014', num_comments: 9 },
+              { day: '9 май, 2014 йил', num_comments: 9 },
               
-              { day: '10-05-2014', num_comments: 14 },
+              { day: '10 май, 2014 йил', num_comments: 14 },
               
-              { day: '11-05-2014', num_comments: 12 },
+              { day: '11 май, 2014 йил', num_comments: 12 },
               
-              { day: '12-05-2014', num_comments: 19 },
+              { day: '12 май, 2014 йил', num_comments: 19 },
               
-              { day: '13-05-2014', num_comments: 17 },
+              { day: '13 май, 2014 йил', num_comments: 17 },
               
-              { day: '15-05-2014', num_comments: 2 },
+              { day: '15 май, 2014 йил', num_comments: 2 },
               
-              { day: '16-05-2014', num_comments: 2 },
+              { day: '16 май, 2014 йил', num_comments: 2 },
               
-              { day: '17-05-2014', num_comments: 10 },
+              { day: '17 май, 2014 йил', num_comments: 10 },
               
-              { day: '18-05-2014', num_comments: 11 },
+              { day: '18 май, 2014 йил', num_comments: 11 },
               
-              { day: '19-05-2014', num_comments: 6 },
+              { day: '19 май, 2014 йил', num_comments: 6 },
               
-              { day: '20-05-2014', num_comments: 1 },
+              { day: '20 май, 2014 йил', num_comments: 1 },
               
-              { day: '21-05-2014', num_comments: 5 },
+              { day: '21 май, 2014 йил', num_comments: 5 },
               
-              { day: '22-05-2014', num_comments: 4 },
+              { day: '22 май, 2014 йил', num_comments: 4 },
               
-              { day: '23-05-2014', num_comments: 5 },
+              { day: '23 май, 2014 йил', num_comments: 5 },
               
-              { day: '25-05-2014', num_comments: 21 },
+              { day: '25 май, 2014 йил', num_comments: 21 },
               
-              { day: '26-05-2014', num_comments: 1 },
+              { day: '26 май, 2014 йил', num_comments: 1 },
               
-              { day: '28-05-2014', num_comments: 8 },
+              { day: '28 май, 2014 йил', num_comments: 8 },
               
-              { day: '29-05-2014', num_comments: 14 },
+              { day: '29 май, 2014 йил', num_comments: 14 },
               
-              { day: '30-05-2014', num_comments: 25 },
+              { day: '30 май, 2014 йил', num_comments: 25 },
               
-              { day: '31-05-2014', num_comments: 12 },
+              { day: '31 май, 2014 йил', num_comments: 12 },
               
-              { day: '01-06-2014', num_comments: 8 },
+              { day: '1 июнь, 2014 йил', num_comments: 8 },
               
-              { day: '02-06-2014', num_comments: 12 },
+              { day: '2 июнь, 2014 йил', num_comments: 12 },
               
-              { day: '03-06-2014', num_comments: 5 },
+              { day: '3 июнь, 2014 йил', num_comments: 5 },
               
-              { day: '04-06-2014', num_comments: 5 },
+              { day: '4 июнь, 2014 йил', num_comments: 5 },
               
-              { day: '05-06-2014', num_comments: 11 },
+              { day: '5 июнь, 2014 йил', num_comments: 11 },
               
-              { day: '06-06-2014', num_comments: 11 },
+              { day: '6 июнь, 2014 йил', num_comments: 11 },
               
-              { day: '07-06-2014', num_comments: 17 },
+              { day: '7 июнь, 2014 йил', num_comments: 17 },
               
-              { day: '08-06-2014', num_comments: 37 },
+              { day: '8 июнь, 2014 йил', num_comments: 37 },
               
-              { day: '09-06-2014', num_comments: 32 },
+              { day: '9 июнь, 2014 йил', num_comments: 32 },
               
-              { day: '10-06-2014', num_comments: 17 },
+              { day: '10 июнь, 2014 йил', num_comments: 17 },
               
-              { day: '11-06-2014', num_comments: 25 },
+              { day: '11 июнь, 2014 йил', num_comments: 25 },
               
-              { day: '13-06-2014', num_comments: 19 },
+              { day: '13 июнь, 2014 йил', num_comments: 19 },
               
-              { day: '14-06-2014', num_comments: 14 },
+              { day: '14 июнь, 2014 йил', num_comments: 14 },
               
-              { day: '15-06-2014', num_comments: 57 },
+              { day: '15 июнь, 2014 йил', num_comments: 57 },
               
-              { day: '16-06-2014', num_comments: 22 },
+              { day: '16 июнь, 2014 йил', num_comments: 22 },
               
-              { day: '17-06-2014', num_comments: 22 },
+              { day: '17 июнь, 2014 йил', num_comments: 22 },
               
-              { day: '18-06-2014', num_comments: 14 },
+              { day: '18 июнь, 2014 йил', num_comments: 14 },
               
-              { day: '19-06-2014', num_comments: 19 },
+              { day: '19 июнь, 2014 йил', num_comments: 19 },
               
-              { day: '20-06-2014', num_comments: 7 },
+              { day: '20 июнь, 2014 йил', num_comments: 7 },
               
-              { day: '21-06-2014', num_comments: 1 },
+              { day: '21 июнь, 2014 йил', num_comments: 1 },
               
-              { day: '22-06-2014', num_comments: 7 },
+              { day: '22 июнь, 2014 йил', num_comments: 7 },
               
-              { day: '23-06-2014', num_comments: 24 },
+              { day: '23 июнь, 2014 йил', num_comments: 24 },
               
-              { day: '24-06-2014', num_comments: 15 },
+              { day: '24 июнь, 2014 йил', num_comments: 15 },
               
-              { day: '25-06-2014', num_comments: 21 },
+              { day: '25 июнь, 2014 йил', num_comments: 21 },
               
-              { day: '26-06-2014', num_comments: 17 },
+              { day: '26 июнь, 2014 йил', num_comments: 17 },
               
-              { day: '27-06-2014', num_comments: 7 },
+              { day: '27 июнь, 2014 йил', num_comments: 7 },
               
-              { day: '28-06-2014', num_comments: 8 },
+              { day: '28 июнь, 2014 йил', num_comments: 8 },
               
-              { day: '29-06-2014', num_comments: 4 },
+              { day: '29 июнь, 2014 йил', num_comments: 4 },
               
-              { day: '01-07-2014', num_comments: 7 },
+              { day: '1 июль, 2014 йил', num_comments: 7 },
               
-              { day: '02-07-2014', num_comments: 18 },
+              { day: '2 июль, 2014 йил', num_comments: 18 },
               
-              { day: '03-07-2014', num_comments: 22 },
+              { day: '3 июль, 2014 йил', num_comments: 22 },
               
-              { day: '04-07-2014', num_comments: 11 },
+              { day: '4 июль, 2014 йил', num_comments: 11 },
               
-              { day: '05-07-2014', num_comments: 9 },
+              { day: '5 июль, 2014 йил', num_comments: 9 },
               
-              { day: '06-07-2014', num_comments: 2 },
+              { day: '6 июль, 2014 йил', num_comments: 2 },
               
-              { day: '08-07-2014', num_comments: 2 },
+              { day: '8 июль, 2014 йил', num_comments: 2 },
               
-              { day: '09-07-2014', num_comments: 2 },
+              { day: '9 июль, 2014 йил', num_comments: 2 },
               
-              { day: '11-07-2014', num_comments: 32 },
+              { day: '11 июль, 2014 йил', num_comments: 32 },
               
-              { day: '12-07-2014', num_comments: 27 },
+              { day: '12 июль, 2014 йил', num_comments: 27 },
               
-              { day: '13-07-2014', num_comments: 1 },
+              { day: '13 июль, 2014 йил', num_comments: 1 },
               
-              { day: '14-07-2014', num_comments: 9 },
+              { day: '14 июль, 2014 йил', num_comments: 9 },
               
-              { day: '16-07-2014', num_comments: 15 },
+              { day: '16 июль, 2014 йил', num_comments: 15 },
               
-              { day: '17-07-2014', num_comments: 3 },
+              { day: '17 июль, 2014 йил', num_comments: 3 },
               
-              { day: '18-07-2014', num_comments: 1 },
+              { day: '18 июль, 2014 йил', num_comments: 1 },
               
-              { day: '19-07-2014', num_comments: 5 },
+              { day: '19 июль, 2014 йил', num_comments: 5 },
               
-              { day: '20-07-2014', num_comments: 43 },
+              { day: '20 июль, 2014 йил', num_comments: 43 },
               
-              { day: '21-07-2014', num_comments: 14 },
+              { day: '21 июль, 2014 йил', num_comments: 14 },
               
-              { day: '22-07-2014', num_comments: 8 },
+              { day: '22 июль, 2014 йил', num_comments: 8 },
               
-              { day: '23-07-2014', num_comments: 3 },
+              { day: '23 июль, 2014 йил', num_comments: 3 },
               
-              { day: '24-07-2014', num_comments: 10 },
+              { day: '24 июль, 2014 йил', num_comments: 10 },
               
-              { day: '25-07-2014', num_comments: 3 },
+              { day: '25 июль, 2014 йил', num_comments: 3 },
               
-              { day: '26-07-2014', num_comments: 6 },
+              { day: '26 июль, 2014 йил', num_comments: 6 },
               
-              { day: '27-07-2014', num_comments: 8 },
+              { day: '27 июль, 2014 йил', num_comments: 8 },
               
-              { day: '28-07-2014', num_comments: 9 },
+              { day: '28 июль, 2014 йил', num_comments: 9 },
               
-              { day: '29-07-2014', num_comments: 2 },
+              { day: '29 июль, 2014 йил', num_comments: 2 },
               
-              { day: '30-07-2014', num_comments: 29 },
+              { day: '30 июль, 2014 йил', num_comments: 29 },
               
-              { day: '31-07-2014', num_comments: 46 },
+              { day: '31 июль, 2014 йил', num_comments: 46 },
               
-              { day: '01-08-2014', num_comments: 133 },
+              { day: '1 август, 2014 йил', num_comments: 133 },
               
-              { day: '02-08-2014', num_comments: 95 },
+              { day: '2 август, 2014 йил', num_comments: 95 },
               
-              { day: '03-08-2014', num_comments: 41 },
+              { day: '3 август, 2014 йил', num_comments: 41 },
               
-              { day: '04-08-2014', num_comments: 17 },
+              { day: '4 август, 2014 йил', num_comments: 17 },
               
-              { day: '05-08-2014', num_comments: 39 },
+              { day: '5 август, 2014 йил', num_comments: 39 },
               
-              { day: '06-08-2014', num_comments: 174 },
+              { day: '6 август, 2014 йил', num_comments: 174 },
               
-              { day: '07-08-2014', num_comments: 79 },
+              { day: '7 август, 2014 йил', num_comments: 79 },
               
-              { day: '08-08-2014', num_comments: 58 },
+              { day: '8 август, 2014 йил', num_comments: 58 },
               
-              { day: '09-08-2014', num_comments: 137 },
+              { day: '9 август, 2014 йил', num_comments: 137 },
               
-              { day: '10-08-2014', num_comments: 19 },
+              { day: '10 август, 2014 йил', num_comments: 19 },
               
-              { day: '11-08-2014', num_comments: 94 },
+              { day: '11 август, 2014 йил', num_comments: 94 },
               
-              { day: '12-08-2014', num_comments: 26 },
+              { day: '12 август, 2014 йил', num_comments: 26 },
               
-              { day: '13-08-2014', num_comments: 37 },
+              { day: '13 август, 2014 йил', num_comments: 37 },
               
-              { day: '14-08-2014', num_comments: 87 },
+              { day: '14 август, 2014 йил', num_comments: 87 },
               
-              { day: '15-08-2014', num_comments: 48 },
+              { day: '15 август, 2014 йил', num_comments: 48 },
               
-              { day: '16-08-2014', num_comments: 15 },
+              { day: '16 август, 2014 йил', num_comments: 15 },
               
-              { day: '17-08-2014', num_comments: 16 },
+              { day: '17 август, 2014 йил', num_comments: 16 },
               
-              { day: '18-08-2014', num_comments: 2 },
+              { day: '18 август, 2014 йил', num_comments: 2 },
               
-              { day: '19-08-2014', num_comments: 5 },
+              { day: '19 август, 2014 йил', num_comments: 5 },
               
-              { day: '20-08-2014', num_comments: 64 },
+              { day: '20 август, 2014 йил', num_comments: 64 },
               
-              { day: '21-08-2014', num_comments: 144 },
+              { day: '21 август, 2014 йил', num_comments: 144 },
               
-              { day: '22-08-2014', num_comments: 180 },
+              { day: '22 август, 2014 йил', num_comments: 180 },
               
-              { day: '23-08-2014', num_comments: 121 },
+              { day: '23 август, 2014 йил', num_comments: 121 },
               
-              { day: '24-08-2014', num_comments: 247 },
+              { day: '24 август, 2014 йил', num_comments: 247 },
               
-              { day: '25-08-2014', num_comments: 389 },
+              { day: '25 август, 2014 йил', num_comments: 389 },
               
-              { day: '26-08-2014', num_comments: 108 },
+              { day: '26 август, 2014 йил', num_comments: 108 },
               
-              { day: '27-08-2014', num_comments: 69 },
+              { day: '27 август, 2014 йил', num_comments: 69 },
               
-              { day: '28-08-2014', num_comments: 151 },
+              { day: '28 август, 2014 йил', num_comments: 151 },
               
-              { day: '29-08-2014', num_comments: 158 },
+              { day: '29 август, 2014 йил', num_comments: 158 },
               
-              { day: '30-08-2014', num_comments: 392 },
+              { day: '30 август, 2014 йил', num_comments: 392 },
               
-              { day: '31-08-2014', num_comments: 118 },
+              { day: '31 август, 2014 йил', num_comments: 118 },
               
-              { day: '01-09-2014', num_comments: 366 },
+              { day: '1 сентябрь, 2014 йил', num_comments: 366 },
               
-              { day: '02-09-2014', num_comments: 74 },
+              { day: '2 сентябрь, 2014 йил', num_comments: 74 },
               
-              { day: '03-09-2014', num_comments: 87 },
+              { day: '3 сентябрь, 2014 йил', num_comments: 87 },
               
-              { day: '04-09-2014', num_comments: 94 },
+              { day: '4 сентябрь, 2014 йил', num_comments: 94 },
               
-              { day: '05-09-2014', num_comments: 25 },
+              { day: '5 сентябрь, 2014 йил', num_comments: 25 },
               
-              { day: '06-09-2014', num_comments: 44 },
+              { day: '6 сентябрь, 2014 йил', num_comments: 44 },
               
-              { day: '07-09-2014', num_comments: 146 },
+              { day: '7 сентябрь, 2014 йил', num_comments: 146 },
               
-              { day: '08-09-2014', num_comments: 156 },
+              { day: '8 сентябрь, 2014 йил', num_comments: 156 },
               
-              { day: '09-09-2014', num_comments: 138 },
+              { day: '9 сентябрь, 2014 йил', num_comments: 138 },
               
-              { day: '10-09-2014', num_comments: 165 },
+              { day: '10 сентябрь, 2014 йил', num_comments: 165 },
               
-              { day: '11-09-2014', num_comments: 103 },
+              { day: '11 сентябрь, 2014 йил', num_comments: 103 },
               
-              { day: '12-09-2014', num_comments: 149 },
+              { day: '12 сентябрь, 2014 йил', num_comments: 149 },
               
-              { day: '13-09-2014', num_comments: 84 },
+              { day: '13 сентябрь, 2014 йил', num_comments: 84 },
               
-              { day: '14-09-2014', num_comments: 71 },
+              { day: '14 сентябрь, 2014 йил', num_comments: 71 },
               
-              { day: '15-09-2014', num_comments: 86 },
+              { day: '15 сентябрь, 2014 йил', num_comments: 86 },
               
-              { day: '16-09-2014', num_comments: 61 },
+              { day: '16 сентябрь, 2014 йил', num_comments: 61 },
               
-              { day: '17-09-2014', num_comments: 105 },
+              { day: '17 сентябрь, 2014 йил', num_comments: 105 },
               
-              { day: '18-09-2014', num_comments: 163 },
+              { day: '18 сентябрь, 2014 йил', num_comments: 163 },
               
-              { day: '19-09-2014', num_comments: 67 },
+              { day: '19 сентябрь, 2014 йил', num_comments: 67 },
               
-              { day: '20-09-2014', num_comments: 77 },
+              { day: '20 сентябрь, 2014 йил', num_comments: 77 },
               
-              { day: '21-09-2014', num_comments: 38 },
+              { day: '21 сентябрь, 2014 йил', num_comments: 38 },
               
-              { day: '22-09-2014', num_comments: 155 },
+              { day: '22 сентябрь, 2014 йил', num_comments: 155 },
               
-              { day: '23-09-2014', num_comments: 177 },
+              { day: '23 сентябрь, 2014 йил', num_comments: 177 },
               
-              { day: '24-09-2014', num_comments: 32 },
+              { day: '24 сентябрь, 2014 йил', num_comments: 32 },
               
-              { day: '25-09-2014', num_comments: 51 },
+              { day: '25 сентябрь, 2014 йил', num_comments: 51 },
               
-              { day: '26-09-2014', num_comments: 47 },
+              { day: '26 сентябрь, 2014 йил', num_comments: 47 },
               
-              { day: '27-09-2014', num_comments: 29 },
+              { day: '27 сентябрь, 2014 йил', num_comments: 29 },
               
-              { day: '28-09-2014', num_comments: 50 },
+              { day: '28 сентябрь, 2014 йил', num_comments: 50 },
               
-              { day: '29-09-2014', num_comments: 108 },
+              { day: '29 сентябрь, 2014 йил', num_comments: 108 },
               
-              { day: '30-09-2014', num_comments: 147 },
+              { day: '30 сентябрь, 2014 йил', num_comments: 147 },
               
-              { day: '01-10-2014', num_comments: 65 },
+              { day: '1 октябрь, 2014 йил', num_comments: 65 },
               
-              { day: '02-10-2014', num_comments: 63 },
+              { day: '2 октябрь, 2014 йил', num_comments: 63 },
               
-              { day: '03-10-2014', num_comments: 82 },
+              { day: '3 октябрь, 2014 йил', num_comments: 82 },
               
-              { day: '04-10-2014', num_comments: 95 },
+              { day: '4 октябрь, 2014 йил', num_comments: 95 },
               
-              { day: '05-10-2014', num_comments: 134 },
+              { day: '5 октябрь, 2014 йил', num_comments: 134 },
               
-              { day: '06-10-2014', num_comments: 113 },
+              { day: '6 октябрь, 2014 йил', num_comments: 113 },
               
-              { day: '07-10-2014', num_comments: 110 },
+              { day: '7 октябрь, 2014 йил', num_comments: 110 },
               
-              { day: '08-10-2014', num_comments: 61 },
+              { day: '8 октябрь, 2014 йил', num_comments: 61 },
               
-              { day: '09-10-2014', num_comments: 78 },
+              { day: '9 октябрь, 2014 йил', num_comments: 78 },
               
-              { day: '10-10-2014', num_comments: 133 },
+              { day: '10 октябрь, 2014 йил', num_comments: 133 },
               
-              { day: '11-10-2014', num_comments: 41 },
+              { day: '11 октябрь, 2014 йил', num_comments: 41 },
               
-              { day: '12-10-2014', num_comments: 105 },
+              { day: '12 октябрь, 2014 йил', num_comments: 105 },
               
-              { day: '13-10-2014', num_comments: 27 },
+              { day: '13 октябрь, 2014 йил', num_comments: 27 },
               
-              { day: '14-10-2014', num_comments: 282 },
+              { day: '14 октябрь, 2014 йил', num_comments: 282 },
               
-              { day: '15-10-2014', num_comments: 136 },
+              { day: '15 октябрь, 2014 йил', num_comments: 136 },
               
-              { day: '16-10-2014', num_comments: 72 },
+              { day: '16 октябрь, 2014 йил', num_comments: 72 },
               
-              { day: '17-10-2014', num_comments: 75 },
+              { day: '17 октябрь, 2014 йил', num_comments: 75 },
               
-              { day: '18-10-2014', num_comments: 17 },
+              { day: '18 октябрь, 2014 йил', num_comments: 17 },
               
-              { day: '19-10-2014', num_comments: 16 },
+              { day: '19 октябрь, 2014 йил', num_comments: 16 },
               
-              { day: '20-10-2014', num_comments: 169 },
+              { day: '20 октябрь, 2014 йил', num_comments: 169 },
               
-              { day: '21-10-2014', num_comments: 82 },
+              { day: '21 октябрь, 2014 йил', num_comments: 82 },
               
-              { day: '22-10-2014', num_comments: 90 },
+              { day: '22 октябрь, 2014 йил', num_comments: 90 },
               
-              { day: '23-10-2014', num_comments: 79 },
+              { day: '23 октябрь, 2014 йил', num_comments: 79 },
               
-              { day: '24-10-2014', num_comments: 88 },
+              { day: '24 октябрь, 2014 йил', num_comments: 88 },
               
-              { day: '25-10-2014', num_comments: 68 },
+              { day: '25 октябрь, 2014 йил', num_comments: 68 },
               
-              { day: '26-10-2014', num_comments: 10 },
+              { day: '26 октябрь, 2014 йил', num_comments: 10 },
               
-              { day: '27-10-2014', num_comments: 75 },
+              { day: '27 октябрь, 2014 йил', num_comments: 75 },
               
-              { day: '28-10-2014', num_comments: 104 },
+              { day: '28 октябрь, 2014 йил', num_comments: 104 },
               
-              { day: '29-10-2014', num_comments: 50 },
+              { day: '29 октябрь, 2014 йил', num_comments: 50 },
               
-              { day: '30-10-2014', num_comments: 156 },
+              { day: '30 октябрь, 2014 йил', num_comments: 156 },
               
-              { day: '31-10-2014', num_comments: 59 },
+              { day: '31 октябрь, 2014 йил', num_comments: 59 },
               
-              { day: '01-11-2014', num_comments: 196 },
+              { day: '1 ноябрь, 2014 йил', num_comments: 196 },
               
-              { day: '02-11-2014', num_comments: 201 },
+              { day: '2 ноябрь, 2014 йил', num_comments: 201 },
               
-              { day: '03-11-2014', num_comments: 135 },
+              { day: '3 ноябрь, 2014 йил', num_comments: 135 },
               
-              { day: '04-11-2014', num_comments: 61 },
+              { day: '4 ноябрь, 2014 йил', num_comments: 61 },
               
-              { day: '05-11-2014', num_comments: 24 },
+              { day: '5 ноябрь, 2014 йил', num_comments: 24 },
               
-              { day: '06-11-2014', num_comments: 75 },
+              { day: '6 ноябрь, 2014 йил', num_comments: 75 },
               
-              { day: '07-11-2014', num_comments: 292 },
+              { day: '7 ноябрь, 2014 йил', num_comments: 292 },
               
-              { day: '08-11-2014', num_comments: 73 },
+              { day: '8 ноябрь, 2014 йил', num_comments: 73 },
               
-              { day: '09-11-2014', num_comments: 56 },
+              { day: '9 ноябрь, 2014 йил', num_comments: 56 },
               
-              { day: '10-11-2014', num_comments: 77 },
+              { day: '10 ноябрь, 2014 йил', num_comments: 77 },
               
-              { day: '11-11-2014', num_comments: 75 },
+              { day: '11 ноябрь, 2014 йил', num_comments: 75 },
               
-              { day: '12-11-2014', num_comments: 85 },
+              { day: '12 ноябрь, 2014 йил', num_comments: 85 },
               
-              { day: '13-11-2014', num_comments: 64 },
+              { day: '13 ноябрь, 2014 йил', num_comments: 64 },
               
-              { day: '14-11-2014', num_comments: 43 },
+              { day: '14 ноябрь, 2014 йил', num_comments: 43 },
               
-              { day: '15-11-2014', num_comments: 109 },
+              { day: '15 ноябрь, 2014 йил', num_comments: 109 },
               
-              { day: '16-11-2014', num_comments: 21 },
+              { day: '16 ноябрь, 2014 йил', num_comments: 21 },
               
-              { day: '17-11-2014', num_comments: 11 },
+              { day: '17 ноябрь, 2014 йил', num_comments: 11 },
               
-              { day: '18-11-2014', num_comments: 100 },
+              { day: '18 ноябрь, 2014 йил', num_comments: 100 },
               
-              { day: '19-11-2014', num_comments: 82 },
+              { day: '19 ноябрь, 2014 йил', num_comments: 82 },
               
-              { day: '20-11-2014', num_comments: 43 },
+              { day: '20 ноябрь, 2014 йил', num_comments: 43 },
               
-              { day: '21-11-2014', num_comments: 42 },
+              { day: '21 ноябрь, 2014 йил', num_comments: 42 },
               
-              { day: '22-11-2014', num_comments: 16 },
+              { day: '22 ноябрь, 2014 йил', num_comments: 16 },
               
-              { day: '23-11-2014', num_comments: 78 },
+              { day: '23 ноябрь, 2014 йил', num_comments: 78 },
               
-              { day: '24-11-2014', num_comments: 73 },
+              { day: '24 ноябрь, 2014 йил', num_comments: 73 },
               
-              { day: '25-11-2014', num_comments: 139 },
+              { day: '25 ноябрь, 2014 йил', num_comments: 139 },
               
-              { day: '26-11-2014', num_comments: 65 },
+              { day: '26 ноябрь, 2014 йил', num_comments: 65 },
               
-              { day: '27-11-2014', num_comments: 186 },
+              { day: '27 ноябрь, 2014 йил', num_comments: 186 },
               
-              { day: '28-11-2014', num_comments: 142 },
+              { day: '28 ноябрь, 2014 йил', num_comments: 142 },
               
-              { day: '29-11-2014', num_comments: 297 },
+              { day: '29 ноябрь, 2014 йил', num_comments: 297 },
               
-              { day: '30-11-2014', num_comments: 51 },
+              { day: '30 ноябрь, 2014 йил', num_comments: 51 },
               
-              { day: '01-12-2014', num_comments: 148 },
+              { day: '1 декабрь, 2014 йил', num_comments: 148 },
               
-              { day: '02-12-2014', num_comments: 164 },
+              { day: '2 декабрь, 2014 йил', num_comments: 164 },
               
-              { day: '03-12-2014', num_comments: 60 },
+              { day: '3 декабрь, 2014 йил', num_comments: 60 },
               
-              { day: '04-12-2014', num_comments: 104 },
+              { day: '4 декабрь, 2014 йил', num_comments: 104 },
               
-              { day: '05-12-2014', num_comments: 67 },
+              { day: '5 декабрь, 2014 йил', num_comments: 67 },
               
-              { day: '06-12-2014', num_comments: 43 },
+              { day: '6 декабрь, 2014 йил', num_comments: 43 },
               
-              { day: '07-12-2014', num_comments: 19 },
+              { day: '7 декабрь, 2014 йил', num_comments: 19 },
               
-              { day: '08-12-2014', num_comments: 7 },
+              { day: '8 декабрь, 2014 йил', num_comments: 7 },
               
-              { day: '09-12-2014', num_comments: 49 },
+              { day: '9 декабрь, 2014 йил', num_comments: 49 },
               
-              { day: '10-12-2014', num_comments: 28 },
+              { day: '10 декабрь, 2014 йил', num_comments: 28 },
               
-              { day: '11-12-2014', num_comments: 4 },
+              { day: '11 декабрь, 2014 йил', num_comments: 4 },
               
-              { day: '12-12-2014', num_comments: 11 },
+              { day: '12 декабрь, 2014 йил', num_comments: 11 },
               
-              { day: '19-12-2014', num_comments: 3 },
+              { day: '19 декабрь, 2014 йил', num_comments: 3 },
               
-              { day: '20-12-2014', num_comments: 3 },
+              { day: '20 декабрь, 2014 йил', num_comments: 3 },
               
-              { day: '02-01-2015', num_comments: 2 },
+              { day: '2 январь, 2015 йил', num_comments: 2 },
               
-              { day: '03-01-2015', num_comments: 1 },
+              { day: '3 январь, 2015 йил', num_comments: 1 },
               
-              { day: '04-01-2015', num_comments: 4 },
+              { day: '4 январь, 2015 йил', num_comments: 4 },
               
-              { day: '22-01-2015', num_comments: 12 },
+              { day: '22 январь, 2015 йил', num_comments: 12 },
               
-              { day: '24-01-2015', num_comments: 43 },
+              { day: '24 январь, 2015 йил', num_comments: 43 },
               
-              { day: '25-01-2015', num_comments: 27 },
+              { day: '25 январь, 2015 йил', num_comments: 27 },
               
-              { day: '26-01-2015', num_comments: 29 },
+              { day: '26 январь, 2015 йил', num_comments: 29 },
               
-              { day: '27-01-2015', num_comments: 216 },
+              { day: '27 январь, 2015 йил', num_comments: 216 },
               
-              { day: '28-01-2015', num_comments: 161 },
+              { day: '28 январь, 2015 йил', num_comments: 161 },
               
-              { day: '29-01-2015', num_comments: 77 },
+              { day: '29 январь, 2015 йил', num_comments: 77 },
               
-              { day: '30-01-2015', num_comments: 63 },
+              { day: '30 январь, 2015 йил', num_comments: 63 },
               
-              { day: '31-01-2015', num_comments: 243 },
+              { day: '31 январь, 2015 йил', num_comments: 243 },
               
-              { day: '01-02-2015', num_comments: 77 },
+              { day: '1 февраль, 2015 йил', num_comments: 77 },
               
-              { day: '02-02-2015', num_comments: 67 },
+              { day: '2 февраль, 2015 йил', num_comments: 67 },
               
-              { day: '03-02-2015', num_comments: 72 },
+              { day: '3 февраль, 2015 йил', num_comments: 72 },
               
-              { day: '04-02-2015', num_comments: 55 },
+              { day: '4 февраль, 2015 йил', num_comments: 55 },
               
-              { day: '05-02-2015', num_comments: 120 },
+              { day: '5 февраль, 2015 йил', num_comments: 120 },
               
-              { day: '06-02-2015', num_comments: 58 },
+              { day: '6 февраль, 2015 йил', num_comments: 58 },
               
-              { day: '07-02-2015', num_comments: 93 },
+              { day: '7 февраль, 2015 йил', num_comments: 93 },
               
-              { day: '08-02-2015', num_comments: 96 },
+              { day: '8 февраль, 2015 йил', num_comments: 96 },
               
-              { day: '09-02-2015', num_comments: 58 },
+              { day: '9 февраль, 2015 йил', num_comments: 58 },
               
-              { day: '10-02-2015', num_comments: 72 },
+              { day: '10 февраль, 2015 йил', num_comments: 72 },
               
-              { day: '11-02-2015', num_comments: 119 },
+              { day: '11 февраль, 2015 йил', num_comments: 119 },
               
-              { day: '12-02-2015', num_comments: 167 },
+              { day: '12 февраль, 2015 йил', num_comments: 167 },
               
-              { day: '13-02-2015', num_comments: 67 },
+              { day: '13 февраль, 2015 йил', num_comments: 67 },
               
-              { day: '14-02-2015', num_comments: 59 },
+              { day: '14 февраль, 2015 йил', num_comments: 59 },
               
-              { day: '15-02-2015', num_comments: 34 },
+              { day: '15 февраль, 2015 йил', num_comments: 34 },
               
-              { day: '16-02-2015', num_comments: 17 },
+              { day: '16 февраль, 2015 йил', num_comments: 17 },
               
-              { day: '17-02-2015', num_comments: 69 },
+              { day: '17 февраль, 2015 йил', num_comments: 69 },
               
-              { day: '18-02-2015', num_comments: 135 },
+              { day: '18 февраль, 2015 йил', num_comments: 135 },
               
-              { day: '19-02-2015', num_comments: 58 },
+              { day: '19 февраль, 2015 йил', num_comments: 58 },
               
-              { day: '20-02-2015', num_comments: 65 },
+              { day: '20 февраль, 2015 йил', num_comments: 65 },
               
-              { day: '21-02-2015', num_comments: 77 },
+              { day: '21 февраль, 2015 йил', num_comments: 77 },
               
-              { day: '22-02-2015', num_comments: 38 },
+              { day: '22 февраль, 2015 йил', num_comments: 38 },
               
-              { day: '23-02-2015', num_comments: 45 },
+              { day: '23 февраль, 2015 йил', num_comments: 45 },
               
-              { day: '24-02-2015', num_comments: 39 },
+              { day: '24 февраль, 2015 йил', num_comments: 39 },
               
         ],
         xkey: 'day',
@@ -1288,7 +1289,7 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif',
         barRatio: 0.4,
-        xLabelAngle: 45,
+        xLabelAngle: 15,
         hideHover: 'auto'
         });
         new Morris.Bar({
