@@ -41,6 +41,7 @@ a:focus {
   outline: none;
 }
 
+h4,
 h5 {
   font-family: inherit;
   font-weight: 700;
@@ -48,9 +49,14 @@ h5 {
   color: inherit;
 }
 
+h4,
 h5 {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 29px;
 }
 
 h5 {
