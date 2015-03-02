@@ -58,20 +58,9 @@ def posts_page(request):
 
 @cache_page(60 * 5)
 def comments_page(request):
-    daily_comments = Comment.objects.extra({
-        "day": "date_trunc('day', created_time)"
-        }).values('day').order_by().annotate(num_comments=Count('id'))
-    monthly_comments = Comment.objects.extra({
-        "month": "date_trunc('month', created_time)"
-        }).values('month').order_by().annotate(num_comments=Count('id'))
-    yearly_comments = Comment.objects.extra({
-        "year": "date_trunc('year', created_time)"
-        }).values('year').order_by().annotate(num_comments=Count('id'))
+
     context = {
         "total_comments": Comment.objects.count(),
-        "daily_comments": daily_comments,
-        "monthly_comments": monthly_comments,
-        "yearly_comments": yearly_comments,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/comments.html', context)

@@ -43,7 +43,7 @@
         element: 'yearly_comments',
         data: [
           {% for comment in yearly_comments %}
-          {label: '{{ comment.year|date:"Y" }} йил', value: {{ comment.num_comments }} },
+          {label: '{{ comment.year|date:"Y" }} йилда', value: {{ comment.num_comments }} },
           {% endfor %}
         ],
         colors: ['#2c3e50'],

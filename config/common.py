@@ -364,11 +364,17 @@ class Common(Configuration):
             ),
             'output_filename': 'js/home.min.js',
         },
-        'daily_comments': {
+        'posts_chart': {
             'source_filenames': (
-                'js/daily_comments.js',
+                'js/posts_chart.js',
             ),
-            'output_filename': 'js/daily_comments.min.js',
+            'output_filename': 'js/posts_chart.min.js',
+        },
+        'comments_chart': {
+            'source_filenames': (
+                'js/comments_chart.js',
+            ),
+            'output_filename': 'js/comments_chart.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'

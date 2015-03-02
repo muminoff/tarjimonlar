@@ -10,7 +10,7 @@ from django.template import Context, loader
 
 
 class Command(BaseCommand):
-    help = 'Render'
+    help = 'Render chart for comments'
 
     def handle(self, *args, **options):
         daily_comments = Comment.objects.extra({
@@ -23,15 +23,10 @@ class Command(BaseCommand):
             "year": "date_trunc('year', created_time)"
             }).values('year').order_by().annotate(num_comments=Count('id'))
         context = {
-            "total_comments": Comment.objects.count(),
             "daily_comments": daily_comments,
             "monthly_comments": monthly_comments,
             "yearly_comments": yearly_comments,
         }
-        template_file = "daily_comments.js"
+        template_file = "comments_chart.js"
         template = loader.get_template(template_file)
         print render_to_response(template_file, context).content
-
-
-
-

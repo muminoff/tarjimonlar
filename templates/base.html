@@ -18,7 +18,7 @@
     {% stylesheet 'bootstrap' %}
     {% stylesheet 'flat' %}
     {% stylesheet 'project' %}
-    {% if request.path == '/comments/' %}
+    {% if request.path == '/comments/' or request.path == '/posts/' %}
     {% stylesheet 'chart' %}
     {% endif %}
   </head>
@@ -44,11 +44,16 @@
           {% block content %}{% endblock %}
       </div>
 
-      {% if request.path == '/comments/' %}
+      {% if request.path == '/posts/' %}
       <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
       {% javascript 'raphael' %}
       {% javascript 'morris' %}
-      {% javascript 'daily_comments' %}
+      {% javascript 'posts_chart' %}
+      {% elif request.path == '/comments/' %}
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+      {% javascript 'raphael' %}
+      {% javascript 'morris' %}
+      {% javascript 'comments_chart' %}
       {% endif %}
   </body>
 </html>
