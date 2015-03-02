@@ -30,16 +30,12 @@
   content: "\e96f";
 }
 
-.icon-user:before {
-  content: "\e972";
-}
-
 .icon-search:before {
   content: "\e986";
 }
 
-.icon-link:before {
-  content: "\e9cb";
+.icon-stat:before {
+  content: "\e99a";
 }
 
 .icon-info:before {
