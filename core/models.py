@@ -2,7 +2,7 @@ from django.db import models
 
 
 class Member(models.Model):
-    id = models.CharField(max_length=255, primary_key=True)
+    id = models.CharField(max_length=255, primary_key=True, db_index=True)
     name = models.CharField(max_length=255)
     admin = models.BooleanField(default=False)
 
@@ -36,10 +36,10 @@ class Member(models.Model):
 class Post(models.Model):
     id = models.CharField(max_length=255, primary_key=True)
     message = models.TextField()
-    created_time = models.DateTimeField()
+    created_time = models.DateTimeField(db_index=True)
     updated_time = models.DateTimeField()
-    creator = models.ForeignKey(Member)
-    likes = models.IntegerField()
+    creator = models.ForeignKey(Member, db_index=True)
+    likes = models.IntegerField(db_index=True)
 
     def __unicode__(self):
         return self.id
@@ -59,12 +59,12 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    id = models.CharField(max_length=255, primary_key=True)
+    id = models.CharField(max_length=255, primary_key=True, db_index=True)
     message = models.TextField()
-    created_time = models.DateTimeField()
-    creator = models.ForeignKey(Member)
-    post = models.ForeignKey(Post)
-    likes = models.IntegerField()
+    created_time = models.DateTimeField(db_index=True)
+    creator = models.ForeignKey(Member, db_index=True)
+    post = models.ForeignKey(Post, db_index=True)
+    likes = models.IntegerField(db_index=True)
 
     def __unicode__(self):
         return self.id
