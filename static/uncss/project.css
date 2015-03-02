@@ -186,3 +186,8 @@ span.found_result {
   display: table;
   margin: 0 auto;
 }
+
+p.eslatma {
+  font-size: 10px;
+  font-color: #95a5a6;
+}
