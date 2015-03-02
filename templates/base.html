@@ -42,8 +42,8 @@
       </div>
 
       {% if request.path == '/comments/' %}
-      {% stylesheet 'chart' %}
       {% javascript 'jquery' %}
+      {% stylesheet 'chart' %}
       {% javascript 'raphael' %}
       {% javascript 'morris' %}
       {% include 'pages/daily_comments.html' %}
