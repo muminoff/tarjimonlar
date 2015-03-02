@@ -346,17 +346,29 @@ class Common(Configuration):
             ),
             'output_filename': 'js/project.min.js',
         },
+        'raphael': {
+            'source_filenames': (
+                'js/raphael.js',
+            ),
+            'output_filename': 'js/raphael.min.js',
+        },
+        'morris': {
+            'source_filenames': (
+                'js/morris.js',
+            ),
+            'output_filename': 'js/morris.min.js',
+        },
         'home': {
             'source_filenames': (
                 'js/home.js',
             ),
             'output_filename': 'js/home.min.js',
         },
-        'raphael': {
+        'daily_comments': {
             'source_filenames': (
-                'js/raphael.js',
+                'js/daily_comments.js',
             ),
-            'output_filename': 'js/raphael.min.js',
+            'output_filename': 'js/daily_comments.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
