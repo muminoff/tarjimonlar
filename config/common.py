@@ -302,6 +302,12 @@ class Common(Configuration):
             ),
             'output_filename': 'css/bootstrap.min.css',
         },
+        'chart': {
+            'source_filenames': (
+                'css/chart.css',
+            ),
+            'output_filename': 'css/chart.min.css',
+        },
     }
     PIPELINE_JS = {
         'modernizr': {
@@ -345,6 +351,12 @@ class Common(Configuration):
                 'js/home.js',
             ),
             'output_filename': 'js/home.min.js',
+        },
+        'raphael': {
+            'source_filenames': (
+                'js/raphael.js',
+            ),
+            'output_filename': 'js/raphael.min.js',
         },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
