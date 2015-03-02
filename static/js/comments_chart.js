@@ -1296,59 +1296,59 @@
             element: 'monthly_comments',
             data: [
               
-              { day: 'март, 2013 йил', num_comments: 201 },
+              { day: 'Март, 2013 йил', num_comments: 201 },
               
-              { day: 'апрель, 2013 йил', num_comments: 239 },
+              { day: 'Апрель, 2013 йил', num_comments: 239 },
               
-              { day: 'май, 2013 йил', num_comments: 446 },
+              { day: 'Май, 2013 йил', num_comments: 446 },
               
-              { day: 'июнь, 2013 йил', num_comments: 570 },
+              { day: 'Июнь, 2013 йил', num_comments: 570 },
               
-              { day: 'июль, 2013 йил', num_comments: 621 },
+              { day: 'Июль, 2013 йил', num_comments: 621 },
               
-              { day: 'август, 2013 йил', num_comments: 1387 },
+              { day: 'Август, 2013 йил', num_comments: 1387 },
               
-              { day: 'сентябрь, 2013 йил', num_comments: 1260 },
+              { day: 'Сентябрь, 2013 йил', num_comments: 1260 },
               
-              { day: 'октябрь, 2013 йил', num_comments: 2141 },
+              { day: 'Октябрь, 2013 йил', num_comments: 2141 },
               
-              { day: 'ноябрь, 2013 йил', num_comments: 1573 },
+              { day: 'Ноябрь, 2013 йил', num_comments: 1573 },
               
-              { day: 'декабрь, 2013 йил', num_comments: 1954 },
+              { day: 'Декабрь, 2013 йил', num_comments: 1954 },
               
-              { day: 'январь, 2014 йил', num_comments: 2993 },
+              { day: 'Январь, 2014 йил', num_comments: 2993 },
               
-              { day: 'февраль, 2014 йил', num_comments: 1347 },
+              { day: 'Февраль, 2014 йил', num_comments: 1347 },
               
-              { day: 'март, 2014 йил', num_comments: 451 },
+              { day: 'Март, 2014 йил', num_comments: 451 },
               
-              { day: 'апрель, 2014 йил', num_comments: 227 },
+              { day: 'Апрель, 2014 йил', num_comments: 227 },
               
-              { day: 'май, 2014 йил', num_comments: 243 },
+              { day: 'Май, 2014 йил', num_comments: 243 },
               
-              { day: 'июнь, 2014 йил', num_comments: 458 },
+              { day: 'Июнь, 2014 йил', num_comments: 458 },
               
-              { day: 'июль, 2014 йил', num_comments: 347 },
+              { day: 'Июль, 2014 йил', num_comments: 347 },
               
-              { day: 'август, 2014 йил', num_comments: 3263 },
+              { day: 'Август, 2014 йил', num_comments: 3263 },
               
-              { day: 'сентябрь, 2014 йил', num_comments: 3095 },
+              { day: 'Сентябрь, 2014 йил', num_comments: 3095 },
               
-              { day: 'октябрь, 2014 йил', num_comments: 2735 },
+              { day: 'Октябрь, 2014 йил', num_comments: 2735 },
               
-              { day: 'ноябрь, 2014 йил', num_comments: 2912 },
+              { day: 'Ноябрь, 2014 йил', num_comments: 2912 },
               
-              { day: 'декабрь, 2014 йил', num_comments: 710 },
+              { day: 'Декабрь, 2014 йил', num_comments: 710 },
               
-              { day: 'январь, 2015 йил', num_comments: 878 },
+              { day: 'Январь, 2015 йил', num_comments: 878 },
               
-              { day: 'февраль, 2015 йил', num_comments: 1757 },
+              { day: 'Февраль, 2015 йил', num_comments: 1757 },
               
         ],
         xkey: 'day',
         ykeys: ['num_comments'],
         labels: ['Шарҳлар'],
-        barColors: ['#2c3e50'],
+        barColors: ['#16a085'],
         resize: true,
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,
@@ -1368,7 +1368,7 @@
           {label: '2015 йилда', value: 2635 },
           
         ],
-        colors: ['#2c3e50'],
+        colors: ['#2c3e50', '#c0392b', '#2980b9'],
         formatter: function(y, data) { return y + ' та шарҳ' },
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,

@@ -1142,59 +1142,59 @@
             element: 'monthly_posts',
             data: [
               
-              { day: 'март, 2013 йил', num_posts: 33 },
+              { day: 'Март, 2013 йил', num_posts: 33 },
               
-              { day: 'апрель, 2013 йил', num_posts: 23 },
+              { day: 'Апрель, 2013 йил', num_posts: 23 },
               
-              { day: 'май, 2013 йил', num_posts: 28 },
+              { day: 'Май, 2013 йил', num_posts: 28 },
               
-              { day: 'июнь, 2013 йил', num_posts: 53 },
+              { day: 'Июнь, 2013 йил', num_posts: 53 },
               
-              { day: 'июль, 2013 йил', num_posts: 44 },
+              { day: 'Июль, 2013 йил', num_posts: 44 },
               
-              { day: 'август, 2013 йил', num_posts: 82 },
+              { day: 'Август, 2013 йил', num_posts: 82 },
               
-              { day: 'сентябрь, 2013 йил', num_posts: 101 },
+              { day: 'Сентябрь, 2013 йил', num_posts: 101 },
               
-              { day: 'октябрь, 2013 йил', num_posts: 141 },
+              { day: 'Октябрь, 2013 йил', num_posts: 141 },
               
-              { day: 'ноябрь, 2013 йил', num_posts: 113 },
+              { day: 'Ноябрь, 2013 йил', num_posts: 113 },
               
-              { day: 'декабрь, 2013 йил', num_posts: 147 },
+              { day: 'Декабрь, 2013 йил', num_posts: 147 },
               
-              { day: 'январь, 2014 йил', num_posts: 172 },
+              { day: 'Январь, 2014 йил', num_posts: 172 },
               
-              { day: 'февраль, 2014 йил', num_posts: 120 },
+              { day: 'Февраль, 2014 йил', num_posts: 120 },
               
-              { day: 'март, 2014 йил', num_posts: 76 },
+              { day: 'Март, 2014 йил', num_posts: 76 },
               
-              { day: 'апрель, 2014 йил', num_posts: 40 },
+              { day: 'Апрель, 2014 йил', num_posts: 40 },
               
-              { day: 'май, 2014 йил', num_posts: 40 },
+              { day: 'Май, 2014 йил', num_posts: 40 },
               
-              { day: 'июнь, 2014 йил', num_posts: 55 },
+              { day: 'Июнь, 2014 йил', num_posts: 55 },
               
-              { day: 'июль, 2014 йил', num_posts: 30 },
+              { day: 'Июль, 2014 йил', num_posts: 30 },
               
-              { day: 'август, 2014 йил', num_posts: 159 },
+              { day: 'Август, 2014 йил', num_posts: 159 },
               
-              { day: 'сентябрь, 2014 йил', num_posts: 168 },
+              { day: 'Сентябрь, 2014 йил', num_posts: 168 },
               
-              { day: 'октябрь, 2014 йил', num_posts: 169 },
+              { day: 'Октябрь, 2014 йил', num_posts: 169 },
               
-              { day: 'ноябрь, 2014 йил', num_posts: 165 },
+              { day: 'Ноябрь, 2014 йил', num_posts: 165 },
               
-              { day: 'декабрь, 2014 йил', num_posts: 48 },
+              { day: 'Декабрь, 2014 йил', num_posts: 48 },
               
-              { day: 'январь, 2015 йил', num_posts: 40 },
+              { day: 'Январь, 2015 йил', num_posts: 40 },
               
-              { day: 'февраль, 2015 йил', num_posts: 125 },
+              { day: 'Февраль, 2015 йил', num_posts: 125 },
               
         ],
         xkey: 'day',
         ykeys: ['num_posts'],
         labels: ['Постлар'],
-        barColors: ['#2c3e50'],
+        barColors: ['#16a085'],
         resize: true,
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,
@@ -1214,7 +1214,7 @@
           {label: '2015 йилда', value: 165 },
           
         ],
-        colors: ['#2c3e50'],
+        colors: ['#2c3e50', '#c0392b', '#2980b9'],
         formatter: function(y, data) { return y + ' та пост' },
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,

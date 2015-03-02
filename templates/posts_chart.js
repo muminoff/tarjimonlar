@@ -24,13 +24,13 @@
             element: 'monthly_posts',
             data: [
               {% for post in monthly_posts %}
-              { day: '{{ post.month|date:"m-Y"|uzbekify_monthyear }}', num_posts: {{ post.num_posts }} },
+              { day: '{{ post.month|date:"m-Y"|uzbekify_monthyear|capfirst }}', num_posts: {{ post.num_posts }} },
               {% endfor %}
         ],
         xkey: 'day',
         ykeys: ['num_posts'],
         labels: ['Постлар'],
-        barColors: ['#2c3e50'],
+        barColors: ['#16a085'],
         resize: true,
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,
@@ -46,7 +46,7 @@
           {label: '{{ post.year|date:"Y" }} йилда', value: {{ post.num_posts }} },
           {% endfor %}
         ],
-        colors: ['#2c3e50'],
+        colors: ['#2c3e50', '#c0392b', '#2980b9'],
         formatter: function(y, data) { return y + ' та пост' },
         gridTextColor: '#7f8c8d',
         gridTextSize: 10,
