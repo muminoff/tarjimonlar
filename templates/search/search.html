@@ -27,7 +27,7 @@
 <hr/>
 <div class="row">
   <h5>Натижалар</h5>
-  <p>Сўровингиз бўйича {{ page.object_list|length }} та натижа топилди.</p>
+  <p>«{{ request.GET.q }}» сўрови бўйича {{ page.object_list|length }} та натижа топилди.</p>
   <table class="table">
     <tbody>
       {% for result in page.object_list %}
