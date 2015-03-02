@@ -1,8 +1,78 @@
 {% extends "base.html" %}
 {% block content %}
+{% load pipeline %}
+{% stylesheet 'chart' %}
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+{% javascript 'raphael' %}
+<script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <div class="row">
     <div class="col-md-12">
       Гуруҳдаги жами шарҳлар: {{ total_comments }}.
+      <h5>Кунлик статистика</h5>
+      <div id="daily_comments" style="height: 250px;"></div>
+    </div>
+    <div class="col-md-8">
+        <h5>Ойлик статистика</h5>
+        <div id="monthly_comments" style="height: 250px;"></div>
+    </div>
+    <div class="col-md-4">
+        <h5>Йиллик статистика</h5>
+        <div id="yearly_comments" style="height: 250px;"></div>
     </div>
 </div>
+<script type="text/javascript">
+  new Morris.Bar({
+      element: 'daily_comments',
+      data: [
+        {% for comment in daily_comments %}
+        { day: '{{ comment.day|date:"d-m-Y" }}', num_comments: {{ comment.num_comments }} },
+        {% endfor %}
+  ],
+  xkey: 'day',
+  ykeys: ['num_comments'],
+  labels: ['Шарҳлар'],
+  barColors: ['#2c3e50'],
+  grid: true,
+  axes: true,
+  resize: true,
+  gridTextColor: '#7f8c8d',
+  gridTextSize: 10,
+  gridTextFamily: 'Noto Serif',
+  barRatio: 0.4,
+  xLabelAngle: 45,
+  hideHover: 'auto'
+  });
+  new Morris.Bar({
+      element: 'monthly_comments',
+      data: [
+        {% for comment in monthly_comments %}
+        { day: '{{ comment.month|date:"m-Y" }}', num_comments: {{ comment.num_comments }} },
+        {% endfor %}
+  ],
+  xkey: 'day',
+  ykeys: ['num_comments'],
+  labels: ['Шарҳлар'],
+  barColors: ['#2c3e50'],
+  resize: true,
+  gridTextColor: '#7f8c8d',
+  gridTextSize: 10,
+  gridTextFamily: 'Noto Serif',
+  barRatio: 0.4,
+  xLabelAngle: 45,
+  hideHover: 'auto'
+  });
+  Morris.Donut({
+  element: 'yearly_comments',
+  data: [
+    {% for comment in yearly_comments %}
+    {label: '{{ comment.year|date:"Y" }} йил', value: {{ comment.num_comments }} },
+    {% endfor %}
+  ],
+  colors: ['#2c3e50'],
+  formatter: function(y, data) { return y + ' та шарҳ' },
+  gridTextColor: '#7f8c8d',
+  gridTextSize: 10,
+  gridTextFamily: 'Noto Serif'
+});
+</script>
 {% endblock content %}
