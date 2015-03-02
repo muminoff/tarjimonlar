@@ -4,9 +4,13 @@ from django.conf import settings
 from core.models import Member, Post, Comment
 from django.db.models import Count
 from django.template.loader import render_to_string
+from django.shortcuts import render_to_response
+from django.http import HttpResponse
+from django.template import Context, loader
+
 
 class Command(BaseCommand):
-    help = 'Show group feed'
+    help = 'Render'
 
     def handle(self, *args, **options):
         daily_comments = Comment.objects.extra({
@@ -24,7 +28,9 @@ class Command(BaseCommand):
             "monthly_comments": monthly_comments,
             "yearly_comments": yearly_comments,
         }
-        template_file = open(settings.STATICFILES_DIRS[0] + '/js/daily_comments.js', 'w')
-        render_to_string(template_file, context)
+        template_file = settings.STATICFILES_DIRS[0] + "/js/daily_comments.js"
+        template = loader.get_template(template_file)
+        render_to_response(template_file, context)
+
 
 
