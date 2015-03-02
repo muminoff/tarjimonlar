@@ -28,9 +28,10 @@ class Command(BaseCommand):
             "monthly_comments": monthly_comments,
             "yearly_comments": yearly_comments,
         }
-        template_file = settings.STATICFILES_DIRS[0] + "/js/daily_comments.js"
+        template_file = "daily_comments.js"
         template = loader.get_template(template_file)
-        render_to_response(template_file, context)
+        print render_to_response(template_file, context).content
+
 
 
 
