@@ -1,17 +1,21 @@
 from django.shortcuts import render
 from django.db.models import Count, Sum
-from django.views.decorators.cache import cache_page
+from django.views.decorators.cache import cache_page, never_cache
 from core.models import Member, Post, Comment
 from itertools import chain
 from random import sample
 
 
+@never_cache
 def index_page(request):
-    top_15_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:50]
-    top_15_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:50]
+    top_15_posters = Member.objects.annotate(
+            num_posts=Count('post')).order_by('-num_posts')[:50]
+    top_15_commentors = Member.objects.annotate(
+            num_comments=Count('comment')).order_by('-num_comments')[:50]
 
     context = {
-        "hall_of_fame": sample(list(chain(top_15_posters, top_15_commentors)), 100),
+        "hall_of_fame": sample(
+            list(chain(top_15_posters, top_15_commentors)), 100),
     }
     return render(request, 'home.html', context)
 
@@ -19,10 +23,14 @@ def index_page(request):
 @cache_page(60 * 5)
 def members_page(request):
     total_members = Member.objects.count()
-    top_posters = Member.objects.annotate(num_posts=Count('post')).order_by('-num_posts')[:10]
-    top_commentors = Member.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10]
-    top_liked_posters = Post.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
-    top_liked_commentors = Comment.objects.annotate(creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+    top_posters = Member.objects.annotate(
+            num_posts=Count('post')).order_by('-num_posts')[:10]
+    top_commentors = Member.objects.annotate(
+            num_comments=Count('comment')).order_by('-num_comments')[:10]
+    top_liked_posters = Post.objects.annotate(
+            creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+    top_liked_commentors = Comment.objects.annotate(
+            creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
 
     context = {
         "total_members": total_members,
@@ -38,33 +46,11 @@ def members_page(request):
 
 @cache_page(60 * 5)
 def posts_page(request):
-    # qs = (Post.objects.all().
-    #       extra(select={
-    #           'day': 'extract(day from created_time)',
-    #           'month': 'extract(month from created_time)',
-    #           'year': 'extract(year from created_time)',
-    #       }).
-    #       values('month', 'year', 'day').
-    #       annotate(count_posts=Count('created_time')))
-    # qs = qs.order_by('created_time')
-    # total = 0
-    # json_values = []
-    # for item in qs:
-    #     total += item['count_posts']
-    #     json_values.append(
-    #         {
-    #             'day': item['day'],
-    #             'month': item['month'],
-    #             'year': item['year'],
-    #             'count_posts': total
-    #         }
-    #     )
 
     context = {
         "total_posts": Post.objects.count(),
         "top_liked_posts": Post.objects.order_by('-likes')[:10],
         "top_commented_posts": Post.objects.annotate(num_comments=Count('comment')).order_by('-num_comments')[:10],
-        # "jsondata": json_values,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)
@@ -72,8 +58,20 @@ def posts_page(request):
 
 @cache_page(60 * 5)
 def comments_page(request):
+    daily_comments = Comment.objects.extra({
+        "day": "date_trunc('day', created_time)"
+        }).values('day').order_by().annotate(num_comments=Count('id'))
+    monthly_comments = Comment.objects.extra({
+        "month": "date_trunc('month', created_time)"
+        }).values('month').order_by().annotate(num_comments=Count('id'))
+    yearly_comments = Comment.objects.extra({
+        "year": "date_trunc('year', created_time)"
+        }).values('year').order_by().annotate(num_comments=Count('id'))
     context = {
         "total_comments": Comment.objects.count(),
+        "daily_comments": daily_comments,
+        "monthly_comments": monthly_comments,
+        "yearly_comments": yearly_comments,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/comments.html', context)
