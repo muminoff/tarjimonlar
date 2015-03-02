@@ -1,4 +1,3 @@
-<script type="text/javascript">
         new Morris.Bar({
             element: 'daily_comments',
             data: [
@@ -52,4 +51,3 @@
         gridTextSize: 10,
         gridTextFamily: 'Noto Serif'
       });
-</script>
