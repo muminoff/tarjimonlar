@@ -2,8 +2,8 @@
 
 set -e
 
-rm static/js/comment_chart.js
-rm static/js/posts_chart.js
+rm ./static/js/comment_chart.js
+rm ./static/js/posts_chart.js
 
 git pull origin develop
 killall gunicorn
