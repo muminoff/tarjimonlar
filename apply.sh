@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+# set -e
 
 rm ./static/js/comments_chart.js
 rm ./static/js/posts_chart.js
