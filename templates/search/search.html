@@ -23,16 +23,14 @@
     </div>
 </div>
 {% if query %}
-<br/>
 <hr/>
 <div class="row">
   {% if page.object_list %}
-  <h5>Натижалар</h5>
-  <p>«{{ request.GET.q }}» сўрови бўйича {{ page.object_list|length }} та натижа топилди.</p>
+  <p>«{{ request.GET.q }}» сўрови бўйича {{ paginator.count }} та натижа топилди.</p>
   {% else %}
   <p>«{{ request.GET.q }}» сўрови бўйича маълумот топилмади.</p>
   {% endif %}
-  <table class="table">
+  <table class="table table-condensed">
     <tbody>
       {% for result in page.object_list %}
       <tr>
@@ -54,4 +52,18 @@
   </table>
 </div>
 {% endif %}
+<div class="header">
+    {% if page.has_previous or page.has_next %}
+    {% if page.has_previous %}
+    <a href="?q={{ query }}&amp;page={{ page.previous_page_number }}" class="btn btn-xs btn-info pull-left">Аввалгилари</a>
+    {% else %}
+    {% endif %}
+    {% if page.has_next %}
+    <a href="?q={{ query }}&amp;page={{ page.next_page_number }}" class="btn btn-xs btn-info pull-right">Кейингилари</a>
+    {% else %}
+    {% endif %}
+    {% endif %}
+</div>
+<br/>
+<br/>
 {% endblock %}

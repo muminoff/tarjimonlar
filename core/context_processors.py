@@ -10,7 +10,7 @@ def navbar(request):
         ('members_page', {'title': 'Гуруҳ аъзолари', 'icon': 'user', 'submenu': False}),
         ('posts_page', {'title': 'Постлар', 'icon': 'post', 'submenu': False}),
         ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment', 'submenu': False}),
-        ('haystack_search', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
+        ('search_page', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
         ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info', 'submenu': False}),
         ])
 

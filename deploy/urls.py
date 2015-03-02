@@ -5,9 +5,13 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+from core.views import TarjimonSearchView
+from haystack.query import SearchQuerySet
 
 from django.contrib import admin
 admin.autodiscover()
+
+qs = SearchQuerySet()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
@@ -17,7 +21,8 @@ urlpatterns = patterns('',
     url(r'^members/', 'core.views.members_page', name='members_page'),
     url(r'^posts/', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/', 'core.views.comments_page', name='comments_page'),
-    url(r'^search/', include('haystack.urls')),
+    # url(r'^search/', include('haystack.urls')),
+    url(r'^search/$', TarjimonSearchView(searchqueryset=qs), name='search_page'),
     url(r'^about/', 'core.views.about_page', name='about_page'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

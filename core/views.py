@@ -4,6 +4,8 @@ from django.views.decorators.cache import cache_page, never_cache
 from core.models import Member, Post, Comment
 from itertools import chain
 from random import sample
+from haystack.query import SearchQuerySet
+from haystack.views import SearchView
 
 
 @never_cache
@@ -65,12 +67,17 @@ def comments_page(request):
     }
     return render(request, 'pages/comments.html', context)
 
-
 def search_page(request):
     context = {
         "next": request.GET.get('next')
     }
     return render(request, 'pages/search.html', context)
+
+class TarjimonSearchView(SearchView):
+    
+    def get_context_data(self, *args, **kwargs):
+        context = super(TarjimonSearchView, self).get_context_data(*args, **kwargs)
+        return context
 
 
 def about_page(request):
