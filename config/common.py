@@ -39,10 +39,6 @@ class Common(Configuration):
     THIRD_PARTY_APPS = (
         'crispy_forms',  # Form layouts
         'avatar',  # for user avatars
-        'allauth',  # registration
-        'allauth.account',  # registration
-        'allauth.socialaccount',  # registration
-        'allauth.socialaccount.providers.facebook',  # registration
         'pipeline', # minimize assets
         'haystack',
     )
@@ -144,7 +140,7 @@ class Common(Configuration):
     LANGUAGE_CODE = 'uz-uz'
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#site-id
-    SITE_ID = 1
+    SITE_ID = 2
 
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#use-i18n
     USE_I18N = True
@@ -160,8 +156,6 @@ class Common(Configuration):
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-context-processors
     TEMPLATE_CONTEXT_PROCESSORS = (
         'django.contrib.auth.context_processors.auth',
-        'allauth.account.context_processors.account',
-        'allauth.socialaccount.context_processors.socialaccount',
         'django.core.context_processors.debug',
         'django.core.context_processors.i18n',
         'django.core.context_processors.media',
@@ -226,7 +220,6 @@ class Common(Configuration):
     # AUTHENTICATION CONFIGURATION
     AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
-        'allauth.account.auth_backends.AuthenticationBackend',
     )
 
     # Some really nice defaults

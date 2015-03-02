@@ -33,6 +33,7 @@
               </ul>
               {% if request.user.is_authenticated %}
               <ul class="nav navbar-nav navbar-right">
+                {{ request.user.username }}
                   <li><a href="#">Чиқиш</a></li>
               </ul>
               {% endif %}

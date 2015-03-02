@@ -26,8 +26,12 @@
 <br/>
 <hr/>
 <div class="row">
+  {% if page.object_list %}
   <h5>Натижалар</h5>
   <p>«{{ request.GET.q }}» сўрови бўйича {{ page.object_list|length }} та натижа топилди.</p>
+  {% else %}
+  <p>«{{ request.GET.q }}» сўрови бўйича маълумот топилмади.</p>
+  {% endif %}
   <table class="table">
     <tbody>
       {% for result in page.object_list %}
