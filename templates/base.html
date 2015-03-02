@@ -41,8 +41,8 @@
           {% block content %}{% endblock %}
       </div>
 
-      {% if request.path == '/comments/' %}
       {% javascript 'jquery' %}
+      {% if request.path == '/comments/' %}
       {% stylesheet 'chart' %}
       {% javascript 'raphael' %}
       {% javascript 'morris' %}
