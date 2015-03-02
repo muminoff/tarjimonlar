@@ -12,7 +12,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^users/', include("users.urls", namespace="users")),
-    url(r'^accounts/', include('allauth.urls')),
     url(r'^avatar/', include('avatar.urls')),
     url(r'^$', 'core.views.index_page', name='index_page'),
     url(r'^members/', 'core.views.members_page', name='members_page'),
