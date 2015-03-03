@@ -12,9 +12,10 @@ env.key_filename = '/home/sardor/digkey.pem'
 
 
 GITHUB = 'git@github.com:muminoff/tarjimonlar.git'
-ROOT = '/home/ubuntu'
+ROOT = '/home/ubuntu/'
 CODE_ROOT = '%s/tarjimonlar' % ROOT
 LOCAL_SETTINGS = '%s/tarjimonlar/config/production.py' % CODE_ROOT
+GUNICORN = '/usr/local/bin/gunicorn'
 
 
 @task
@@ -58,4 +59,4 @@ def clear_cache():
 def restart():
     with cd(CODE_ROOT):
         run('killall gunicorn')
-        run('nohup gunicorn deploy.wsgi:application --workers 4 --worker-class gevent &')
+        run('nohup %s deploy.wsgi:application --workers 4 --worker-class gevent &' % GUNICORN)
