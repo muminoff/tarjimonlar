@@ -13,7 +13,8 @@ killall gunicorn
 
 rm -rf ../staticfiles
 
-./manage.py collectstatic --noinput
+./manage.py collectstatic --noinput >/dev/null
 
 nohup gunicorn deploy.wsgi:application --workers 4 --worker-class gevent &
-redis-cli -n 1 flushdb
+echo "Cleaning cache"
+redis-cli -n 1 flushdb >/dev/null
