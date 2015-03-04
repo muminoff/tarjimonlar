@@ -76,6 +76,7 @@ def search_page(request):
     }
     return render(request, 'pages/search.html', context)
 
+@cache_page(60 * 5)
 class TarjimonSearchView(SearchView):
     
     def get_context_data(self, *args, **kwargs):
