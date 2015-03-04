@@ -43,20 +43,6 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.id
-
-#     def has_emoticons(self):
-#         happy_emoticons = [
-#                 ':-)',':)',':D',':o)',':]',
-#                 ':3',':c)',':>','=]','8)',
-#                 '=)',':}',':^)',':っ)'
-#                 ]
-#         laughing_emoticons = [
-#                 ':-D','8-D','8D','x-D','xD',
-#                 'X-D','XD','=-D','=D','=-3',
-#                 '=3','B^D'
-#                 ]
-#         return self.message in happy_emoticons + laughing_emoticons
-
     def get_comments(self):
         return Comment.objects.filter(post=self)
 
