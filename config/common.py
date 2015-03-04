@@ -14,6 +14,7 @@ import os
 from os.path import join, dirname
 
 from configurations import Configuration, values
+from getenv import env
 
 BASE_DIR = dirname(dirname(__file__))
 

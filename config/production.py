@@ -9,8 +9,6 @@ from configurations import values
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings
 
 from .common import Common
-from getenv import env
-
 
 class Production(Common):
 
