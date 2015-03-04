@@ -374,9 +374,9 @@ class Common(Configuration):
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
     PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
     # STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-    PIPELINE_VERSIONING = 'pipeline.versioning.hash.MD5Versioning'
+    # PIPELINE_VERSIONING = 'pipeline.versioning.hash.MD5Versioning'
     PIPELINE_ENABLED = True
-    PIPELINE_AUTO = False
+    PIPELINE_AUTO = True
     PIPELINE_VERSION = True
     AWS_ACCESS_KEY_ID = env('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = env('AWS_SECRET_ACCESS_KEY')
