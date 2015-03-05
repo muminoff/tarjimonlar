@@ -42,6 +42,7 @@ class Common(Configuration):
         'avatar',  # for user avatars
         'pipeline', # minimize assets
         'haystack',
+        'django_facebook',
     )
 
     # Apps specific for this project go here.
@@ -113,7 +114,7 @@ class Common(Configuration):
 
     # DATABASE CONFIGURATION
     # See: https://docs.djangoproject.com/en/dev/ref/settings/#databases
-    DATABASES = values.DatabaseURLValue('postgres://tarjimonlar:tarjimonlar@localhost/tarjimonlar')
+    DATABASES = values.DatabaseURLValue('postgres://muminoff@localhost/tarjimonlar')
     # DATABASES = values.DatabaseURLValue('sqlite:///master.db')
     # END DATABASE CONFIGURATION
 
@@ -163,6 +164,7 @@ class Common(Configuration):
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
         'django.core.context_processors.request',
+        'django_facebook.context_processors.facebook',
         'core.context_processors.navbar',
         # Your stuff: custom template context processers go here
     )
@@ -220,7 +222,11 @@ class Common(Configuration):
     # AUTHENTICATION CONFIGURATION
     AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
+        'django_facevook.auth.backends.FacebookBackend',
     )
+
+    AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
+    AUTH_PROFILE_MODEL = 'django_facebook.FacebookProfile'
 
     # SLUGLIFIER
     AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
@@ -383,4 +389,5 @@ class Common(Configuration):
                 },
             }
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
-
+    FACEBOOK_APP_ID = env('FACEBOOK_APP_ID')
+    FACEBOOK_APP_SECRET = env('FACEBOOK_APP_SECRET')
