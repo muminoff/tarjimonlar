@@ -87,5 +87,6 @@ def about_page(request):
 def go_to_link(request, hashid):
     hashids = Hashids(salt=settings.SECRET_KEY)
     realid = hashids.decode(hashid)[0]
+    print realid
     url = 'https://fb.com/{objid}'.format(objid=realid)
     return HttpResponseRedirect(url)
