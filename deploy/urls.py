@@ -22,7 +22,7 @@ urlpatterns = patterns('',
     url(r'^comments/', 'core.views.comments_page', name='comments_page'),
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs), name='search_page'),
     url(r'^about/', 'core.views.about_page', name='about_page'),
-    url(r'^goto/(?P<hashid>.+)/', 'core.views.go_to_link', name='go_to_link'),
+    url(r'^member/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
