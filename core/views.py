@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
+from django.conf import settings
 from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page, never_cache
 from core.models import Member, Post, Comment
@@ -84,7 +85,7 @@ def about_page(request):
     return render(request, 'pages/about.html', context)
 
 def go_to_link(request, hashid):
-    hashids = Hashids(salt=settings.SECRET_KEY)
-    realid = hashids.decode(hashid)
+    hashids = Hashids(salt='tarjimonlar')
+    realid = hashids.decode(hashid)[0]
     url = 'https://fb.com/{objid}'.format(objid=realid)
     return HttpResponseRedirect(url)
