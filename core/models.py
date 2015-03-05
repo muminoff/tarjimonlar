@@ -59,7 +59,7 @@ class Post(models.Model):
         return 'post'
 
     def get_hashid(self):
-        hashids = Hashids(salt='tarjimonlar')
+        hashids = Hashids(salt=settings.SECRET_KEY)
         return hashids.encode(int(self.id.split('_')[1]))
 
     class Meta:
