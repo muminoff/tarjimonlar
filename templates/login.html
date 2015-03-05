@@ -18,7 +18,6 @@
         {% stylesheet 'bootstrap' %}
         {% stylesheet 'flat' %}
         {% stylesheet 'project' %}
-        <link rel="stylesheet" href="{{ STATIC_URL }}django_facebook/css/facebook.css" type="text/css" media="all" />
         {% include 'django_facebook/_facebook_js.html' %}
         <noscript>
             {% stylesheet 'fallback' %}
@@ -53,7 +52,7 @@
                 <input type="hidden" value="{{ request.path }}" name="register_next" />
                 <input type="hidden" value="{{ request.path }}" name="error_next" />
                 {% csrf_token %}
-                <input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png" />
+                <input onclick="F.connect(this.parentNode); return false;" type="image" src="https://s3.amazonaws.com/tarjimonlar/django_facebook/images/facebook_login.png" />
             </form>
             {% endblock %}
         </div>

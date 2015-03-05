@@ -22,7 +22,7 @@ def login_page(request):
         "hall_of_fame": sample(
             list(chain(top_15_posters, top_15_commentors)), 100),
     }
-    return render(request, 'home.html', context)
+    return render(request, 'login.html', context)
 
 
 @cache_page(60 * 5)
