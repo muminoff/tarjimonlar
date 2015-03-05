@@ -9,6 +9,7 @@ from configurations import values
 # See: http://django-storages.readthedocs.org/en/latest/backends/amazon-S3.html#settings
 
 from .common import Common
+from getenv import env
 
 class Production(Common):
 
@@ -21,7 +22,7 @@ class Production(Common):
     # END INSTALLED_APPS
 
     # SECRET KEY
-    SECRET_KEY = 'qwr1235asgast'
+    SECRET_KEY = env('SECRET_KEY')
     # END SECRET KEY
 
     # django-secure

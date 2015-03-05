@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect
 from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page, never_cache
 from core.models import Member, Post, Comment
@@ -6,6 +7,7 @@ from itertools import chain
 from random import sample
 from haystack.query import SearchQuerySet
 from haystack.views import SearchView
+from hashids import Hashids
 
 
 @never_cache
@@ -70,12 +72,6 @@ def comments_page(request):
     }
     return render(request, 'pages/comments.html', context)
 
-def search_page(request):
-    context = {
-        "next": request.GET.get('next')
-    }
-    return render(request, 'pages/search.html', context)
-
 class TarjimonSearchView(SearchView):
     
     def get_context_data(self, *args, **kwargs):
@@ -86,3 +82,9 @@ class TarjimonSearchView(SearchView):
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)
+
+def go_to_link(request, hashid):
+    hashids = Hashids(salt=settings.SECRET_KEY)
+    realid = hashids.decode(hashid)
+    url = 'https://fb.com/{objid}'.format(objid=realid)
+    return HttpResponseRedirect(url)

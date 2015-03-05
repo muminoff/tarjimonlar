@@ -4,4 +4,4 @@ from bitmapist import setup_redis, delete_all_events,\
         DayEvents, HourEvents, BitOpAnd, BitOpOr
 
 
-def user_loggedin_event(
+def user_loggedin_event(userid

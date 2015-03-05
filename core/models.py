@@ -1,4 +1,6 @@
 from django.db import models
+from django.conf import settings
+from hashids import Hashids
 
 
 class Member(models.Model):
@@ -22,6 +24,10 @@ class Member(models.Model):
 
     def get_comments(self):
         return Comment.objects.filter(creator=self)
+
+    def get_hashid(self):
+        hashids = Hashids(salt=settings.SECRET_KEY)
+        return hashids.encode(int(self.id))
 
     def get_texts_from_posts_and_comments(self):
         posts = [''.join(p.message) for p in Post.objects.filter(creator=self)]
@@ -51,6 +57,10 @@ class Post(models.Model):
 
     def get_type(self):
         return 'post'
+
+    def get_hashid(self):
+        hashids = Hashids(salt=settings.SECRET_KEY)
+        return hashids.encode(int(self.id))
 
     class Meta:
         db_table = 'posts'
