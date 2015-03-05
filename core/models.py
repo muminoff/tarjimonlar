@@ -60,7 +60,7 @@ class Post(models.Model):
 
     def get_hashid(self):
         hashids = Hashids(salt=settings.SECRET_KEY)
-        return hashids.encode(int(self.id))
+        return hashids.encode(int(self.id.split('_')[1]))
 
     class Meta:
         db_table = 'posts'
