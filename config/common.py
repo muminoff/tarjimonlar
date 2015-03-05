@@ -344,11 +344,11 @@ class Common(Configuration):
             ),
             'output_filename': 'js/morris.min.js',
         },
-        'home': {
+        'halloffame': {
             'source_filenames': (
-                'js/home.js',
+                'js/halloffame.js',
             ),
-            'output_filename': 'js/home.min.js',
+            'output_filename': 'js/halloffame.min.js',
         },
         'posts_chart': {
             'source_filenames': (

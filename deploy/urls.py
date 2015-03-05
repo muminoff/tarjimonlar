@@ -14,7 +14,7 @@ admin.autodiscover()
 qs = SearchQuerySet()
 
 urlpatterns = patterns('',
-    url(r'^$', 'core.views.index_page', name='index_page'),
+    url(r'^$', 'core.views.login_page', name='login_page'),
     url(r'^facts/', 'core.views.facts_page', name='facts_page'),
     url(r'^posts/', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/', 'core.views.comments_page', name='comments_page'),

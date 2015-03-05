@@ -1,0 +1,65 @@
+{% load staticfiles i18n %}
+{% load pipeline %}
+<!doctype html>
+<html lang="uz">
+    <head>
+        <title>{% block title %}Таржимонлар гуруҳи{% endblock title %}</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Таржимонлар гуруҳи">
+        <meta name="keywords" content="ўзбек, ўзбек тили, ўзбекча, таржима, таржимон, таржимонлар, ўзбеклар фейсбукда, бадиий китоблар, бадиий асарлар, ўзбек таржималар">
+        <meta name="robots" content="index, follow">
+        <meta name="copyright" content="Uzbek Translators">
+        <meta name="language" content="uzbek">
+        <meta name="web_author" content="@muminoff">
+        <meta name="author" content="@muminoff">
+        <meta name="rating" content="general">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" />
+        {% stylesheet 'bootstrap' %}
+        {% stylesheet 'flat' %}
+        {% stylesheet 'project' %}
+        <link rel="stylesheet" href="{{ STATIC_URL }}django_facebook/css/facebook.css" type="text/css" media="all" />
+        {% include 'django_facebook/_facebook_js.html' %}
+        <noscript>
+            {% stylesheet 'fallback' %}
+        </noscript>
+        {% javascript 'modernizr' %}
+        <!--[if lt IE 9]>
+        <link rel="stylesheet" type="text/css" href="css/fallback.css" />
+        <![endif]-->
+    </head>
+    <body>
+        <img src="{% static 'images/loading.gif' %}" style="display:none;"/>
+        <div class="container">
+            {% block content %}
+            <section class="main">
+
+            <div id="ri-grid" class="ri-grid ri-grid-size-2">
+                <img class="ri-loading-image" src="{% static 'images/loading.gif' %}"/>
+                <ul>
+                    {% for member in hall_of_fame %}
+                    <li><a href="#"><img src="https://graph.facebook.com/{{ member.id }}/picture?type=square&width=128&height=128"/></a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            </section>
+            <h5 class="group-name" align="center">Профессионал ва ҳаваскор таржимонлар</h5>
+            <!-- <span class="login-wrapper"> -->
+                <!--   <a class="btn btn-lg btn-inverse login-btn"><span class="icon-facebook"></span> Сайтга Фейсбук орқали кириш</a> -->
+                <!-- </span> -->
+            <form action="{% url 'facebook_connect' %}?facebook_login=1" method="post">
+                <input type="hidden" value="{{ request.path }}" name="next" />
+                <input type="hidden" value="{{ request.path }}" name="register_next" />
+                <input type="hidden" value="{{ request.path }}" name="error_next" />
+                {% csrf_token %}
+                <input onclick="F.connect(this.parentNode); return false;" type="image" src="{{ STATIC_URL }}django_facebook/images/facebook_login.png" />
+            </form>
+            {% endblock %}
+        </div>
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        {% javascript "jquery_gridrotator" %}
+        {% javascript "halloffame" %}
+    </body>
+</html>
