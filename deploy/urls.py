@@ -21,6 +21,8 @@ urlpatterns = patterns('',
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs), name='search_page'),
     url(r'^about/', 'core.views.about_page', name='about_page'),
     url(r'^member/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
+    url(r'^facebook/', include('django_facebook.urls')),
+    url(r'^members/', include('django_facebook.auth_urls')),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
