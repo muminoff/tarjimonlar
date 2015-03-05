@@ -16,7 +16,7 @@
                 {% for poster in top_posters %}
                 <tr>
                     <td>{{ forloop.counter }}.</td>
-                    <td><a href="https://fb.com/{{ post.get_hashid }}" target="_blank"><img src="https://graph.facebook.com/{{ poster.id }}/picture?type=square&width=32&height=32"/></a> {{ poster.name }}</td>
+                    <td><a href="https://fb.com/{{ post.creator.id }}" target="_blank"><img src="https://graph.facebook.com/{{ poster.id }}/picture?type=square&width=32&height=32"/></a> {{ poster.name }}</td>
                     <td>{{ poster.num_posts }}</td>
                 </tr>
                 {% endfor %}
