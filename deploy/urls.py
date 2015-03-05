@@ -14,8 +14,8 @@ admin.autodiscover()
 qs = SearchQuerySet()
 
 urlpatterns = patterns('',
-    url(r'^users/', include("users.urls", namespace="users")),
-    url(r'^avatar/', include('avatar.urls')),
+    # url(r'^users/', include("users.urls", namespace="users")),
+    # url(r'^avatar/', include('avatar.urls')),
     url(r'^$', 'core.views.index_page', name='index_page'),
     url(r'^facts/', 'core.views.facts_page', name='facts_page'),
     url(r'^posts/', 'core.views.posts_page', name='posts_page'),
