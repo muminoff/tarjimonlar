@@ -26,7 +26,7 @@ class Member(models.Model):
         return Comment.objects.filter(creator=self)
 
     def get_hashid(self):
-        hashids = Hashids(salt=settings.SECRET_KEY)
+        hashids = Hashids(salt='tarjimonlar')
         return hashids.encode(int(self.id))
 
     def get_texts_from_posts_and_comments(self):
@@ -59,7 +59,7 @@ class Post(models.Model):
         return 'post'
 
     def get_hashid(self):
-        hashids = Hashids(salt=settings.SECRET_KEY)
+        hashids = Hashids(salt='tarjimonlar')
         return hashids.encode(int(self.id.split('_')[1]))
 
     class Meta:
