@@ -6,7 +6,7 @@ class PostIndex(indexes.SearchIndex, indexes.Indexable):
     text = indexes.CharField(document=True, model_attr='message')
 
     created_time = indexes.DateTimeField(model_attr='created_time')
-    updated_time = models.DateTimeField(model_attr='updated_time')
+    updated_time = indexes.DateTimeField(model_attr='updated_time')
     likes = indexes.IntegerField(model_attr='likes')
 
     def get_model(self):
