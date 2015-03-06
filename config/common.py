@@ -278,7 +278,7 @@ class Common(Configuration):
         },
         'project': {
             'source_filenames': (
-                'uncss/project.css',
+                'css/project.css',
             ),
             'output_filename': 'css/project.min.css',
         },
