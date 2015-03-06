@@ -11,7 +11,7 @@ from haystack.query import SearchQuerySet
 from django.contrib import admin
 admin.autodiscover()
 
-qs = SearchQuerySet()
+qs = SearchQuerySet().order_by('-created_time', '-likes')
 
 urlpatterns = patterns('',
     url(r'^$', 'core.views.login_page', name='login_page'),
