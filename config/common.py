@@ -384,7 +384,7 @@ class Common(Configuration):
     HAYSTACK_CONNECTIONS = {
             'default': {
                 'ENGINE': 'haystack.backends.whoosh_backend.WhooshEngine',
-		'PATH': os.path.join(os.path.dirname(__file__), 'whoosh_index'),
+		'PATH': join(BASE_DIR, 'whoosh_index'),
                 },
             }
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
