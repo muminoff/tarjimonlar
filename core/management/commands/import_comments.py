@@ -3,6 +3,9 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member, Post, Comment
 from getenv import env
+from dateutil import parser as dateparser
+from datetime import datetime, timedelta
+import pytz
 
 def if_exists(*args):
     def get(obj):
@@ -23,7 +26,9 @@ class Command(BaseCommand):
         group_id = '438868872860349'
 
         new_comments = 0
-        for post in Post.objects.all():
+	one_month_ago = datetime.today() - timedelta(days=30)
+	tashkentzone = pytz.timezone("Asia/Tashkent")
+        for post in Post.objects.filter(updated_time__gte=one_month_ago.replace(tzinfo=tashkentzone)):
             comments = graph.get('{}/comments?limit=1000'.format(post.id))
 
             for c in comments['data']:

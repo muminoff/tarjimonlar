@@ -3,8 +3,9 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member, Post
 from getenv import env
-import sys
-import sys
+from dateutil import parser as dateparser
+from datetime import datetime, timedelta
+import pytz
 
 
 class Command(BaseCommand):
@@ -15,10 +16,10 @@ class Command(BaseCommand):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         likes_arr = graph.get('{}/likes?limit=1000'.format(postid))
-        print 'Getting like counts of {post_id} - {like_counts}...'.format(
-                post_id=postid,
-                like_counts=len(likes_arr['data'])
-                )
+        # print 'Getting like counts of {post_id} - {like_counts}...'.format(
+        #         post_id=postid,
+        #         like_counts=len(likes_arr['data'])
+        #         )
         return len(likes_arr['data'])
 
 
@@ -26,7 +27,9 @@ class Command(BaseCommand):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
-        feed = graph.get('{}/feed?limit=1000'.format(group_id))
+        feed = graph.get('{}/feed?limit=500'.format(group_id))
+	one_month_ago = datetime.today() - timedelta(days=30)
+	tashkentzone = pytz.timezone("Asia/Tashkent")
 
         new_posts = 0
         while 'data' in feed and feed['data'] and \
@@ -40,8 +43,10 @@ class Command(BaseCommand):
                 postutime = post['updated_time']
                 creatorid = post['from']['id']
                 creatorname = post['from']['name']
-
-                howmanylikes = self.get_likes_of_post(postid)
+		ppostctime = dateparser.parse(postctime)
+		this_post_is_new =  ppostctime.replace(tzinfo=tashkentzone) > one_month_ago.replace(tzinfo=tashkentzone)
+                if this_post_is_new:
+			howmanylikes = self.get_likes_of_post(postid)
 
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
@@ -69,7 +74,8 @@ class Command(BaseCommand):
                         new_posts -= 1
 
                 else:
-                    Post.objects.filter(id=postid).update(likes=howmanylikes)
+		    if this_post_is_new:
+                        Post.objects.filter(id=postid).update(likes=howmanylikes)
 
             newUrl = feed['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
