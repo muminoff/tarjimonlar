@@ -36,7 +36,7 @@ class Production(Common):
     SECURE_BROWSER_XSS_FILTER = values.BooleanValue(True)
     SESSION_COOKIE_SECURE = values.BooleanValue(False)
     SESSION_COOKIE_HTTPONLY = values.BooleanValue(True)
-    # SECURE_SSL_REDIRECT = values.BooleanValue(True)
+    SECURE_SSL_REDIRECT = values.BooleanValue(True)
     # end django-secure
 
     # SITE CONFIGURATION
@@ -59,11 +59,11 @@ class Production(Common):
     INSTALLED_APPS += ('collectfast', )
 
     # EMAIL
-    DEFAULT_FROM_EMAIL = values.Value('tarjimonlar <noreply@tarjimonlar.herokuapp.com>')
-    EMAIL_HOST = values.Value('smtp.sendgrid.com')
-    EMAIL_HOST_PASSWORD = 'qwrqrw12'
-    EMAIL_HOST_USER = 'qwrqwr'
-    EMAIL_PORT = values.IntegerValue(587, environ_prefix="", environ_name="EMAIL_PORT")
+    DEFAULT_FROM_EMAIL = values.Value('Tarjimonlar <dev@tarjimonlar.org>')
+    EMAIL_HOST = values.Value('smtp.yandex.com')
+    EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+    EMAIL_HOST_USER = 'dev@tarjimonlar.org'
+    EMAIL_PORT = values.IntegerValue(465, environ_prefix="", environ_name="EMAIL_PORT")
     EMAIL_SUBJECT_PREFIX = values.Value('[tarjimonlar] ', environ_name="EMAIL_SUBJECT_PREFIX")
     EMAIL_USE_TLS = True
     SERVER_EMAIL = EMAIL_HOST_USER
