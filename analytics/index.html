@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello ZingChart World</title>
+<script src="http://cdn.zingchart.com/zingchart.min.js"></script>
+<script>
+var chartData={
+  "type": "area",
+  "series": [
+    { "values": [35, 42, 67, 89, 25, 34, 67, 85 ] },
+    { "values": [28, 57, 43, 56, 78, 99, 67, 28 ] }
+  ]
+};
+window.onload=function(){
+  zingchart.render({
+    id:'chartDiv',
+    height:400,
+    width:600,
+    data:chartData
+  });
+};
+</script>
+</head>
+<body>
+<div id='chartDiv'></div>
+</body>
+</html>
