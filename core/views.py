@@ -11,7 +11,7 @@ from haystack.views import SearchView
 from hashids import Hashids
 
 
-@never_cache
+@cache_page(60 * 5)
 def login_page(request):
     top_15_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:50]
