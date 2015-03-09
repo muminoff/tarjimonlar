@@ -99,3 +99,4 @@ media
 .DS_Store
 nohup.out
 staticfiles/*
+whoosh_index/*
