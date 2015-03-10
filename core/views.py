@@ -80,6 +80,11 @@ class TarjimonSearchView(SearchView):
         return context
 
 
+def subscribe_page(request):
+    context = {"next": request.GET.get('next')}
+    return render(request, 'pages/subscribe.html', context)
+
+
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)
