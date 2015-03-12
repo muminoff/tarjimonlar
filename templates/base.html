@@ -31,12 +31,11 @@
                   <li {% if v.active %}class="active"{% endif %}><a href="{% url k %}"><span class="icon-{{ v.icon }}"></span> {{ v.title }}</a></li>
                   {% endfor %}
               </ul>
-              {% if request.user.is_authenticated %}
-              <ul class="nav navbar-nav navbar-right">
+              <ul class="nav navbar-nav pull-right">
                 {{ request.user.username }}
+                  <li><a href="#"><img src="https://graph.facebook.com/507731196033816/picture?type=small&width=24&height=24"></img></a></li>
                   <li><a href="#">Чиқиш</a></li>
               </ul>
-              {% endif %}
           </div>
           </nav>
       </div>
