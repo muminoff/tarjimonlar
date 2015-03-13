@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         comments_by_weekdays = Comment.objects.extra({
-            "weekday": "EXTRACT('dow' FROM created_time)"
+            "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
             }).values("weekday").order_by("weekday").annotate(num_comments=Count("id"))
         for comment in comments_by_weekdays:
             print comment["weekday"], comment["num_comments"]

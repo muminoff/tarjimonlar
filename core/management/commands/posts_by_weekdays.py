@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         posts_by_weekdays = Post.objects.extra({
-            "weekday": "EXTRACT('dow' FROM created_time)"
+            "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
             }).values("weekday").order_by("weekday").annotate(num_posts=Count("id"))
         for post in posts_by_weekdays:
             print post["weekday"], post["num_posts"]
