@@ -1,12 +1,13 @@
 {% extends "base.html" %}
 {% load staticfiles i18n %}
+{% load localize_time %}
 {% block content %}
 <div class="row">
     <h4>Постлар бўйича</h4>
     <div class="col-md-12">
       Гуруҳдаги жами постлар: {{ total_posts }}.
       <h5>Кунлик статистика</h5>
-      <div id="daily_posts" style="height: 300px;"></div>
+      <div id="daily_posts" style="height: 300px;"><svg></svg></div>
     </div>
     <div class="col-md-8">
         <h5>Ойлик статистика</h5>

@@ -56,9 +56,13 @@ def facts_page(request):
 
 @cache_page(60 * 5)
 def posts_page(request):
+    daily_posts = Post.objects.extra({
+        "day": "date_trunc('day', created_time)"
+        }).values('day').order_by('day').annotate(num_posts=Count('id'))
 
     context = {
         "total_posts": Post.objects.count(),
+        "daily_posts": daily_posts,
         "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)
