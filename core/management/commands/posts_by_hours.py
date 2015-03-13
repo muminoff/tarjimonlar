@@ -16,12 +16,5 @@ class Command(BaseCommand):
             "hour": "extract('hour' from created_time at time zone 'UZT')"
             }).values("hour").order_by("hour").annotate(num_posts=Count("id"))
 
-        posts = []
         for post in posts_by_hours:
-            pobj = {}
-            pobj["daytime"] = "morning" if post["hour"] < 12 and post["hour"] > 0 else "afternoon"
-            pobj["hour"] = post["hour"]
-            pobj["num_posts"] = post["num_posts"]
-            posts.append(pobj)
-
-        print posts
+            print post["hour"], post["num_posts"]
