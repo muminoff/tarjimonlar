@@ -260,6 +260,11 @@ class Common(Configuration):
                 'level': 'ERROR',
                 'propagate': True,
             },
+            'django_facebook.models': {
+                'handlers': ['mail_admins'],
+                'level': 'ERROR',
+                'propagate': True,
+            },
         }
     }
     # END LOGGING CONFIGURATION
