@@ -394,5 +394,6 @@ class Common(Configuration):
             }
     HAYSTACK_DEFAULT_OPERATOR = 'OR'
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
+    HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
     FACEBOOK_APP_ID = env('FACEBOOK_APP_ID')
     FACEBOOK_APP_SECRET = env('FACEBOOK_APP_SECRET')
