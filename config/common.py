@@ -387,6 +387,7 @@ class Common(Configuration):
 		'PATH': join(BASE_DIR, 'whoosh_index'),
                 },
             }
+    HAYSTACK_DEFAULT_OPERATOR = 'OR'
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
     FACEBOOK_APP_ID = env('FACEBOOK_APP_ID')
     FACEBOOK_APP_SECRET = env('FACEBOOK_APP_SECRET')
