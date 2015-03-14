@@ -77,6 +77,7 @@ def comments_page(request):
     }
     return render(request, 'pages/comments.html', context)
 
+
 class TarjimonSearchView(SearchView):
     
     def get_context_data(self, *args, **kwargs):
@@ -84,11 +85,13 @@ class TarjimonSearchView(SearchView):
         return context
 
 
+@cache_page(60 * 5)
 def subscribe_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/subscribe.html', context)
 
 
+@cache_page(60 * 5)
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)
