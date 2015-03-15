@@ -43,6 +43,10 @@ class Common(Configuration):
         'pipeline', # minimize assets
         'haystack',
         'django_facebook',
+        'allauth',
+        'allauth.account',
+        'allauth.socialaccount',
+        'allauth.socialaccount.providers.facebook',
     )
 
     # Apps specific for this project go here.
@@ -165,6 +169,8 @@ class Common(Configuration):
         'django.contrib.messages.context_processors.messages',
         'django.core.context_processors.request',
         'django_facebook.context_processors.facebook',
+        'allauth.account.context_processors.account',
+        'allauth.socialaccount.context_processors.socialaccount',
         'core.context_processors.navbar',
         # Your stuff: custom template context processers go here
     )
@@ -222,7 +228,8 @@ class Common(Configuration):
     # AUTHENTICATION CONFIGURATION
     AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
-        'django_facevook.auth.backends.FacebookBackend',
+        # 'django_facevook.auth.backends.FacebookBackend',
+        'allauth.account.auth_backends.AuthenticationBackend'
     )
 
     AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
@@ -397,3 +404,13 @@ class Common(Configuration):
     HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
     FACEBOOK_APP_ID = env('FACEBOOK_APP_ID')
     FACEBOOK_APP_SECRET = env('FACEBOOK_APP_SECRET')
+
+    LOGIN_REDIRECT_URL = '/'
+    SOCIALACCOUNT_PROVIDERS = {
+            'facebook': {
+                'SCOPE': ['email'],
+                'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
+                'METHOD': 'oauth2',
+                'VERIFIED_EMAIL': False
+                }
+            }

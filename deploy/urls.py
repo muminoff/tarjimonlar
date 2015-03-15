@@ -23,6 +23,7 @@ urlpatterns = patterns('',
     url(r'^member/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
     url(r'^facebook/', include('django_facebook.urls')),
     url(r'^members/', include('django_facebook.auth_urls')),
+    url(r'^accounts/', include('allauth.urls')),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
