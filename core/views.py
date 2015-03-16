@@ -25,7 +25,7 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-@cache_page(60 * 5)
+@cache_page(60 * 60)
 def facts_page(request):
     total_members = Member.objects.count()
     top_posters = Member.objects.annotate(
