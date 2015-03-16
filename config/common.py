@@ -372,7 +372,7 @@ class Common(Configuration):
     AWS_HEADERS = {
             'Cache-Control': 'max-age=86400',
             }
-    # STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
+    STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
     HAYSTACK_CONNECTIONS = {
