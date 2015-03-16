@@ -42,11 +42,6 @@ class Common(Configuration):
         'avatar',  # for user avatars
         'pipeline', # minimize assets
         'haystack',
-        'django_facebook',
-        'allauth',
-        'allauth.account',
-        'allauth.socialaccount',
-        'allauth.socialaccount.providers.facebook',
     )
 
     # Apps specific for this project go here.
@@ -168,9 +163,6 @@ class Common(Configuration):
         'django.core.context_processors.tz',
         'django.contrib.messages.context_processors.messages',
         'django.core.context_processors.request',
-        'django_facebook.context_processors.facebook',
-        'allauth.account.context_processors.account',
-        'allauth.socialaccount.context_processors.socialaccount',
         'core.context_processors.navbar',
         # Your stuff: custom template context processers go here
     )
@@ -228,12 +220,7 @@ class Common(Configuration):
     # AUTHENTICATION CONFIGURATION
     AUTHENTICATION_BACKENDS = (
         'django.contrib.auth.backends.ModelBackend',
-        # 'django_facevook.auth.backends.FacebookBackend',
-        'allauth.account.auth_backends.AuthenticationBackend'
     )
-
-    AUTH_USER_MODEL = 'django_facebook.FacebookCustomUser'
-    AUTH_PROFILE_MODEL = 'django_facebook.FacebookProfile'
 
     # SLUGLIFIER
     AUTOSLUG_SLUGIFY_FUNCTION = 'slugify.slugify'
@@ -263,11 +250,6 @@ class Common(Configuration):
         },
         'loggers': {
             'django.request': {
-                'handlers': ['mail_admins'],
-                'level': 'ERROR',
-                'propagate': True,
-            },
-            'django_facebook.models': {
                 'handlers': ['mail_admins'],
                 'level': 'ERROR',
                 'propagate': True,
@@ -402,15 +384,3 @@ class Common(Configuration):
     HAYSTACK_DEFAULT_OPERATOR = 'OR'
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
     HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
-    FACEBOOK_APP_ID = env('FACEBOOK_APP_ID')
-    FACEBOOK_APP_SECRET = env('FACEBOOK_APP_SECRET')
-
-    LOGIN_REDIRECT_URL = '/'
-    SOCIALACCOUNT_PROVIDERS = {
-            'facebook': {
-                'SCOPE': ['email'],
-                'AUTH_PARAMS': {'auth_type': 'reauthenticate'},
-                'METHOD': 'oauth2',
-                'VERIFIED_EMAIL': False
-                }
-            }
