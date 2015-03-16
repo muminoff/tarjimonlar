@@ -15,11 +15,11 @@ qs = SearchQuerySet().order_by('-created_time', '-likes')
 
 urlpatterns = patterns('',
     url(r'^$', 'core.views.login_page', name='login_page'),
-    url(r'^facts/', 'core.views.facts_page', name='facts_page'),
-    url(r'^posts/', 'core.views.posts_page', name='posts_page'),
-    url(r'^comments/', 'core.views.comments_page', name='comments_page'),
+    url(r'^facts/$', 'core.views.facts_page', name='facts_page'),
+    url(r'^posts/$', 'core.views.posts_page', name='posts_page'),
+    url(r'^comments/$', 'core.views.comments_page', name='comments_page'),
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs), name='search_page'),
-    url(r'^about/', 'core.views.about_page', name='about_page'),
+    url(r'^about/$', 'core.views.about_page', name='about_page'),
     url(r'^member/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
