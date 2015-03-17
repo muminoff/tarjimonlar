@@ -276,13 +276,13 @@ class Common(Configuration):
         },
         'bootstrap': {
             'source_filenames': (
-                'uncss/bootstrap.css',
+                'css/bootstrap.css',
             ),
             'output_filename': 'css/bootstrap.min.css',
         },
         'chart': {
             'source_filenames': (
-                'uncss/chart.css',
+                'css/chart.css',
             ),
             'output_filename': 'css/chart.min.css',
         },
