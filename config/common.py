@@ -38,8 +38,6 @@ class Common(Configuration):
         'django.contrib.admin',
     )
     THIRD_PARTY_APPS = (
-        'crispy_forms',  # Form layouts
-        'avatar',  # for user avatars
         'pipeline', # minimize assets
         'haystack',
     )
