@@ -54,7 +54,7 @@ def facts_page(request):
     return render(request, 'pages/facts.html', context)
 
 
-@cache_page(60 * 5)
+# @cache_page(60 * 5)
 def posts_page(request):
     daily_posts = Post.objects.extra({
         "day": "date_trunc('day', created_time)"
@@ -91,7 +91,7 @@ def subscribe_page(request):
     return render(request, 'pages/subscribe.html', context)
 
 
-@cache_page(60 * 5)
+# @cache_page(60 * 5)
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)

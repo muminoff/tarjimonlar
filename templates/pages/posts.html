@@ -3,7 +3,12 @@
 {% load localize_time %}
 {% block content %}
 <div class="row">
-    <h4>Постлар бўйича</h4>
+    <div class="btn-group">
+        <a class="btn btn-info" href="#fakelink">2013 йилги</a>
+        <a class="btn btn-info" href="#fakelink">2014 йилги</a>
+        <a class="btn btn-info active" href="#fakelink">2015 йилги</a>
+    </div>
+    <h4>2015 йилда ёзилган постлар бўйича</h4>
     <div class="col-md-12">
       Гуруҳдаги жами постлар: {{ total_posts }}.
       <h5>Кунлик статистика</h5>
