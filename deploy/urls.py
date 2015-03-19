@@ -14,15 +14,15 @@ admin.autodiscover()
 qs = SearchQuerySet().order_by('-created_time', '-likes')
 
 urlpatterns = patterns('',
-    url(r'^$', 'core.views.login_page', name='login_page'),
+    url(r'^login/$', 'core.views.login_page', name='login_page'),
     url(r'^facts/$', 'core.views.facts_page', name='facts_page'),
     url(r'^posts/$', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/$', 'core.views.comments_page', name='comments_page'),
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs, template='pages/search.html'), name='search_page'),
     url(r'^about/$', 'core.views.about_page', name='about_page'),
-    url(r'^member/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
+    url(r'^member-link/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
     # User management
-    url(r'^users/', include("users.urls", namespace="users")),
+    url(r'^members/', include("users.urls", namespace="users")),
     url(r'^accounts/', include('allauth.urls')),
 
     # Uncomment the next line to enable avatars
