@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from django.conf import settings
 from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page, never_cache
+from django.contrib.auth.decorators import login_required
 from core.models import Member, Post, Comment
 from itertools import chain
 from random import sample
@@ -25,6 +26,7 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
+@login_required
 @cache_page(60 * 60)
 def general_page(request):
     total_members = Member.objects.count()
@@ -54,7 +56,8 @@ def general_page(request):
     return render(request, 'pages/facts.html', context)
 
 
-# @cache_page(60 * 5)
+@login_required
+@cache_page(60 * 5)
 def posts_page(request):
     daily_posts = Post.objects.extra({
         "day": "date_trunc('day', created_time)"
@@ -68,6 +71,7 @@ def posts_page(request):
     return render(request, 'pages/posts.html', context)
 
 
+@login_required
 @cache_page(60 * 5)
 def comments_page(request):
 
@@ -85,13 +89,15 @@ class TarjimonSearchView(SearchView):
         return context
 
 
+@login_required
 @cache_page(60 * 5)
 def subscribe_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/subscribe.html', context)
 
 
-# @cache_page(60 * 5)
+@login_required
+@cache_page(60 * 5)
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)
