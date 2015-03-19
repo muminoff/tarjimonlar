@@ -26,7 +26,7 @@ def login_page(request):
 
 
 @cache_page(60 * 60)
-def facts_page(request):
+def general_page(request):
     total_members = Member.objects.count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
