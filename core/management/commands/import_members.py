@@ -29,6 +29,9 @@ class Command(BaseCommand):
                     except Exception, e:
                         new_members -= 1
                         print str(e), unicode(member['name']), member['id'], ' failed...'
+			pass
+
+		print member
 
 
             newUrl = members['paging']['next'].replace(
