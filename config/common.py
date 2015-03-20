@@ -286,27 +286,33 @@ class Common(Configuration):
     PIPELINE_CSS = {
         'flat': {
             'source_filenames': (
-                'css/flat.css',
+                'uncss/flat.css',
             ),
             'output_filename': 'css/flat.min.css',
         },
         'project': {
             'source_filenames': (
-                'css/project.css',
+                'uncss/project.css',
             ),
             'output_filename': 'css/project.min.css',
         },
         'bootstrap': {
             'source_filenames': (
-                'css/bootstrap.css',
+                'uncss/bootstrap.css',
             ),
             'output_filename': 'css/bootstrap.min.css',
         },
         'chart': {
             'source_filenames': (
-                'css/chart.css',
+                'uncss/chart.css',
             ),
             'output_filename': 'css/chart.min.css',
+        'fallback': {
+            'source_filenames': (
+                'uncss/fallback.css',
+            ),
+            'output_filename': 'css/fallback.min.css',
+        },
         },
     }
     PIPELINE_JS = {

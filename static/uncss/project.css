@@ -22,6 +22,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-home:before {
+  content: "\e900";
+}
+
 .icon-post:before {
   content: "\e96e";
 }
@@ -32,14 +36,6 @@
 
 .icon-search:before {
   content: "\e986";
-}
-
-.icon-stat:before {
-  content: "\e99a";
-}
-
-.icon-link:before {
-  content: "\e9cb";
 }
 
 .icon-info:before {
@@ -156,12 +152,22 @@ body {
 
 /* Shadow style */
 
+.ri-grid-loading:after,
+.ri-grid-loading:before {
+  display: none;
+}
+
 .ri-loading-image {
   display: none;
 }
 
-ul.credits {
-  list-style-type: none;
+.ri-grid-loading .ri-loading-image {
+  position: relative;
+  width: 128px;
+  height: 128px;
+  left: 50%;
+  margin: 100px 0 0 -15px;
+  display: block;
 }
 
 span.found_result {
@@ -185,9 +191,4 @@ span.found_result {
 .login-wrapper {
   display: table;
   margin: 0 auto;
-}
-
-p.eslatma {
-  font-size: 12px;
-  font-color: #95a5a6;
 }
