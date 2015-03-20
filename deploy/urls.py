@@ -14,8 +14,8 @@ admin.autodiscover()
 qs = SearchQuerySet().order_by('-created_time', '-likes')
 
 urlpatterns = patterns('',
-    url(r'^login/$', 'core.views.login_page', name='login_page'),
     url(r'^$', 'core.views.general_page', name='general_page'),
+    url(r'^login/$', 'core.views.login_page', name='login_page'),
     url(r'^posts/$', 'core.views.posts_page', name='posts_page'),
     url(r'^comments/$', 'core.views.comments_page', name='comments_page'),
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs, template='pages/search.html'), name='search_page'),
