@@ -307,8 +307,7 @@ class Common(Configuration):
                 'css/fallback.css',
             ),
             'output_filename': 'css/fallback.min.css',
-        },
-        },
+        }
     }
     PIPELINE_JS = {
         'modernizr': {
