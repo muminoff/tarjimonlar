@@ -38,6 +38,10 @@
   content: "\e986";
 }
 
+.icon-link:before {
+  content: "\e9cb";
+}
+
 .icon-info:before {
   content: "\ea0c";
 }
@@ -152,22 +156,8 @@ body {
 
 /* Shadow style */
 
-.ri-grid-loading:after,
-.ri-grid-loading:before {
-  display: none;
-}
-
 .ri-loading-image {
   display: none;
-}
-
-.ri-grid-loading .ri-loading-image {
-  position: relative;
-  width: 128px;
-  height: 128px;
-  left: 50%;
-  margin: 100px 0 0 -15px;
-  display: block;
 }
 
 span.found_result {
