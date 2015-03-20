@@ -302,11 +302,6 @@ class Common(Configuration):
             ),
             'output_filename': 'css/bootstrap.min.css',
         },
-        'chart': {
-            'source_filenames': (
-                'css/chart.css',
-            ),
-            'output_filename': 'css/chart.min.css',
         'fallback': {
             'source_filenames': (
                 'css/fallback.css',
@@ -352,36 +347,12 @@ class Common(Configuration):
             ),
             'output_filename': 'js/project.min.js',
         },
-        'raphael': {
-            'source_filenames': (
-                'js/raphael.js',
-            ),
-            'output_filename': 'js/raphael.min.js',
-        },
-        'morris': {
-            'source_filenames': (
-                'js/morris.js',
-            ),
-            'output_filename': 'js/morris.min.js',
-        },
         'halloffame': {
             'source_filenames': (
                 'js/halloffame.js',
             ),
             'output_filename': 'js/halloffame.min.js',
-        },
-        'posts_chart': {
-            'source_filenames': (
-                'js/posts_chart.js',
-            ),
-            'output_filename': 'js/posts_chart.min.js',
-        },
-        'comments_chart': {
-            'source_filenames': (
-                'js/comments_chart.js',
-            ),
-            'output_filename': 'js/comments_chart.min.js',
-        },
+        }
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
     PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
