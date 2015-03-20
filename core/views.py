@@ -27,8 +27,8 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-@login_required
-@cache_page(60 * 60)
+# @login_required
+# @cache_page(60 * 60)
 def general_page(request):
     r = redis.Redis()
     rkeys = r.keys('*members')
