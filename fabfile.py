@@ -56,6 +56,13 @@ def clear_cache():
 
 
 @task
+def get_stat():
+    with cd(CODE_ROOT):
+        run("redis-cli -n 0 get $(redis-cli -n 0 keys *members |awk '{print $1 }'|head -n 1)")
+        run("redis-cli -n 0 get $(redis-cli -n 0 keys *posts |awk '{print $1 }'|head -n 1)")
+
+
+@task
 def restart():
     with cd(CODE_ROOT):
         run('killall gunicorn')
