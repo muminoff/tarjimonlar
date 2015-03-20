@@ -7,15 +7,6 @@ from dateutil import parser as dateparser
 from datetime import datetime, timedelta
 import pytz
 
-def if_exists(*args):
-    def get(obj):
-        for arg in args:
-            if isinstance(obj, dict) and arg in obj:
-                obj = obj[args]
-            else:
-                return None
-        return obj
-    return get
 
 class Command(BaseCommand):
     help = 'Imports posts from Facebook'

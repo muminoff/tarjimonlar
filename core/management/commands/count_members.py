@@ -4,6 +4,9 @@ from facepy import GraphAPI
 from core.models import Member
 from getenv import env
 import sys
+import redis
+import time
+
 
 class Command(BaseCommand):
     help = 'Imports members from Facebook'
@@ -13,30 +16,17 @@ class Command(BaseCommand):
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         members = graph.get('{}/members?limit=1000'.format(group_id))
-        new_members = 0
+        r = redis.Redis()
+        thistimestamp = int(time.time())
 
         while 'data' in members and members['data'] and \
               len(members['data']) > 0:
             for member in members['data']:
-                if not Member.objects.filter(pk=member['id']).exists():
-                    try:
-                        Member.objects.create(
-                            pk=member['id'],
-                            name=member['name'],
-                            admin=member['administrator'],
-                        )
-                        new_members += 1
-                    except Exception, e:
-                        new_members -= 1
-                        print str(e), unicode(member['name']), member['id'], ' failed...'
-			pass
-
-		print member
-
+		r.incrby('{}:{}:members'.format(group_id, thistimestamp), 1)
 
             newUrl = members['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
             )
             members = graph.get(newUrl)
 
-        print 'Total {0} members added.'.format(new_members)
+        print r.get('{}:{}:members'.format(group_id, thistimestamp))
