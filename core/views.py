@@ -30,8 +30,9 @@ def login_page(request):
 @login_required
 @cache_page(60 * 60)
 def general_page(request):
-    rkeys = redis.keys('*members')
-    total_members = redis.get(rkeys[0])
+    r = redis.Redis()
+    rkeys = r.keys('*members')
+    total_members = r.get(rkeys[0])
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
