@@ -10,7 +10,6 @@ from random import sample
 from haystack.query import SearchQuerySet
 from haystack.views import SearchView
 from hashids import Hashids
-import redis
 
 
 @cache_page(60 * 5)
@@ -30,9 +29,7 @@ def login_page(request):
 @login_required
 @cache_page(60 * 60)
 def general_page(request):
-    r = redis.Redis()
-    rkeys = r.keys('*members')
-    total_members = r.get(rkeys[0])
+    total_members = Member.objects.count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
