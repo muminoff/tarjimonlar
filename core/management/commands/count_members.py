@@ -1,9 +1,6 @@
-from django.core.management.base import BaseCommand, CommandError
-from django.conf import settings
+from django.core.management.base import BaseCommand
 from facepy import GraphAPI
-from core.models import Member
 from getenv import env
-import sys
 import redis
 import time
 
@@ -22,7 +19,7 @@ class Command(BaseCommand):
         while 'data' in members and members['data'] and \
               len(members['data']) > 0:
             for member in members['data']:
-		r.incrby('{}:{}:members'.format(group_id, thistimestamp), 1)
+                r.incrby('{}:{}:members'.format(group_id, thistimestamp), 1)
 
             newUrl = members['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
