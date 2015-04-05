@@ -357,7 +357,13 @@ class Common(Configuration):
                 'js/radar.js',
             ),
             'output_filename': 'js/radar.min.js',
-        }
+        },
+        'd3': {
+            'source_filenames': (
+                'js/d3.js',
+            ),
+            'output_filename': 'js/d3.min.js',
+        },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
     PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
