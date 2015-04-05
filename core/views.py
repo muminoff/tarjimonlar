@@ -26,9 +26,58 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-@login_required
-@cache_page(60 * 60)
-def general_page(request):
+# @login_required
+# @cache_page(60 * 60)
+def stats_page(request):
+    posts_by_hours = Post.objects.extra({
+        "hour": "extract('hour' from created_time at time zone 'UZT')"
+        }).values("hour").order_by("-hour").annotate(num_posts=Count("id"))
+    posts_by_hours_daytime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[11:]]
+    del posts_by_hours_daytime[-1]
+    posts_by_hours_nighttime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[:11]]
+    posts_by_hours_nighttime.insert(0, {'hour': posts_by_hours.last()['hour'], 'num_posts': posts_by_hours.last()['num_posts']})
+
+    comments_by_hours = Comment.objects.extra({
+        "hour": "extract('hour' from created_time at time zone 'UZT')"
+        }).values("hour").order_by("-hour").annotate(num_comments=Count("id"))
+    comments_by_hours_daytime = [{'hour': x['hour'], 'num_comments': x['num_comments'] } for x in comments_by_hours[11:]]
+    del comments_by_hours_daytime[-1]
+    comments_by_hours_nighttime = [{'hour': x['hour'], 'num_comments': x['num_comments'] } for x in comments_by_hours[:11]]
+    comments_by_hours_nighttime.insert(0, {'hour': comments_by_hours.last()['hour'], 'num_comments': comments_by_hours.last()['num_comments']})
+
+    posts_by_weekdays = Post.objects.extra({
+        "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
+        }).values("weekday").order_by("weekday").annotate(num_posts=Count("id"))
+    comments_by_weekdays = Comment.objects.extra({
+        "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
+        }).values("weekday").order_by("weekday").annotate(num_comments=Count("id"))
+    posts_by_months = Post.objects.extra({
+        "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
+        }).values("month").order_by("month").annotate(num_posts=Count("id"))
+    comments_by_months = Comment.objects.extra({
+        "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
+        }).values("month").order_by("month").annotate(num_comments=Count("id"))
+
+    context = {
+        "posts_by_hours_daytime": posts_by_hours_daytime,
+        "posts_by_hours_nighttime": posts_by_hours_nighttime,
+        "comments_by_hours_daytime": comments_by_hours_daytime,
+        "comments_by_hours_nighttime": comments_by_hours_nighttime,
+        "posts_by_weekdays": posts_by_weekdays,
+        "comments_by_weekdays": comments_by_weekdays,
+        "posts_by_months": posts_by_months,
+        "comments_by_months": comments_by_months,
+        "total_posts": Post.objects.count(),
+        "total_comments": Comment.objects.count(),
+        "next": request.GET.get('next')
+    }
+
+    return render(request, 'pages/stats_time.html', context)
+
+
+# @login_required
+# @cache_page(60 * 60)
+def members_page(request):
     total_members = Member.objects.count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
@@ -38,9 +87,6 @@ def general_page(request):
             creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(
             creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
-    top_commented_posts = Post.objects.annotate(
-            num_comments=Count('comment')).order_by('-num_comments')[:10]
-    top_liked_posts = Post.objects.order_by('-likes')[:10]
 
     context = {
         "total_members": total_members,
@@ -48,16 +94,14 @@ def general_page(request):
         "top_commentors": top_commentors,
         "top_liked_posters": top_liked_posters,
         "top_liked_commentors": top_liked_commentors,
-        "top_commented_posts": top_commented_posts,
-        "top_liked_posts": top_liked_posts,
         "next": request.GET.get('next')
     }
 
-    return render(request, 'pages/facts.html', context)
+    return render(request, 'pages/members.html', context)
 
 
-@login_required
-@cache_page(60 * 5)
+# @login_required
+# @cache_page(60 * 5)
 def posts_page(request):
     daily_posts = Post.objects.extra({
         "day": "date_trunc('day', created_time)"
@@ -71,8 +115,8 @@ def posts_page(request):
     return render(request, 'pages/posts.html', context)
 
 
-@login_required
-@cache_page(60 * 5)
+# @login_required
+# @cache_page(60 * 5)
 def comments_page(request):
 
     context = {
@@ -89,15 +133,15 @@ class TarjimonSearchView(SearchView):
         return context
 
 
-@login_required
-@cache_page(60 * 5)
+# @login_required
+# @cache_page(60 * 5)
 def subscribe_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/subscribe.html', context)
 
 
-@login_required
-@cache_page(60 * 5)
+# @login_required
+# @cache_page(60 * 5)
 def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)

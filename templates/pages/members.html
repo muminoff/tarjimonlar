@@ -93,51 +93,5 @@
             </tbody>
         </table> 
     </div>
-    <div class="col-md-6">
-        <h5>Энг кўп муҳокама бўлган постлар</h5>
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>Пост матнидан парча</th>
-                    <th>Шарҳлар</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for post in top_commented_posts %}
-                <tr>
-                    <td>{{ forloop.counter }}.</td>
-                    <td>{{ post.message | slice:"25"}}...</td>
-                    <td>{{ post.num_comments }}</td>
-                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table> 
-    </div>
-    <div class="col-md-6">
-        <h5>Кўпчиликка ёққан постлар</h5>
-        <table class="table table-condensed">
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>Пост матнидан парча</th>
-                    <th>Лайклар</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for post in top_liked_posts %}
-                <tr>
-                    <td>{{ forloop.counter }}.</td>
-                    <td>{{ post.message | slice:"25"}}...</td>
-                    <td>{{ post.likes }}</td>
-                    <td><a class="btn btn-xs btn-inverse" href="https://www.facebook.com/{{ post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table> 
-    </div>
 </div>
 {% endblock content %}

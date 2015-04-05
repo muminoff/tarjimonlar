@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load localize_time %}
+{% load pipeline %}
+{% block content %}
+<script src="http://d3js.org/d3.v3.min.js"></script>
+{% javascript "radar" %}
+<div class="container-fluid">
+    <div class="btn-group">
+        <a class="btn btn-info active" href="#fakelink">Кун вақтлари бўйича</a>
+        <a class="btn btn-info" href="#fakelink">Ҳафта кунлари бўйича</a>
+        <a class="btn btn-info" href="#fakelink">Йил ойлари бўйича</a>
+    </div>
+    <h4>Қайси вақтда қанча постлар ёзилган?</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Кундузги вақт <small>(соат 1 дан 12 гача)</small></h5>
+            <div id="dayChartPosts"></div>
+        </div>
+        <div class="col-md-6">
+            <h5>Кечки вақт <small>(соат 13 дан 0 гача)</small></h5>
+            <div id="nightChartPosts"></div>
+        </div>
+    </div>
+    <h4>Қайси вақтда қанча шарҳлар ёзилган?</h4>
+    <div class="row">
+        <div class="col-md-6">
+            <h5>Кундузги вақт <small>(соат 1 дан 12 гача)</small></h5>
+            <div id="dayChartComments"></div>
+        </div>
+        <div class="col-md-6">
+            <h5>Кечки вақт <small>(соат 13 дан 0 гача)</small></h5>
+            <div id="nightChartComments"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+var w = 300,
+    h = 300;
+
+var colorscale = d3.scale.category10();
+
+
+var dayChartPostsData = [
+      [
+          {% for hour in posts_by_hours_daytime %}
+              {axis:"{{ hour.hour|floatformat }}",value:{{ hour.num_posts }}},
+          {% endfor %}
+          ]
+    ];
+
+var nightChartPostsData = [
+      [
+          {% for hour in posts_by_hours_nighttime %}
+              {axis:"{{ hour.hour|floatformat }}",value:{{ hour.num_posts }}},
+          {% endfor %}
+          ]
+    ]; 
+
+var dayChartCommentsData = [
+      [
+          {% for hour in comments_by_hours_daytime %}
+              {axis:"{{ hour.hour|floatformat }}",value:{{ hour.num_comments }}},
+          {% endfor %}
+          ]
+    ];
+
+var nightChartCommentsData = [
+      [
+          {% for hour in comments_by_hours_nighttime %}
+              {axis:"{{ hour.hour|floatformat }}",value:{{ hour.num_comments }}},
+          {% endfor %}
+          ]
+    ];
+
+var mycfg = {
+  w: w,
+  h: h,
+  maxValue: 200,
+  levels: 3,
+  ExtraWidthX: 100
+}
+
+RadarChart.draw("#dayChartPosts", dayChartPostsData, mycfg);
+RadarChart.draw("#nightChartPosts", nightChartPostsData, mycfg);
+RadarChart.draw("#dayChartComments", dayChartCommentsData, mycfg);
+RadarChart.draw("#nightChartComments", nightChartCommentsData, mycfg);
+
+var svg = d3.select('#body')
+  .selectAll('svg')
+  .append('svg')
+  .attr("width", w+300)
+  .attr("height", h)
+</script>
+{% endblock content %}

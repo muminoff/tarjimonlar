@@ -24,8 +24,8 @@ class Command(BaseCommand):
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=500'.format(group_id))
-	one_month_ago = datetime.today() - timedelta(days=30)
-	tashkentzone = pytz.timezone("Asia/Tashkent")
+        one_month_ago = datetime.today() - timedelta(days=30)
+        tashkentzone = pytz.timezone("Asia/Tashkent")
 
         new_posts = 0
         while 'data' in feed and feed['data'] and \
@@ -33,16 +33,20 @@ class Command(BaseCommand):
 
             for post in feed['data']:
 
+                print post
+
                 postid = post['id']
                 postmsg = post['message'] if 'message' in post else ''
                 postctime = post['created_time']
                 postutime = post['updated_time']
                 creatorid = post['from']['id']
                 creatorname = post['from']['name']
-		ppostctime = dateparser.parse(postctime)
-		this_post_is_new =  ppostctime.replace(tzinfo=tashkentzone) > one_month_ago.replace(tzinfo=tashkentzone)
-                if this_post_is_new:
-			howmanylikes = self.get_likes_of_post(postid)
+
+                ppostctime = dateparser.parse(postctime)
+                # this_post_is_new =  ppostctime.replace(tzinfo=tashkentzone) > one_month_ago.replace(tzinfo=tashkentzone)
+
+                # if this_post_is_new:
+                howmanylikes = self.get_likes_of_post(postid)
 
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
@@ -70,12 +74,12 @@ class Command(BaseCommand):
                         new_posts -= 1
 
                 else:
-		    if this_post_is_new:
-                        Post.objects.filter(id=postid).update(likes=howmanylikes)
+                    # if this_post_is_new:
+                    Post.objects.filter(id=postid).update(likes=howmanylikes)
 
             newUrl = feed['paging']['next'].replace(
-                'https://graph.facebook.com/', ''
-            )
+                    'https://graph.facebook.com/', ''
+                    )
             feed = graph.get(newUrl)
 
 

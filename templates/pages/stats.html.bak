@@ -1,0 +1,187 @@
+{% extends "base.html" %}
+{% load localize_time %}
+{% block content %}
+<div class="row">
+    <h3>Кун вақтлари бўйича</h3>
+    <div class="col-md-6">
+        <h5><span class="icon-post"></span> Постлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Вақт</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hour in posts_by_hours %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ hour.hour|uzbekify_time }}</td>
+                    <td>{{ hour.num_posts }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами постлар:</th>
+                <th>{{ total_posts }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h5><span class="icon-comment"></span> Шарҳлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Вақт</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for hour in comments_by_hours %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ hour.hour|uzbekify_time }}</td>
+                    <td>{{ hour.num_comments }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами шарҳлар:</th>
+                <th>{{ total_comments }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+</div>
+<div class="row">
+    <h3>Ҳафта кунлари бўйича</h3>
+    <div class="col-md-6">
+        <h5><span class="icon-post"></span> Постлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Ҳафта куни</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for weekday in posts_by_weekdays %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ weekday.weekday|uzbekify_weekday }}</td>
+                    <td>{{ weekday.num_posts }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами постлар:</th>
+                <th>{{ total_posts }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h5><span class="icon-comment"></span> Шарҳлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Ҳафта куни</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for weekday in comments_by_weekdays %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ weekday.weekday|uzbekify_weekday }}</td>
+                    <td>{{ weekday.num_comments }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами шарҳлар:</th>
+                <th>{{ total_comments }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+</div>
+<div class="row">
+    <h3>Йил ойлари бўйича</h3>
+    <div class="col-md-6">
+        <h5><span class="icon-post"></span> Постлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Вақт</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for month in posts_by_months %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ month.month|uzbekify_month }}</td>
+                    <td>{{ month.num_posts }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами постлар:</th>
+                <th>{{ total_posts }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+    <div class="col-md-6">
+        <h5><span class="icon-comment"></span> Шарҳлар</h5>
+        <table class="table table-condensed">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>Вақт</th>
+                    <th>Сони</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for month in comments_by_months %}
+                <tr>
+                    <td>{{ forloop.counter }}.</td>
+                    <td>{{ month.month|uzbekify_month }}</td>
+                    <td>{{ month.num_comments }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+              <tr>
+                <th></th>
+                <th>Жами шарҳлар:</th>
+                <th>{{ total_comments }}</th>
+              </tr>
+            </tfoot>
+        </table> 
+    </div>
+</div>
+{% endblock content %}

@@ -351,6 +351,12 @@ class Common(Configuration):
                 'js/halloffame.js',
             ),
             'output_filename': 'js/halloffame.min.js',
+        },
+        'radar': {
+            'source_filenames': (
+                'js/radar.js',
+            ),
+            'output_filename': 'js/radar.min.js',
         }
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
@@ -368,7 +374,7 @@ class Common(Configuration):
     AWS_HEADERS = {
             'Cache-Control': 'max-age=86400',
             }
-    STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
+    # STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
     HAYSTACK_CONNECTIONS = {
