@@ -33,8 +33,6 @@ class Command(BaseCommand):
 
             for post in feed['data']:
 
-                print post
-
                 postid = post['id']
                 postmsg = post['message'] if 'message' in post else ''
                 postctime = post['created_time']
@@ -43,10 +41,10 @@ class Command(BaseCommand):
                 creatorname = post['from']['name']
 
                 ppostctime = dateparser.parse(postctime)
-                # this_post_is_new =  ppostctime.replace(tzinfo=tashkentzone) > one_month_ago.replace(tzinfo=tashkentzone)
+                this_post_is_new =  ppostctime.replace(tzinfo=tashkentzone) > one_month_ago.replace(tzinfo=tashkentzone)
 
-                # if this_post_is_new:
-                howmanylikes = self.get_likes_of_post(postid)
+                if this_post_is_new:
+                    howmanylikes = self.get_likes_of_post(postid)
 
                 post_exists = Post.objects.filter(id=postid).exists()
                 member_exists = Member.objects.filter(id=creatorid).exists()
@@ -74,8 +72,8 @@ class Command(BaseCommand):
                         new_posts -= 1
 
                 else:
-                    # if this_post_is_new:
-                    Post.objects.filter(id=postid).update(likes=howmanylikes)
+                    if this_post_is_new:
+                        Post.objects.filter(id=postid).update(likes=howmanylikes)
 
             newUrl = feed['paging']['next'].replace(
                     'https://graph.facebook.com/', ''
