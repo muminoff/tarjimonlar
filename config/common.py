@@ -45,6 +45,7 @@ class Common(Configuration):
         'allauth.socialaccount.providers.facebook', 
         'pipeline', # minimize assets
         'haystack',
+        'opbeat.contrib.django',
     )
 
     # Apps specific for this project go here.
@@ -70,6 +71,7 @@ class Common(Configuration):
         'django.middleware.clickjacking.XFrameOptionsMiddleware',
         'django.middleware.gzip.GZipMiddleware',
         'pipeline.middleware.MinifyHTMLMiddleware',
+        'opbeat.contrib.django.middleware.OpbeatAPMMiddleware',
     )
     # END MIDDLEWARE CONFIGURATION
 
@@ -380,7 +382,7 @@ class Common(Configuration):
     AWS_HEADERS = {
             'Cache-Control': 'max-age=86400',
             }
-    STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
+    # STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
     HAYSTACK_CONNECTIONS = {
@@ -392,3 +394,8 @@ class Common(Configuration):
     HAYSTACK_DEFAULT_OPERATOR = 'OR'
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
     # HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+    OPBEAT = {
+            "ORGANIZATION_ID": "d738aae57d3c422eb85de019958e9f28",
+            "APP_ID": "a593228dba",
+            "SECRET_TOKEN": "2f5080a09daef166d42fa187a2b8bdf98d4fb5fe"
+            }
