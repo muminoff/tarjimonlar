@@ -13,6 +13,7 @@ class Command(BaseCommand):
 
 
     def get_likes_of_post(self, postid):
+	print "Getting like of {}".format(postid)
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         likes_arr = graph.get('{}/likes?limit=1000'.format(postid))
@@ -24,7 +25,7 @@ class Command(BaseCommand):
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
         feed = graph.get('{}/feed?limit=500'.format(group_id))
-        one_month_ago = datetime.today() - timedelta(days=30)
+        one_month_ago = datetime.today() - timedelta(days=130)
         tashkentzone = pytz.timezone("Asia/Tashkent")
 
         new_posts = 0

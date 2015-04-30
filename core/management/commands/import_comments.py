@@ -9,7 +9,7 @@ import pytz
 
 
 class Command(BaseCommand):
-    help = 'Imports posts from Facebook'
+    help = 'Imports comments from Facebook'
 
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
@@ -17,10 +17,11 @@ class Command(BaseCommand):
         group_id = '438868872860349'
 
         new_comments = 0
-        one_month_ago = datetime.today() - timedelta(days=30)
+        one_month_ago = datetime.today() - timedelta(days=130)
         tashkentzone = pytz.timezone("Asia/Tashkent")
 
         for post in Post.objects.filter(updated_time__gte=one_month_ago.replace(tzinfo=tashkentzone)):
+            print "Getting comments of {} ...".format(post)
             comments = graph.get('{}/comments?limit=1000'.format(post.id))
 
             for c in comments['data']:

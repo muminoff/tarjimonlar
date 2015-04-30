@@ -103,13 +103,7 @@ def members_page(request):
 # @login_required
 # @cache_page(60 * 5)
 def posts_page(request):
-    from datetime import datetime
-
-    daily_posts = Post.objects.filter(created_time__year=2015).extra({
-        "day": "date_trunc('day', created_time)"
-        }).values('day').order_by('day').annotate(num_posts=Count('id'))
-
-    posts_by_months = Post.objects.extra({
+    posts_by_months = Post.objects.filter(created_time__year=2014).extra({
         "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
         }).values("month").order_by("month").annotate(num_posts=Count("id"))
     context = {
