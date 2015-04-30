@@ -307,6 +307,12 @@ class Common(Configuration):
                 'css/fallback.css',
             ),
             'output_filename': 'css/fallback.min.css',
+        },
+        'posts': {
+            'source_filenames': (
+                'css/posts.css',
+            ),
+            'output_filename': 'css/posts.min.css',
         }
     }
     PIPELINE_JS = {
@@ -364,6 +370,12 @@ class Common(Configuration):
             ),
             'output_filename': 'js/d3.min.js',
         },
+        'd3tip': {
+            'source_filenames': (
+                'js/d3tip.js',
+            ),
+            'output_filename': 'js/d3tip.min.js',
+        },
     }
     PIPELINE_CSS_COMPRESSOR = 'pipeline.compressors.yuglify.YuglifyCompressor'
     PIPELINE_JS_COMPRESSOR = 'pipeline.compressors.jsmin.JSMinCompressor'
@@ -380,7 +392,7 @@ class Common(Configuration):
     AWS_HEADERS = {
             'Cache-Control': 'max-age=86400',
             }
-    STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
+    # STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
     HAYSTACK_CONNECTIONS = {

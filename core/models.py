@@ -49,6 +49,7 @@ class Post(models.Model):
 
     def __unicode__(self):
         return self.id
+
     def get_comments(self):
         return Comment.objects.filter(post=self)
 
