@@ -108,7 +108,6 @@ def posts_page(request):
         }).values("month").order_by("month").annotate(num_posts=Count("id"))
     context = {
         "total_posts": Post.objects.count(),
-        "daily_posts": daily_posts,
         "posts_by_months": posts_by_months,
         "next": request.GET.get('next')
     }
