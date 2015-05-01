@@ -28,7 +28,7 @@
           <div class="collapse navbar-collapse" id="navbar-collapse-01">
               <ul class="nav navbar-nav navbar-left">
                   {% for k, v in menus.items %}
-                  <li {% if v.active %}class="active"{% endif %}><a href="{% url k %}"><span class="icon-{{ v.icon }}"></span> {{ v.title }}</a></li>
+                  <li {% if v.active %}class="active"{% endif %}><a href="{% url k 2015 %}"><span class="icon-{{ v.icon }}"></span> {{ v.title }}</a></li>
                   {% endfor %}
               </ul>
           </div>
