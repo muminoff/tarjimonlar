@@ -31,8 +31,6 @@ class Command(BaseCommand):
                         print str(e), unicode(member['name']), member['id'], ' failed...'
 			pass
 
-            print member
-
             newUrl = members['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
             )
