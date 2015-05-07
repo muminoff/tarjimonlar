@@ -28,7 +28,7 @@ class Command(BaseCommand):
                 commentid = c['id']
                 commentcreatorid = c['from']['id']
                 commentcreatorname = c['from']['name']
-                commentmsg = c['message']
+                commentmsg = c['message'] if 'message' in c else ''
                 commentctime = c['created_time']
                 commentlikecount = c['like_count']
 
@@ -49,7 +49,7 @@ class Command(BaseCommand):
                     try:
                         Comment.objects.create(
                             pk=commentid,
-                            message=commentmsg if 'message' in c else '',
+                            message=commentmsg,
                             created_time=commentctime,
                             creator=commentcreator,
                             post=post,

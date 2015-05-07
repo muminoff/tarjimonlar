@@ -7,6 +7,7 @@ class Member(models.Model):
     id = models.CharField(max_length=255, primary_key=True, db_index=True)
     name = models.CharField(max_length=255)
     admin = models.BooleanField(default=False)
+    currently_member = models.BooleanField(default=True)
 
     def __unicode__(self):
         return unicode(self.name)

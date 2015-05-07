@@ -78,7 +78,7 @@ def stats_page(request):
 # @login_required
 # @cache_page(60 * 60)
 def members_page(request):
-    total_members = Member.objects.count()
+    total_members = Member.objects.filter(currently_member=True).count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
