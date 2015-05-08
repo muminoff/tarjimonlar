@@ -59,4 +59,4 @@ def get_stat():
 @task
 def restart():
     with cd(CODE_ROOT):
-        run('supervisorctl -c conf/supervisor.conf restart all')
+        run('supervisorctl -c deploy/supervisord.conf restart all')
