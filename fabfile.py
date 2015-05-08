@@ -40,10 +40,6 @@ def deploy():
         run('rm ./static/js/posts_chart.js')
         run('rm ./static/js/comments_chart.js')
         run('git pull origin develop')
-        run('./manage.py posts_chart >./static/js/posts_chart.js')
-        run('./manage.py comments_chart >./static/js/comments_chart.js')
-        run('rm -rf ../staticfiles')
-        run('./manage.py collectstatic --noinput')
         clear_cache()
         run(r'find . -name "*.pyc" -delete')
         restart()
@@ -65,5 +61,4 @@ def get_stat():
 @task
 def restart():
     with cd(CODE_ROOT):
-        run('killall gunicorn')
-        run('nohup %s deploy.wsgi:application --workers 4 --worker-class gevent &' % GUNICORN)
+        run('supervisorctl -c conf/supervisor.conf restart all')
