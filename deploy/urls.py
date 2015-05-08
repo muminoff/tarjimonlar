@@ -21,6 +21,7 @@ urlpatterns = patterns('',
     url(r'^comments/$', 'core.views.comments_page', name='comments_page'),
     url(r'^search/$', TarjimonSearchView(searchqueryset=qs, template='pages/search.html'), name='search_page'),
     url(r'^about/$', 'core.views.about_page', name='about_page'),
+    url(r'^feed/$', 'core.views.feed_page', name='feed_page'),
     url(r'^member-link/(?P<hashid>.+)$', 'core.views.go_to_link', name='go_to_link'),
     # User management
     url(r'^profiles/', include("users.urls", namespace="users")),

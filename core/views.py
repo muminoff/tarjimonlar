@@ -145,6 +145,18 @@ def about_page(request):
     context = {"next": request.GET.get('next')}
     return render(request, 'pages/about.html', context)
 
+
+def feed_page(request):
+    last_ten_posts = Post.objects.order_by('-created_time')[:10]
+    last_ten_comments = Comment.objects.order_by('-created_time')[:10]
+    context = {
+        "next": request.GET.get('next'),
+        "last_ten_posts": last_ten_posts,
+        "last_ten_comments": last_ten_comments
+    }
+    return render(request, 'pages/feed.html', context)
+
+
 def go_to_link(request, hashid):
     hashids = Hashids(salt='tarjimonlar')
     realid = hashids.decode(hashid)[0]

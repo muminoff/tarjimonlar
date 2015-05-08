@@ -12,6 +12,7 @@ def navbar(request):
         ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment', 'submenu': False}),
         ('search_page', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
         ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info', 'submenu': False}),
+        ('feed_page', {'title': 'News', 'icon': 'book', 'submenu': False}),
         ])
 
     try: 
