@@ -11,7 +11,7 @@
                 {% endfor %}
                 {% for comment in last_ten_comments %}
                 <tr>
-                    <td>{{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:%M:S" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
+                    <td>{{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:M:S" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
