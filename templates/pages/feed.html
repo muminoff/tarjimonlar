@@ -6,12 +6,12 @@
             <tbody>
                 {% for post in last_ten_posts %}
                 <tr>
-                    <td>Иштирокчи {{ post.creator }} {{ post.created_time|date:"d-m-Y H:M:S" }} да пост ёзди <a href="https://fb.com/{{ post.id }}">Link</a></td>
+                    <td>Иштирокчи {{ post.creator }} {{ post.created_time|date:"d-m-Y H:M" }} да пост ёзди <a href="https://fb.com/{{ post.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
                 {% for comment in last_ten_comments %}
                 <tr>
-                    <td>{{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:M:S" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
+                    <td>{{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:M" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
