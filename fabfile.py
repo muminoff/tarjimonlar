@@ -37,8 +37,6 @@ def deploy():
     """Deploy code to production"""
     print(colors.cyan('Deploying...', bold=True))
     with cd(CODE_ROOT):
-        run('rm ./static/js/posts_chart.js')
-        run('rm ./static/js/comments_chart.js')
         run('git pull origin develop')
         clear_cache()
         run(r'find . -name "*.pyc" -delete')
