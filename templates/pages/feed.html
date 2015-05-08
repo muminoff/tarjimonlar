@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row">
+    <p>Latest news:</p>
+        <table class="table table-condensed">
+            <tbody>
+                {% for post in last_ten_posts %}
+                <tr>
+                    <td>{{ post.creator }} {{ post.created_time }} да пост ёзди <a href="https://fb.com/{{ post.id }}">Link</a></td>
+                </tr>
+                {% endfor %}
+                {% for comment in last_ten_comments %}
+                <tr>
+                    <td>{{ comment.creator }} {{ comment.created_time }} да {{ comment.post.id }} га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table> 
+</div>
+{% endblock content %}
