@@ -4,14 +4,16 @@
     <p>Гуруҳдаги сўнгги янгиликлар</p>
         <table class="table table-condensed">
             <tbody>
+                <td><strong>Постлар</strong></td>
                 {% for post in last_ten_posts %}
                 <tr>
                     <td>Иштирокчи {{ post.creator }} {{ post.created_time|date:"d-m-Y H:i" }} да пост ёзди <a href="https://fb.com/{{ post.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
+                <td><strong>Шарҳлар</strong></td>
                 {% for comment in last_ten_comments %}
                 <tr>
-                    <td>{{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:i" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
+                    <td>Иштирокчи {{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:i" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
