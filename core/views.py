@@ -115,7 +115,7 @@ def posts_page(request):
 
 
 # @login_required
-# @cache_page(60 * 5)
+@cache_page(60 * 5)
 def comments_page(request):
 
     context = {
