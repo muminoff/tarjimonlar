@@ -3,10 +3,12 @@
  * Copyright 2013-2014 Designmodo, Inc.
  */
 @font-face {
-  font-family: 'Noto Serif';
+  /* font-family: 'Noto Serif'; */
+  font-family: 'Noto Sans';
   font-style: normal;
   font-weight: 400;
-  src: local('Noto Serif'), local('NotoSerif'), url('../fonts/notoserif.woff') format('woff');
+  /* src: local('Noto Serif'), local('NotoSerif'), url('../fonts/notoserif.woff') format('woff'); */
+  src: local('Noto Sans'), local('NotoSans'), url('../fonts/notosans.woff') format('woff');
 }
 @font-face {
   font-family: 'Flat-UI-Icons';
