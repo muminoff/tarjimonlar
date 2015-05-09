@@ -28,6 +28,13 @@ class Command(BaseCommand):
                     except Exception, e:
                         new_members -= 1
                         print str(e), unicode(member['name']), member['id'], ' failed...'
+                else:
+                    try:
+                        existing_member = Member.objects.get(pk=member['id'])
+                        existing_member.name = member['name']
+                        existing_member.save()
+                    except Exception, e:
+                        print str(e), unicode(member['name']), member['id'], ' failed...'
 			pass
 
             newUrl = members['paging']['next'].replace(
