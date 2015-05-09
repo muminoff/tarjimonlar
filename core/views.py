@@ -134,8 +134,8 @@ class TarjimonSearchView(SearchView):
         return context
 
 
-@login_required
-@cache_page(60 * 10)
+# @login_required
+# @cache_page(60 * 10)
 def subscribe_page(request):
     context = {}
     return render(request, 'pages/subscribe.html', context)
