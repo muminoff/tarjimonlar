@@ -12,8 +12,8 @@ def navbar(request):
         ('posts_page', {'title': 'Постлар', 'icon': 'post', 'submenu': False}),
         ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment', 'submenu': False}),
         ('search_page', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
-        ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info', 'submenu': False}),
         ('subscribe_page', {'title': 'Обуна', 'icon': 'broadcast', 'submenu': False}),
+        ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info', 'submenu': False}),
         ])
 
     try: 
