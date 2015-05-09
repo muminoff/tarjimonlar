@@ -407,4 +407,4 @@ class Common(Configuration):
     }
     HAYSTACK_DEFAULT_OPERATOR = 'AND'
     HAYSTACK_SEARCH_RESULTS_PER_PAGE = 10
-    # HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
+    HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
