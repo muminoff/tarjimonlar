@@ -4,13 +4,13 @@
     <h5>Гуруҳдаги сўнгги янгиликлар</h5>
         <table class="table table-condensed">
             <tbody>
-                <td><span class="icon icon-post"></span> <strong>Постлар</strong></td>
+                <td><span class="icon icon-post"></span><strong> Постлар</strong></td>
                 {% for post in last_ten_posts %}
                 <tr>
                   <td><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/> {{ post.creator }} {{ post.created_time|date:"d-m-Y H:i" }} да пост ёзди <a href="https://fb.com/{{ post.id }}">Link</a></td>
                 </tr>
                 {% endfor %}
-                <td><span class="icon icon-comment"></span> <strong>Шарҳлар</strong></td>
+                <td><span class="icon icon-comment"></span><strong> Шарҳлар</strong></td>
                 {% for comment in last_ten_comments %}
                 <tr>
                   <td><img src="https://graph.facebook.com/{{ comment.creator.id }}/picture?type=square&width=32&height=32"/> {{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:i" }} да <a href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
