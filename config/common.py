@@ -15,6 +15,7 @@ from os.path import join, dirname
 
 from configurations import Configuration, values
 from getenv import env
+from socket import gethostname
 
 BASE_DIR = dirname(dirname(__file__))
 
@@ -392,7 +393,9 @@ class Common(Configuration):
     AWS_HEADERS = {
             'Cache-Control': 'max-age=86400',
             }
-    # STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
+
+    if gethostname() == 'ip-10-0-1-64':
+        STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
     HAYSTACK_CONNECTIONS = {
