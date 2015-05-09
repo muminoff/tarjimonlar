@@ -26,8 +26,8 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-# @login_required
-# @cache_page(60 * 60)
+@login_required
+@cache_page(60 * 10)
 def stats_page(request):
     posts_by_hours = Post.objects.extra({
         "hour": "extract('hour' from created_time at time zone 'UZT')"
@@ -74,8 +74,8 @@ def stats_page(request):
     return render(request, 'pages/stats_time.html', context)
 
 
-# @login_required
-# @cache_page(60 * 60)
+@login_required
+@cache_page(60 * 10)
 def members_page(request):
     non_members_count = Member.objects.filter(currently_member=False).count()
     members_count = Member.objects.filter(currently_member=True).count()
@@ -102,8 +102,8 @@ def members_page(request):
     return render(request, 'pages/members.html', context)
 
 
-# @login_required
-# @cache_page(60 * 5)
+@login_required
+@cache_page(60 * 10)
 def posts_page(request):
     posts_by_months = Post.objects.filter(created_time__year=2015).extra({
         "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
@@ -115,8 +115,8 @@ def posts_page(request):
     return render(request, 'pages/posts.html', context)
 
 
-# @login_required
-@cache_page(60 * 5)
+@login_required
+@cache_page(60 * 10)
 def comments_page(request):
 
     context = {
@@ -132,20 +132,22 @@ class TarjimonSearchView(SearchView):
         return context
 
 
-# @login_required
-# @cache_page(60 * 5)
+@login_required
+@cache_page(60 * 10)
 def subscribe_page(request):
     context = {}
     return render(request, 'pages/subscribe.html', context)
 
 
-# @login_required
+@login_required
 # @cache_page(60 * 5)
 def about_page(request):
     context = {}
     return render(request, 'pages/about.html', context)
 
 
+@login_required
+@cache_page(60 * 10)
 def feed_page(request):
     last_ten_posts = Post.objects.order_by('-created_time')[:10]
     last_ten_comments = Comment.objects.order_by('-created_time')[:10]
@@ -156,6 +158,7 @@ def feed_page(request):
     return render(request, 'pages/feed.html', context)
 
 
+@login_required
 def go_to_link(request, hashid):
     hashids = Hashids(salt='tarjimonlar')
     realid = hashids.decode(hashid)[0]
