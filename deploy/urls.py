@@ -14,7 +14,7 @@ admin.autodiscover()
 qs = SearchQuerySet().order_by('-created_time', '-likes')
 
 urlpatterns = patterns('',
-    url(r'^login/$', 'core.views.login_page', name='login_page'),
+    url(r'^$', 'core.views.login_page', name='login_page'),
     url(r'^stats/$', 'core.views.stats_page', name='stats_page'),
     url(r'^members/$', 'core.views.members_page', name='members_page'),
     url(r'^posts/$', 'core.views.posts_page', name='posts_page'),
