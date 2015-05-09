@@ -21,7 +21,7 @@ def login_page(request):
 
     context = {
         "hall_of_fame": sample(
-            list(chain(top_15_posters, top_15_commentors), 10) +  easter_egg,
+            list(chain(top_15_posters, top_15_commentors), 10) + easter_egg),
     }
     return render(request, 'login.html', context)
 
