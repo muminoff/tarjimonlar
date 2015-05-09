@@ -12,16 +12,16 @@ from haystack.views import SearchView
 from hashids import Hashids
 
 
-@cache_page(60 * 5)
 def login_page(request):
     top_15_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:50]
     top_15_commentors = Member.objects.annotate(
             num_comments=Count('comment')).order_by('-num_comments')[:50]
+    easter_egg = Member.objects.get(pk=u'10203262924912071')
 
     context = {
         "hall_of_fame": sample(
-            list(chain(top_15_posters, top_15_commentors)), 100),
+            list(chain(top_15_posters, top_15_commentors), 10) +  easter_egg,
     }
     return render(request, 'login.html', context)
 
