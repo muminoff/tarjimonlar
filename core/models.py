@@ -86,3 +86,15 @@ class Comment(models.Model):
     class Meta:
         db_table = 'comments'
         ordering = ['-created_time']
+
+
+class GroupMeta(models.Model):
+    id = models.CharField(max_length=255, primary_key=True, db_index=True)
+    name = models.CharField(max_length=255, null=False, blank=False)
+    desc = models.TextField()
+
+    def __unicode__(self):
+        return unicode(self.name)
+
+    class Meta:
+        db_table = 'groupinfo'

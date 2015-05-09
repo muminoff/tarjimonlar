@@ -4,7 +4,7 @@ from django.conf import settings
 from django.db.models import Count, Sum
 from django.views.decorators.cache import cache_page, never_cache
 from django.contrib.auth.decorators import login_required
-from core.models import Member, Post, Comment
+from core.models import Member, Post, Comment, GroupMeta
 from itertools import chain
 from random import sample
 from haystack.query import SearchQuerySet
@@ -18,10 +18,12 @@ def login_page(request):
     top_15_commentors = Member.objects.annotate(
             num_comments=Count('comment')).order_by('-num_comments')[:50]
     easter_egg = Member.objects.get(pk=u'10204510554222024')
+    group_meta = GroupMeta.objects.all()[0]
 
     context = {
         "hall_of_fame": sample(
-            list(chain(top_15_posters, top_15_commentors)) + [easter_egg], 100)
+            list(chain(top_15_posters, top_15_commentors)) + [easter_egg], 100),
+        "group_meta": group_meta
     }
     return render(request, 'login.html', context)
 

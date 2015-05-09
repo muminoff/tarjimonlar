@@ -275,14 +275,21 @@ span.found_result {
   background-color: #f1c40f;
 }
 
-.group-name{
+.group-name {
 	margin: 30px auto 30px;
 	position: relative;
 	height: auto;
   top: 70px;
 }
 
-.login-btn{
+.group-desc {
+	margin: 30px auto 30px;
+	position: relative;
+	height: auto;
+  top: 80px;
+}
+
+.login-btn {
 	margin: 30px auto 30px;
 	position: relative;
 	height: auto;

@@ -43,7 +43,8 @@
             </div>
 
             </section>
-            <h5 class="group-name" align="center">Профессионал ва ҳаваскор таржимонлар</h5>
+            <h5 class="group-name" align="center">{{ group_meta.name }}</h5>
+            <p class="group-desc" align="center">{{ group_meta.desc }}</p>
             <span class="login-wrapper">
                   <a class="btn btn-lg btn-inverse btn-lg login-btn" href="{% provider_login_url "facebook" process="login" %}"><span class="icon-facebook"></span> Сайтга Фейсбук орқали кириш</a>
                 </span>
