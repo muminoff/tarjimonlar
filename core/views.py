@@ -79,7 +79,7 @@ def stats_page(request):
 def members_page(request):
     non_members_count = Member.objects.filter(currently_member=False).count()
     members_count = Member.objects.filter(currently_member=True).count()
-    total_members_count = Member.objects.count()
+    total_members_count = non_members_count + members_count
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
