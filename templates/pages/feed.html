@@ -7,13 +7,15 @@
                 <td><span class="icon icon-post"></span><strong> Постлар</strong></td>
                 {% for post in last_ten_posts %}
                 <tr>
-                  <td><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/> {{ post.creator }} {{ post.created_time|date:"d-m-Y H:i" }} да пост ёзди <a target="_blank" href="https://fb.com/{{ post.id }}">Link</a></td>
+                  <td><img src="https://graph.facebook.com/{{ post.creator.id }}/picture?type=square&width=32&height=32"/> {{ post.creator }} {{ post.created_time|date:"d-m-Y H:i" }} да пост ёзди.</td>
+                  <td><a class="btn btn-xs btn-inverse" href="https://www.fb.com/{{ comment.post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
                 </tr>
                 {% endfor %}
                 <td><span class="icon icon-comment"></span><strong> Шарҳлар</strong></td>
                 {% for comment in last_ten_comments %}
                 <tr>
-                  <td><img src="https://graph.facebook.com/{{ comment.creator.id }}/picture?type=square&width=32&height=32"/> {{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:i" }} да <a target="_blank" href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди <a href="https://fb.com/{{ comment.id }}">Link</a></td>
+                  <td><img src="https://graph.facebook.com/{{ comment.creator.id }}/picture?type=square&width=32&height=32"/> {{ comment.creator }} {{ comment.created_time|date:"d-m-Y H:i" }} да <a target="_blank" href="https://fb.com/{{ comment.post.id }}">пост</a>га шарҳ ёзди.</td>
+                  <td><a class="btn btn-xs btn-inverse" href="https://www.fb.com/{{ comment.post.id }}/" target="_blank"><span class="icon-link"></span></a></td>
                 </tr>
                 {% endfor %}
             </tbody>
