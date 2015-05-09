@@ -21,7 +21,7 @@ class Command(BaseCommand):
         tashkentzone = pytz.timezone("Asia/Tashkent")
 
         for post in Post.objects.filter(updated_time__gte=one_month_ago.replace(tzinfo=tashkentzone)):
-            print "Getting comments of {} ...".format(post)
+            # print "Getting comments of {} ...".format(post)
             comments = graph.get('{}/comments?limit=1000'.format(post.id))
 
             for c in comments['data']:

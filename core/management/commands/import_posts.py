@@ -13,7 +13,7 @@ class Command(BaseCommand):
 
 
     def get_likes_of_post(self, postid):
-	print "Getting like of {}".format(postid)
+	# print "Getting like of {}".format(postid)
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         likes_arr = graph.get('{}/likes?limit=1000'.format(postid))

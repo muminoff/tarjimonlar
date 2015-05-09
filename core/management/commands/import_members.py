@@ -15,8 +15,7 @@ class Command(BaseCommand):
         members = graph.get('{}/members?limit=1000'.format(group_id))
         new_members = 0
 
-        while 'data' in members and members['data'] and \
-              len(members['data']) > 0:
+        while 'data' in members and members['data'] and len(members['data']) > 0:
             for member in members['data']:
                 if not Member.objects.filter(pk=member['id']).exists():
                     try:

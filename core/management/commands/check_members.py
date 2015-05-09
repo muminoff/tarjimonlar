@@ -33,6 +33,7 @@ class Command(BaseCommand):
         print "Currently {} members fetched from Facebook API".format(len(current_members))
 
         for member_in_db in Member.objects.all():
+
             if member_in_db.id in current_members:
                 member_in_db.currently_member = True
             else:
@@ -42,5 +43,5 @@ class Command(BaseCommand):
 
         print "Currently {} members in DB".format(Member.objects.filter(currently_member=True).count())
         rkey = "{}:members".format(group_id)
-        redconn.zadd(rkey, int(time()), len(current_members))
+        redconn.zadd(rkey, len(current_members), int(time()))
         print "Written to Redis [OK]"
