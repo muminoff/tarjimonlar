@@ -77,7 +77,9 @@ def stats_page(request):
 # @login_required
 # @cache_page(60 * 60)
 def members_page(request):
-    total_members = Member.objects.filter(currently_member=True).count()
+    non_members_count = Member.objects.filter(currently_member=False).count()
+    members_count = Member.objects.filter(currently_member=True).count()
+    total_members_count = Member.objects.count()
     top_posters = Member.objects.annotate(
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
@@ -88,7 +90,9 @@ def members_page(request):
             creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
 
     context = {
-        "total_members": total_members,
+        "non_members_count": non_members_count,
+        "members_count": members_count,
+        "total_members_count": total_members_count,
         "top_posters": top_posters,
         "top_commentors": top_commentors,
         "top_liked_posters": top_liked_posters,
