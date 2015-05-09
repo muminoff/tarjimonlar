@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load highlight %}
+{% block content %}
+<div class="row">
+    <div class="col-lg-12">
+      <form name="subscribe-form" method="get" action=".">
+        <div class="form-group">
+          <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Электрон почта манзилингиз">
+        </div>
+        <div class="checkbox">
+            <label class="checkbox checkbox-inline" for="post-check">
+                <input type="checkbox" value="" id="post-check" data-toggle="checkbox" class="custom-checkbox" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span>   Гуруҳнинг ҳафталик дайжести
+            </label>
+            <label class="checkbox checkbox-inline" for="post-check">
+                <input type="checkbox" value="" id="post-check" data-toggle="checkbox" class="custom-checkbox" checked><span class="icons"><span class="icon-unchecked"></span><span class="icon-checked"></span></span> Ҳафтанинг энг кўп мулоҳаза билдирилган постлари
+            </label>
+        </div>
+        <button type="submit" class="btn btn-inverse">Обуна бўлиш</button>
+      </form>
+    </div>
+</div>
+{% endblock %}
