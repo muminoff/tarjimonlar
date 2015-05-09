@@ -17,11 +17,11 @@ def login_page(request):
             num_posts=Count('post')).order_by('-num_posts')[:50]
     top_15_commentors = Member.objects.annotate(
             num_comments=Count('comment')).order_by('-num_comments')[:50]
-    easter_egg = Member.objects.get(pk=u'10203262924912071')
+    easter_egg = Member.objects.get(pk=u'10204510554222024')
 
     context = {
         "hall_of_fame": sample(
-            list(chain(top_15_posters, top_15_commentors), 10) + easter_egg),
+            list(chain(top_15_posters, top_15_commentors)) + [easter_egg], 100)
     }
     return render(request, 'login.html', context)
 

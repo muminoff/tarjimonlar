@@ -37,7 +37,7 @@
                 <img class="ri-loading-image" src="{% static 'images/loading.gif' %}"/>
                 <ul>
                     {% for member in hall_of_fame %}
-                    <li><a href="#"><img src="https://graph.facebook.com/{{ member.id }}/picture?type=square&width=128&height=128"/></a></li>
+                    <li><a href="#"><img src="https://graph.facebook.com/{{ member.id }}/picture?type=square&width=128&height=128" alt="{{ member.name }}"/></a></li>
                     {% endfor %}
                 </ul>
             </div>
