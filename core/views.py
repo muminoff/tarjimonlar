@@ -69,7 +69,6 @@ def stats_page(request):
         "comments_by_months": comments_by_months,
         "total_posts": Post.objects.count(),
         "total_comments": Comment.objects.count(),
-        "next": request.GET.get('next')
     }
 
     return render(request, 'pages/stats_time.html', context)
@@ -94,7 +93,6 @@ def members_page(request):
         "top_commentors": top_commentors,
         "top_liked_posters": top_liked_posters,
         "top_liked_commentors": top_liked_commentors,
-        "next": request.GET.get('next')
     }
 
     return render(request, 'pages/members.html', context)
@@ -109,7 +107,6 @@ def posts_page(request):
     context = {
         "total_posts": Post.objects.count(),
         "posts_by_months": posts_by_months,
-        "next": request.GET.get('next')
     }
     return render(request, 'pages/posts.html', context)
 
@@ -120,7 +117,6 @@ def comments_page(request):
 
     context = {
         "total_comments": Comment.objects.count(),
-        "next": request.GET.get('next')
     }
     return render(request, 'pages/comments.html', context)
 
@@ -135,14 +131,14 @@ class TarjimonSearchView(SearchView):
 # @login_required
 # @cache_page(60 * 5)
 def subscribe_page(request):
-    context = {"next": request.GET.get('next')}
+    context = {}
     return render(request, 'pages/subscribe.html', context)
 
 
 # @login_required
 # @cache_page(60 * 5)
 def about_page(request):
-    context = {"next": request.GET.get('next')}
+    context = {}
     return render(request, 'pages/about.html', context)
 
 
@@ -150,7 +146,6 @@ def feed_page(request):
     last_ten_posts = Post.objects.order_by('-created_time')[:10]
     last_ten_comments = Comment.objects.order_by('-created_time')[:10]
     context = {
-        "next": request.GET.get('next'),
         "last_ten_posts": last_ten_posts,
         "last_ten_comments": last_ten_comments
     }
