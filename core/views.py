@@ -151,8 +151,8 @@ def about_page(request):
 @login_required
 @cache_page(60 * 10)
 def feed_page(request):
-    last_ten_posts = Post.objects.order_by('-created_time')[:10]
-    last_ten_comments = Comment.objects.order_by('-created_time')[:10]
+    last_ten_posts = Post.objects.order_by('-created_time')[:20]
+    last_ten_comments = Comment.objects.order_by('-created_time')[:20]
     context = {
         "last_ten_posts": last_ten_posts,
         "last_ten_comments": last_ten_comments
