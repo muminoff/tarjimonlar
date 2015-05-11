@@ -28,7 +28,7 @@ def login_page(request):
     return render(request, 'login.html', context)
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def stats_page(request):
     posts_by_hours = Post.objects.extra({
@@ -76,7 +76,7 @@ def stats_page(request):
     return render(request, 'pages/stats_time.html', context)
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def members_page(request):
     non_members_count = Member.objects.filter(currently_member=False).count()
@@ -104,7 +104,7 @@ def members_page(request):
     return render(request, 'pages/members.html', context)
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def posts_page(request):
     posts_by_months = Post.objects.filter(created_time__year=2015).extra({
@@ -117,7 +117,7 @@ def posts_page(request):
     return render(request, 'pages/posts.html', context)
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def comments_page(request):
 
@@ -134,21 +134,21 @@ class TarjimonSearchView(SearchView):
         return context
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def subscribe_page(request):
     context = {}
     return render(request, 'pages/subscribe.html', context)
 
 
-@login_required
+# @login_required
 # @cache_page(60 * 5)
 def about_page(request):
     context = {}
     return render(request, 'pages/about.html', context)
 
 
-@login_required
+# @login_required
 @cache_page(60 * 10)
 def feed_page(request):
     last_ten_posts = Post.objects.order_by('-created_time')[:20]
@@ -160,7 +160,7 @@ def feed_page(request):
     return render(request, 'pages/feed.html', context)
 
 
-@login_required
+# @login_required
 def go_to_link(request, hashid):
     hashids = Hashids(salt='tarjimonlar')
     realid = hashids.decode(hashid)[0]
