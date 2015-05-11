@@ -47,6 +47,7 @@ class Post(models.Model):
     updated_time = models.DateTimeField()
     creator = models.ForeignKey(Member, db_index=True)
     likes = models.IntegerField(db_index=True)
+    exists_in_group = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.id
