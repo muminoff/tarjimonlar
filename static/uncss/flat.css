@@ -41,6 +41,7 @@ a:focus {
   outline: none;
 }
 
+h4,
 h5 {
   font-family: inherit;
   font-weight: 700;
@@ -48,9 +49,14 @@ h5 {
   color: inherit;
 }
 
+h4,
 h5 {
   margin-top: 15px;
   margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 29px;
 }
 
 h5 {
@@ -61,11 +67,6 @@ p {
   margin: 0 0 15px;
   font-size: 18px;
   line-height: 1.72222;
-}
-
-.small {
-  font-size: 83%;
-  line-height: 2.067;
 }
 
 ul {
@@ -90,7 +91,8 @@ ul {
   outline: none;
 }
 
-.btn:active {
+.btn:active,
+.btn.active {
   outline: none;
   box-shadow: none;
 }
@@ -106,13 +108,15 @@ ul {
 
 .btn-info:hover,
 .btn-info:focus,
-.btn-info:active {
+.btn-info:active,
+.btn-info.active {
   color: #fff;
   background-color: #5dade2;
   border-color: #5dade2;
 }
 
-.btn-info:active {
+.btn-info:active,
+.btn-info.active {
   background: #2c81ba;
   border-color: #2c81ba;
 }
@@ -142,11 +146,12 @@ ul {
   border-radius: 6px;
 }
 
-.btn-xs {
-  padding: 6px 9px;
-  font-size: 12px;
-  line-height: 1.083;
-  border-radius: 3px;
+.btn-group > .btn + .btn {
+  margin-left: 0;
+}
+
+.btn-group > .btn {
+  font-weight: 400;
 }
 
 label {

@@ -22,8 +22,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-home:before {
-  content: "\e900";
+.icon-article:before {
+  content: "\e904";
+}
+
+.icon-broadcast:before {
+  content: "\e91a";
 }
 
 .icon-post:before {
@@ -34,12 +38,16 @@
   content: "\e96f";
 }
 
+.icon-user:before {
+  content: "\e972";
+}
+
 .icon-search:before {
   content: "\e986";
 }
 
-.icon-link:before {
-  content: "\e9cb";
+.icon-stat:before {
+  content: "\e99a";
 }
 
 .icon-info:before {
@@ -160,6 +168,10 @@ body {
   display: none;
 }
 
+ul.credits {
+  list-style-type: none;
+}
+
 span.found_result {
   background-color: #f1c40f;
 }
@@ -169,6 +181,13 @@ span.found_result {
   position: relative;
   height: auto;
   top: 70px;
+}
+
+.group-desc {
+  margin: 30px auto 30px;
+  position: relative;
+  height: auto;
+  top: 80px;
 }
 
 .login-btn {
@@ -181,4 +200,9 @@ span.found_result {
 .login-wrapper {
   display: table;
   margin: 0 auto;
+}
+
+p.eslatma {
+  font-size: 12px;
+  font-color: #95a5a6;
 }
