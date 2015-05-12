@@ -14,14 +14,17 @@ class Command(BaseCommand):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
         graph = GraphAPI(access_token)
         group_id = '438868872860349'
-        # members = graph.get('{}/members?limit=1000'.format(group_id))
+        irrelevant_posts = list()
+        relevant_posts = list()
+        print "Checking posts from API ..."
         for post in Post.objects.all():
             try:
                 graph.get('{}'.format(post.id))
             except FacebookError:
-                print 'Post {} does not exist in API, so making it false ...'.format(post.id)
                 post.exists_in_group = False
                 post.save()
-                print '[OK]'
+                irrelevant_posts.append(post.id)
             else:
-                print 'Post {} is OK'.format(post.id)
+                relevant_posts.append(post.id)
+
+        print "Irrelevant posts {}, and relevant posts {}".format(len(irrelevant_posts), len(relevant_posts))
