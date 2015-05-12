@@ -3,7 +3,6 @@ from django.conf import settings
 from facepy import GraphAPI
 from core.models import Member
 from getenv import env
-import sys
 
 class Command(BaseCommand):
     help = 'Imports members from Facebook'
@@ -35,7 +34,6 @@ class Command(BaseCommand):
                         existing_member.save()
                     except Exception, e:
                         print str(e), unicode(member['name']), member['id'], ' failed...'
-			pass
 
             newUrl = members['paging']['next'].replace(
                 'https://graph.facebook.com/', ''
