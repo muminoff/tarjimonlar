@@ -25,6 +25,8 @@ class Command(BaseCommand):
                 post.save()
                 irrelevant_posts.append(post.id)
             else:
+                post.exists_in_group = True
+                post.save()
                 relevant_posts.append(post.id)
 
         print "Irrelevant posts {}, and relevant posts {}".format(len(irrelevant_posts), len(relevant_posts))
