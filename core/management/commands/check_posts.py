@@ -6,7 +6,7 @@ from core.models import Post
 
 
 class Command(BaseCommand):
-    help = 'Imports members from Facebook'
+    help = 'Check posts from Facebook'
 
     def handle(self, *args, **options):
         access_token = env('FACEBOOK_ACCESS_TOKEN')
