@@ -111,7 +111,7 @@ def posts_page(request):
         "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
         }).values("month").order_by("month").annotate(num_posts=Count("id"))
     context = {
-        "total_posts": Post.objects.filtr(exists_in_group=True).count(),
+        "total_posts": Post.objects.filter(exists_in_group=True).count(),
         "posts_by_months": posts_by_months,
     }
     return render(request, 'pages/posts.html', context)
