@@ -40,7 +40,6 @@ def deploy():
         run('git pull origin develop')
         clear_cache()
         run('find . -name "*.pyc" -delete')
-        run('kill -9 `pgrep gunicorn|xargs`')
         restart()
 
 
@@ -60,4 +59,6 @@ def get_stat():
 @task
 def restart():
     with cd(CODE_ROOT):
-        run('supervisorctl -c deploy/supervisord.conf restart all')
+        run('kill -9 `pgrep gunicorn|xargs`')
+        run('supervisorctl -c deploy/supervisord.conf shutdown')
+        run('supervisord -c deploy/supervisord.conf shutdown')
