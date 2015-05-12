@@ -3,8 +3,6 @@ from facepy import GraphAPI
 from facepy.exceptions import FacebookError
 from getenv import env
 from core.models import Post
-from redis import Redis
-from time import time
 
 
 class Command(BaseCommand):

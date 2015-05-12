@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 from django.conf import settings
-from core.models import Member, Post, Comment
-from django.db.models import Count, Max, Min, Avg
-from django.template.loader import render_to_string
+from core.models import Post, Comment
+from django.db.models import Count, Max, Avg
 from django.shortcuts import render_to_response
 from django.template import Context, loader
 

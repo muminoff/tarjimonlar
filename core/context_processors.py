@@ -1,7 +1,7 @@
 #! -*- coding: utf-8 -*-
 from django.core.urlresolvers import resolve
 from collections import OrderedDict
-from django.utils.translation import ugettext_lazy as _ 
+# from django.utils.translation import ugettext_lazy as _ 
 
 
 def navbar(request):
