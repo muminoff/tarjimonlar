@@ -39,7 +39,8 @@ def deploy():
     with cd(CODE_ROOT):
         run('git pull origin develop')
         clear_cache()
-        run(r'find . -name "*.pyc" -delete')
+        run('find . -name "*.pyc" -delete')
+        run('kill -9 `pgrep gunicorn|xargs`')
         restart()
 
 
