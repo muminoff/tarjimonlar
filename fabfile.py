@@ -61,4 +61,4 @@ def restart():
     with cd(CODE_ROOT):
         run('kill -9 `pgrep gunicorn|xargs`')
         run('supervisorctl -c deploy/supervisord.conf shutdown')
-        run('supervisord -c deploy/supervisord.conf shutdown')
+        run('supervisord -c deploy/supervisord.conf')
