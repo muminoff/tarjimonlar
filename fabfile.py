@@ -59,6 +59,7 @@ def get_stat():
 @task
 def restart():
     with cd(CODE_ROOT):
-        run('kill -9 `pgrep gunicorn|xargs`')
-        run('supervisorctl -c deploy/supervisord.conf shutdown')
-        run('supervisord -c deploy/supervisord.conf')
+        # run('supervisorctl -c deploy/supervisord.conf shutdown')
+        # run('kill -9 `pgrep gunicorn|xargs`')
+        # run('supervisord -c deploy/supervisord.conf')
+        run('supervisorctl -c deploy/supervisord.conf restart tarjimonlar')
