@@ -14,6 +14,7 @@ class Command(BaseCommand):
         group_id = '438868872860349'
         irrelevant_posts = list()
         relevant_posts = list()
+        old_relevant_posts = Post.objects.count()
         print "Checking posts from API ..."
         for post in Post.objects.all():
             try:
@@ -27,4 +28,4 @@ class Command(BaseCommand):
                 post.save()
                 relevant_posts.append(post.id)
 
-        print "Irrelevant posts {}, and relevant posts {}".format(len(irrelevant_posts), len(relevant_posts))
+        print "Irrelevant posts {}, and relevant posts {} (was {})".format(len(irrelevant_posts), len(relevant_posts), old_relevant_posts)
