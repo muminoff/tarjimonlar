@@ -62,5 +62,6 @@ def restart():
         # run('supervisorctl -c deploy/supervisord.conf shutdown')
         # run('kill -9 `pgrep gunicorn|xargs`')
         # run('supervisord -c deploy/supervisord.conf')
+        run('source ~/.bashrc')
         run('./manage.py collectstatic --noinput')
         run('supervisorctl -c deploy/supervisord.conf restart tarjimonlar')
