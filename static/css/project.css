@@ -109,7 +109,8 @@
 
 
 body {
-    font-family: 'Noto Serif', serif;
+  font-family: 'Noto Serif', serif;
+  background-image: url('../images/brillant.png');
 }
 
 .navbar {
