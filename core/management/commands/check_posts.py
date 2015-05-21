@@ -20,12 +20,11 @@ class Command(BaseCommand):
             try:
                 graph.get('{}'.format(post.id))
             except FacebookError:
-                post.exists_in_group = False
-                post.save()
+                print "Post {} not exists in Facebook".format(post.id)
                 irrelevant_posts.append(post.id)
+                post.delete() 
             else:
-                post.exists_in_group = True
-                post.save()
+                print "Post {} OK".format(post.id)
                 relevant_posts.append(post.id)
 
         print "Irrelevant posts {}, and relevant posts {} (was {})".format(len(irrelevant_posts), len(relevant_posts), old_relevant_posts)
