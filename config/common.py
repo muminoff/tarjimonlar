@@ -395,7 +395,7 @@ class Common(Configuration):
             'Cache-Control': 'max-age=86400',
             }
 
-    if gethostname() == 'ip-10-0-1-64':
+    if gethostname() == 'tangalik-server':
         STATICFILES_STORAGE = 'core.storage.S3PipelineStorage'
 
     # Haystack
