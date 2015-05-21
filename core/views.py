@@ -35,6 +35,7 @@ def stats_page(request):
         "hour": "extract('hour' from created_time at time zone 'UZT')"
         }).values("hour").order_by("-hour").annotate(num_posts=Count("id"))
     posts_by_hours_daytime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[11:]]
+
     del posts_by_hours_daytime[-1]
     posts_by_hours_nighttime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[:11]]
     posts_by_hours_nighttime.insert(0, {'hour': posts_by_hours.last()['hour'], 'num_posts': posts_by_hours.last()['num_posts']})
@@ -87,9 +88,11 @@ def members_page(request):
     top_commentors = Member.objects.annotate(
             num_comments=Count('comment')).order_by('-num_comments')[:10]
     top_liked_posters = Post.objects.filter(exists_in_group=True).annotate(
-            creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+            creator_times=Count('creator__name', distinct=True)
+            ).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(
-            creator_times=Count('creator__name', distinct=True)).order_by('-likes')[:10]
+            creator_times=Count('creator__name', distinct=True)
+            ).order_by('-likes')[:10]
 
     context = {
         "non_members_count": non_members_count,
@@ -107,9 +110,14 @@ def members_page(request):
 # @login_required
 @cache_page(60 * 10)
 def posts_page(request):
-    posts_by_months = Post.objects.filter(created_time__year=2015, exists_in_group=True).extra({
-        "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
-        }).values("month").order_by("month").annotate(num_posts=Count("id"))
+    posts_by_months = Post.objects.filter(
+            created_time__year=2015,
+            exists_in_group=True
+            ).extra({
+                "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
+                }).values("month").order_by("month").annotate(
+                        num_posts=Count("id")
+                        )
     context = {
         "total_posts": Post.objects.filter(exists_in_group=True).count(),
         "posts_by_months": posts_by_months,
