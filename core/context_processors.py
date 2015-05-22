@@ -7,12 +7,10 @@ from collections import OrderedDict
 def navbar(request):
     menus = OrderedDict([
         ('feed_page', {'title': 'Сўнгги янгиликлар', 'icon': 'article', 'submenu': False}),
-        ('stats_page', {'title': 'Умумий статистика', 'icon': 'stat', 'submenu': False}),
         ('members_page', {'title': 'Иштирокчилар', 'icon': 'user', 'submenu': False}),
         ('posts_page', {'title': 'Постлар', 'icon': 'post', 'submenu': False}),
         ('comments_page', {'title': 'Шарҳлар', 'icon': 'comment', 'submenu': False}),
         ('search_page', {'title': 'Қидирув', 'icon': 'search', 'submenu': False}),
-        ('subscribe_page', {'title': 'Обуна', 'icon': 'broadcast', 'submenu': False}),
         ('about_page', {'title': 'Лойиҳа ҳақида', 'icon': 'info', 'submenu': False}),
         ])
 

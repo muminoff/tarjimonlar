@@ -30,55 +30,6 @@ def login_page(request):
 
 # @login_required
 @cache_page(60 * 10)
-def stats_page(request):
-    posts_by_hours = Post.objects.filter(exists_in_group=True).extra({
-        "hour": "extract('hour' from created_time at time zone 'UZT')"
-        }).values("hour").order_by("-hour").annotate(num_posts=Count("id"))
-    posts_by_hours_daytime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[11:]]
-
-    del posts_by_hours_daytime[-1]
-    posts_by_hours_nighttime = [{'hour': x['hour'], 'num_posts': x['num_posts'] } for x in posts_by_hours[:11]]
-    posts_by_hours_nighttime.insert(0, {'hour': posts_by_hours.last()['hour'], 'num_posts': posts_by_hours.last()['num_posts']})
-
-    comments_by_hours = Comment.objects.extra({
-        "hour": "extract('hour' from created_time at time zone 'UZT')"
-        }).values("hour").order_by("-hour").annotate(num_comments=Count("id"))
-    comments_by_hours_daytime = [{'hour': x['hour'], 'num_comments': x['num_comments'] } for x in comments_by_hours[11:]]
-    del comments_by_hours_daytime[-1]
-    comments_by_hours_nighttime = [{'hour': x['hour'], 'num_comments': x['num_comments'] } for x in comments_by_hours[:11]]
-    comments_by_hours_nighttime.insert(0, {'hour': comments_by_hours.last()['hour'], 'num_comments': comments_by_hours.last()['num_comments']})
-
-    posts_by_weekdays = Post.objects.filter(exists_in_group=True).extra({
-        "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
-        }).values("weekday").order_by("weekday").annotate(num_posts=Count("id"))
-    comments_by_weekdays = Comment.objects.extra({
-        "weekday": "EXTRACT('dow' FROM created_time AT TIME ZONE 'UZT')"
-        }).values("weekday").order_by("weekday").annotate(num_comments=Count("id"))
-    posts_by_months = Post.objects.filter(exists_in_group=True).extra({
-        "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
-        }).values("month").order_by("month").annotate(num_posts=Count("id"))
-    comments_by_months = Comment.objects.extra({
-        "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
-        }).values("month").order_by("month").annotate(num_comments=Count("id"))
-
-    context = {
-        "posts_by_hours_daytime": posts_by_hours_daytime,
-        "posts_by_hours_nighttime": posts_by_hours_nighttime,
-        "comments_by_hours_daytime": comments_by_hours_daytime,
-        "comments_by_hours_nighttime": comments_by_hours_nighttime,
-        "posts_by_weekdays": posts_by_weekdays,
-        "comments_by_weekdays": comments_by_weekdays,
-        "posts_by_months": posts_by_months,
-        "comments_by_months": comments_by_months,
-        "total_posts": Post.objects.filter(exists_in_group=True).count(),
-        "total_comments": Comment.objects.count(),
-    }
-
-    return render(request, 'pages/stats_time.html', context)
-
-
-# @login_required
-@cache_page(60 * 10)
 def members_page(request):
     non_members_count = Member.objects.filter(currently_member=False).count()
     members_count = Member.objects.filter(currently_member=True).count()
@@ -87,7 +38,7 @@ def members_page(request):
             num_posts=Count('post')).order_by('-num_posts')[:10]
     top_commentors = Member.objects.annotate(
             num_comments=Count('comment')).order_by('-num_comments')[:10]
-    top_liked_posters = Post.objects.filter(exists_in_group=True).annotate(
+    top_liked_posters = Post.objects.annotate(
             creator_times=Count('creator__name', distinct=True)
             ).order_by('-likes')[:10]
     top_liked_commentors = Comment.objects.annotate(
@@ -112,14 +63,13 @@ def members_page(request):
 def posts_page(request):
     posts_by_months = Post.objects.filter(
             created_time__year=2015,
-            exists_in_group=True
             ).extra({
                 "month": "EXTRACT('month' FROM created_time AT TIME ZONE 'UZT')"
                 }).values("month").order_by("month").annotate(
                         num_posts=Count("id")
                         )
     context = {
-        "total_posts": Post.objects.filter(exists_in_group=True).count(),
+        "total_posts": Post.objects.count(),
         "posts_by_months": posts_by_months,
     }
     return render(request, 'pages/posts.html', context)
@@ -143,13 +93,6 @@ class TarjimonSearchView(SearchView):
 
 
 # @login_required
-@cache_page(60 * 10)
-def subscribe_page(request):
-    context = {}
-    return render(request, 'pages/subscribe.html', context)
-
-
-# @login_required
 # @cache_page(60 * 5)
 def about_page(request):
     context = {}
@@ -159,7 +102,7 @@ def about_page(request):
 # @login_required
 @cache_page(60 * 10)
 def feed_page(request):
-    last_ten_posts = Post.objects.filter(exists_in_group=True).order_by('-created_time')[:20]
+    last_ten_posts = Post.objects.order_by('-created_time')[:20]
     last_ten_comments = Comment.objects.order_by('-created_time')[:20]
     context = {
         "last_ten_posts": last_ten_posts,
