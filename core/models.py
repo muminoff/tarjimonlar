@@ -2,6 +2,9 @@ from django.db import models
 from django.conf import settings
 from hashids import Hashids
 
+from django.contrib.sessions.models import Session
+Session._meta.db_table = "sessions"
+
 
 class Member(models.Model):
     id = models.CharField(max_length=255, primary_key=True, db_index=True)
