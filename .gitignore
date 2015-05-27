@@ -100,3 +100,4 @@ media
 nohup.out
 staticfiles/*
 whoosh_index/*
+*.rdb
